@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <title>Nuestra Dieta</title>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap');
 
@@ -1470,24 +1472,118 @@
 
   updateProgress();
 
-  // ─── CONTROL DE DIETA ────────────────────────────────────────────
-  let calYear = new Date().getFullYear();
-  let calMonth = new Date().getMonth();
+  // ─── FIREBASE ────────────────────────────────────────────────────
+  var firebaseConfig = {
+    databaseURL: "https://app-dieta-1d721-default-rtdb.europe-west1.firebasedatabase.app"
+  };
+  firebase.initializeApp(firebaseConfig);
+  var db = firebase.database();
 
-  const MONTH_NAMES = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
-  let modalDateKey = null;
+  // Cache local para no depender de lecturas async en el render
+  var dbCache = { lorena: {}, daniel: {} };
 
-  function ctrlKey(person, dk) { return 'ctrl_' + person + '_' + dk; }
+  // Escuchar cambios en tiempo real de ambas personas
+  db.ref('dieta').on('value', function(snap) {
+    var data = snap.val() || {};
+    dbCache.lorena = data.lorena || {};
+    dbCache.daniel = data.daniel || {};
+    // Si estamos en la vista control, re-renderizar
+    if (document.getElementById('view-control').classList.contains('active')) {
+      renderCalendar();
+      renderStats();
+      renderLog();
+    }
+    // Restaurar checks de comidas del día actual
+    restoreMealChecks();
+  });
+
+  function makeDateKey(y, m, d) { return y + '-' + String(m+1).padStart(2,'0') + '-' + String(d).padStart(2,'0'); }
 
   function getCtrlData(person, dk) {
-    try { return JSON.parse(localStorage.getItem(ctrlKey(person, dk))) || {}; } catch(e) { return {}; }
+    return dbCache[person][dk] || {};
   }
 
   function setCtrlData(person, dk, data) {
-    localStorage.setItem(ctrlKey(person, dk), JSON.stringify(data));
+    dbCache[person][dk] = data;
+    db.ref('dieta/' + person + '/' + dk).set(data);
   }
 
-  function makeDateKey(y, m, d) { return y + '-' + String(m+1).padStart(2,'0') + '-' + String(d).padStart(2,'0'); }
+  function removeCtrlData(person, dk) {
+    dbCache[person][dk] = {};
+    db.ref('dieta/' + person + '/' + dk).remove();
+  }
+
+  // ─── COMIDAS: guardar estado de checks ───────────────────────────
+  function saveMealCheck(cardId, checked) {
+    var today = new Date();
+    var dk = makeDateKey(today.getFullYear(), today.getMonth(), today.getDate());
+    var existing = getCtrlData(currentPerson, dk);
+    var meals = existing.meals || {};
+    meals[cardId] = checked;
+    setCtrlData(currentPerson, dk, Object.assign({}, existing, { meals: meals }));
+  }
+
+  function restoreMealChecks() {
+    var today = new Date();
+    var dk = makeDateKey(today.getFullYear(), today.getMonth(), today.getDate());
+    ['lorena','daniel'].forEach(function(person) {
+      var data = getCtrlData(person, dk);
+      var meals = data.meals || {};
+      Object.keys(meals).forEach(function(cardId) {
+        var card = document.getElementById(cardId);
+        var btn = card ? card.querySelector('.meal-check') : null;
+        if (!btn) return;
+        if (meals[cardId] && !btn.classList.contains('checked')) {
+          btn.classList.add('checked');
+          card.classList.add('done');
+        } else if (!meals[cardId] && btn.classList.contains('checked')) {
+          btn.classList.remove('checked');
+          card.classList.remove('done');
+        }
+      });
+    });
+    updateProgress();
+  }
+
+  // Interceptar clicks en meal-check para guardar en Firebase
+  document.addEventListener('click', function(e) {
+    var btn = e.target.closest('.meal-check');
+    if (!btn) return;
+    setTimeout(function() {
+      var card = btn.closest('.meal-card');
+      if (!card) return;
+      var cardId = card.id;
+      var checked = btn.classList.contains('checked');
+      saveMealCheck(cardId, checked);
+      // Comprobar si el día está completo
+      var dayEl = document.getElementById(currentPerson+'-day-'+currentDay);
+      if (!dayEl) return;
+      var checks = dayEl.querySelectorAll('.meal-check');
+      var doneCount = dayEl.querySelectorAll('.meal-check.checked').length;
+      var today = new Date();
+      var dayOfWeek = (today.getDay() + 6) % 7;
+      var targetDate = new Date(today);
+      targetDate.setDate(today.getDate() - dayOfWeek + currentDay);
+      var dk = makeDateKey(targetDate.getFullYear(), targetDate.getMonth(), targetDate.getDate());
+      var existing = getCtrlData(currentPerson, dk);
+      if (checks.length > 0 && doneCount === checks.length) {
+        setCtrlData(currentPerson, dk, Object.assign({}, existing, { done: true }));
+      } else {
+        // Si desmarcamos algo, quitar el done
+        if (existing.done) {
+          var updated = Object.assign({}, existing);
+          delete updated.done;
+          setCtrlData(currentPerson, dk, updated);
+        }
+      }
+    }, 50);
+  });
+
+  // ─── CONTROL DE DIETA ────────────────────────────────────────────
+  var calYear = new Date().getFullYear();
+  var calMonth = new Date().getMonth();
+  var MONTH_NAMES = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+  var modalDateKey = null;
 
   function renderControl() {
     document.getElementById('controlSubtitle').textContent = 'Seguimiento de ' + (currentPerson === 'lorena' ? 'Lorena' : 'Daniel');
@@ -1498,27 +1594,27 @@
 
   function renderCalendar() {
     document.getElementById('calMonthTitle').textContent = MONTH_NAMES[calMonth] + ' ' + calYear;
-    const grid = document.getElementById('calGrid');
+    var grid = document.getElementById('calGrid');
     grid.innerHTML = '';
-    const today = new Date(); today.setHours(0,0,0,0);
-    const firstDay = new Date(calYear, calMonth, 1);
-    const daysInMonth = new Date(calYear, calMonth+1, 0).getDate();
-    let startOffset = (firstDay.getDay() + 6) % 7;
+    var today = new Date(); today.setHours(0,0,0,0);
+    var firstDay = new Date(calYear, calMonth, 1);
+    var daysInMonth = new Date(calYear, calMonth+1, 0).getDate();
+    var startOffset = (firstDay.getDay() + 6) % 7;
 
-    for (let i = 0; i < startOffset; i++) {
-      const blank = document.createElement('div');
+    for (var i = 0; i < startOffset; i++) {
+      var blank = document.createElement('div');
       blank.className = 'cal-day empty';
       grid.appendChild(blank);
     }
 
-    for (let d = 1; d <= daysInMonth; d++) {
-      const cellDate = new Date(calYear, calMonth, d);
-      const dk = makeDateKey(calYear, calMonth, d);
-      const data = getCtrlData(currentPerson, dk);
-      const isFuture = cellDate > today;
-      const isToday = cellDate.getTime() === today.getTime();
+    for (var d = 1; d <= daysInMonth; d++) {
+      var cellDate = new Date(calYear, calMonth, d);
+      var dk = makeDateKey(calYear, calMonth, d);
+      var data = getCtrlData(currentPerson, dk);
+      var isFuture = cellDate > today;
+      var isToday = cellDate.getTime() === today.getTime();
 
-      const cell = document.createElement('div');
+      var cell = document.createElement('div');
       cell.className = 'cal-day';
       if (isFuture) cell.classList.add('future');
       if (isToday) cell.classList.add('today');
@@ -1529,7 +1625,7 @@
 
       if (!isFuture) {
         (function(dk2, dayNum2, data2) {
-          cell.addEventListener('click', function() { openDayModal(dk2, dayNum2, data2); });
+          cell.addEventListener('click', function() { openDayModal(dk2, dayNum2, getCtrlData(currentPerson, dk2)); });
         })(dk, d, data);
       }
       grid.appendChild(cell);
@@ -1537,22 +1633,18 @@
   }
 
   function renderStats() {
-    const prefix = 'ctrl_' + currentPerson + '_';
-    let done = 0, noted = 0, streak = 0;
-    for (let k in localStorage) {
-      if (k.startsWith(prefix)) {
-        try {
-          const d = JSON.parse(localStorage.getItem(k));
-          if (d.done) done++;
-          else if (d.note) noted++;
-        } catch(e) {}
-      }
-    }
-    const today = new Date(); today.setHours(0,0,0,0);
-    let checkDate = new Date(today);
+    var data = dbCache[currentPerson];
+    var done = 0, noted = 0, streak = 0;
+    Object.keys(data).forEach(function(dk) {
+      var d = data[dk];
+      if (d.done) done++;
+      else if (d.note) noted++;
+    });
+    var today = new Date(); today.setHours(0,0,0,0);
+    var checkDate = new Date(today);
     while (true) {
-      const dk = makeDateKey(checkDate.getFullYear(), checkDate.getMonth(), checkDate.getDate());
-      const d = getCtrlData(currentPerson, dk);
+      var dk = makeDateKey(checkDate.getFullYear(), checkDate.getMonth(), checkDate.getDate());
+      var d = getCtrlData(currentPerson, dk);
       if (d.done) { streak++; checkDate.setDate(checkDate.getDate()-1); }
       else break;
     }
@@ -1562,36 +1654,31 @@
   }
 
   function renderLog() {
-    const list = document.getElementById('logList');
-    const prefix = 'ctrl_' + currentPerson + '_';
-    const entries = [];
-    for (let k in localStorage) {
-      if (k.startsWith(prefix)) {
-        try {
-          const d = JSON.parse(localStorage.getItem(k));
-          if (d.note) entries.push({ dk: k.replace(prefix, ''), note: d.note });
-        } catch(e) {}
-      }
-    }
+    var list = document.getElementById('logList');
+    var data = dbCache[currentPerson];
+    var entries = [];
+    Object.keys(data).forEach(function(dk) {
+      if (data[dk].note) entries.push({ dk: dk, note: data[dk].note });
+    });
     entries.sort(function(a,b) { return b.dk.localeCompare(a.dk); });
     if (entries.length === 0) {
       list.innerHTML = '<div class="log-empty">Sin notas todavía 🎉</div>';
       return;
     }
     list.innerHTML = entries.map(function(e) {
-      const parts = e.dk.split('-');
-      const label = parts[2] + ' ' + MONTH_NAMES[parseInt(parts[1])-1] + ' ' + parts[0];
+      var parts = e.dk.split('-');
+      var label = parts[2] + ' ' + MONTH_NAMES[parseInt(parts[1])-1] + ' ' + parts[0];
       return '<div class="log-card"><span class="log-emoji">📝</span><div><div class="log-date">' + label + '</div><div class="log-text">' + e.note + '</div></div></div>';
     }).join('');
   }
 
   function openDayModal(dk, dayNum, data) {
     modalDateKey = dk;
-    const parts = dk.split('-');
-    const label = dayNum + ' ' + MONTH_NAMES[parseInt(parts[1])-1] + ' ' + parts[0];
+    var parts = dk.split('-');
+    var label = dayNum + ' ' + MONTH_NAMES[parseInt(parts[1])-1] + ' ' + parts[0];
     document.getElementById('modalSub').textContent = label;
     document.getElementById('modalTextarea').value = data.note || '';
-    const undoBtn = document.getElementById('modalBtnUndo');
+    var undoBtn = document.getElementById('modalBtnUndo');
     if (data.done) {
       document.getElementById('modalTitle').textContent = '✅ Día completado';
       document.getElementById('modalTextarea').placeholder = 'Añade una nota si quieres...';
@@ -1606,10 +1693,10 @@
 
   function markDayIncomplete() {
     if (!modalDateKey) return;
-    const existing = getCtrlData(currentPerson, modalDateKey);
-    const updated = Object.assign({}, existing);
+    var existing = getCtrlData(currentPerson, modalDateKey);
+    var updated = Object.assign({}, existing);
     delete updated.done;
-    if (Object.keys(updated).length === 0) localStorage.removeItem(ctrlKey(currentPerson, modalDateKey));
+    if (Object.keys(updated).length === 0) removeCtrlData(currentPerson, modalDateKey);
     else setCtrlData(currentPerson, modalDateKey, updated);
     closeModal();
     renderControl();
@@ -1622,19 +1709,25 @@
 
   function saveNote() {
     if (!modalDateKey) return;
-    const note = document.getElementById('modalTextarea').value.trim();
-    const existing = getCtrlData(currentPerson, modalDateKey);
-    setCtrlData(currentPerson, modalDateKey, Object.assign({}, existing, { note: note }));
+    var note = document.getElementById('modalTextarea').value.trim();
+    var existing = getCtrlData(currentPerson, modalDateKey);
+    if (note) setCtrlData(currentPerson, modalDateKey, Object.assign({}, existing, { note: note }));
+    else {
+      var updated = Object.assign({}, existing);
+      delete updated.note;
+      if (Object.keys(updated).length === 0) removeCtrlData(currentPerson, modalDateKey);
+      else setCtrlData(currentPerson, modalDateKey, updated);
+    }
     closeModal();
     renderControl();
   }
 
   function clearDayNote() {
     if (!modalDateKey) return;
-    const existing = getCtrlData(currentPerson, modalDateKey);
-    const updated = Object.assign({}, existing);
+    var existing = getCtrlData(currentPerson, modalDateKey);
+    var updated = Object.assign({}, existing);
     delete updated.note;
-    if (Object.keys(updated).length === 0) localStorage.removeItem(ctrlKey(currentPerson, modalDateKey));
+    if (Object.keys(updated).length === 0) removeCtrlData(currentPerson, modalDateKey);
     else setCtrlData(currentPerson, modalDateKey, updated);
     closeModal();
     renderControl();
@@ -1647,52 +1740,11 @@
     renderCalendar();
   }
 
-  // Auto-mark day done when all meals are checked
-  const _origToggleMeal = toggleMeal;
-  function toggleMealWithCalendar(cardId, checkBtn) {
-    _origToggleMeal(cardId, checkBtn);
-    const dayEl = document.getElementById(currentPerson+'-day-'+currentDay);
-    if (!dayEl) return;
-    const checks = dayEl.querySelectorAll('.meal-check');
-    const doneCount = dayEl.querySelectorAll('.meal-check.checked').length;
-    if (checks.length > 0 && doneCount === checks.length) {
-      const today = new Date();
-      const dayOfWeek = (today.getDay() + 6) % 7;
-      const targetDate = new Date(today);
-      targetDate.setDate(today.getDate() - dayOfWeek + currentDay);
-      const dk = makeDateKey(targetDate.getFullYear(), targetDate.getMonth(), targetDate.getDate());
-      const existing = getCtrlData(currentPerson, dk);
-      if (!existing.done) setCtrlData(currentPerson, dk, Object.assign({}, existing, { done: true }));
-    }
-  }
-
-  // Override toggleMeal calls via onclick attributes to also update calendar
-  document.addEventListener('click', function(e) {
-    const btn = e.target.closest('.meal-check');
-    if (!btn) return;
-    // After the existing toggleMeal runs, check completion
-    setTimeout(function() {
-      const dayEl = document.getElementById(currentPerson+'-day-'+currentDay);
-      if (!dayEl) return;
-      const checks = dayEl.querySelectorAll('.meal-check');
-      const doneCount = dayEl.querySelectorAll('.meal-check.checked').length;
-      if (checks.length > 0 && doneCount === checks.length) {
-        const today = new Date();
-        const dayOfWeek = (today.getDay() + 6) % 7;
-        const targetDate = new Date(today);
-        targetDate.setDate(today.getDate() - dayOfWeek + currentDay);
-        const dk = makeDateKey(targetDate.getFullYear(), targetDate.getMonth(), targetDate.getDate());
-        const existing = getCtrlData(currentPerson, dk);
-        if (!existing.done) setCtrlData(currentPerson, dk, Object.assign({}, existing, { done: true }));
-      }
-    }, 50);
-  });
-
   document.getElementById('noteModal').addEventListener('click', function(e) {
     if (e.target === this) closeModal();
   });
 
-  // Exponer funciones globalmente para Safari/file://
+  // Exponer funciones globalmente para Safari
   window.setPerson = setPerson;
   window.setDay = setDay;
   window.setView = setView;
