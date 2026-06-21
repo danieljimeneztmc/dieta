@@ -483,18 +483,18 @@
   <div class="header-top">
     <div class="header-title" id="headerTitle">Nuestra <span>dieta</span> 🥗</div>
     <div class="person-switch">
-      <button class="person-btn active" id="pb-lorena" onclick="setPerson('lorena')">Lorena</button>
-      <button class="person-btn" id="pb-daniel" onclick="setPerson('daniel')">Daniel</button>
+      <button class="person-btn active" id="pb-lorena" onclick="window.setPerson('lorena')">Lorena</button>
+      <button class="person-btn" id="pb-daniel" onclick="window.setPerson('daniel')">Daniel</button>
     </div>
   </div>
   <div class="day-selector" id="daySelector">
-    <button class="day-btn active" onclick="setDay(0, this)"><span class="day-name">Lun</span><span class="day-dot"></span></button>
-    <button class="day-btn" onclick="setDay(1, this)"><span class="day-name">Mar</span><span class="day-dot"></span></button>
-    <button class="day-btn" onclick="setDay(2, this)"><span class="day-name">Mié</span><span class="day-dot"></span></button>
-    <button class="day-btn" onclick="setDay(3, this)"><span class="day-name">Jue</span><span class="day-dot"></span></button>
-    <button class="day-btn" onclick="setDay(4, this)"><span class="day-name">Vie</span><span class="day-dot"></span></button>
-    <button class="day-btn" onclick="setDay(5, this)"><span class="day-name">Sáb</span><span class="day-dot"></span></button>
-    <button class="day-btn" onclick="setDay(6, this)"><span class="day-name">Dom</span><span class="day-dot"></span></button>
+    <button class="day-btn active" onclick="window.setDay(0, this)"><span class="day-name">Lun</span><span class="day-dot"></span></button>
+    <button class="day-btn" onclick="window.setDay(1, this)"><span class="day-name">Mar</span><span class="day-dot"></span></button>
+    <button class="day-btn" onclick="window.setDay(2, this)"><span class="day-name">Mié</span><span class="day-dot"></span></button>
+    <button class="day-btn" onclick="window.setDay(3, this)"><span class="day-name">Jue</span><span class="day-dot"></span></button>
+    <button class="day-btn" onclick="window.setDay(4, this)"><span class="day-name">Vie</span><span class="day-dot"></span></button>
+    <button class="day-btn" onclick="window.setDay(5, this)"><span class="day-name">Sáb</span><span class="day-dot"></span></button>
+    <button class="day-btn" onclick="window.setDay(6, this)"><span class="day-name">Dom</span><span class="day-dot"></span></button>
   </div>
   <div class="day-progress-label" id="progressLabel">0 de 5 tomas completadas</div>
   <div class="progress-bar-wrap"><div class="progress-bar-fill" id="progressFill" style="width:0%"></div></div>
@@ -504,7 +504,7 @@
   <div class="person-menu" id="menu-lorena" style="display:block">
 <div class="day-content active" id="lorena-day-0">
 <div class="section-block"><div class="meal-label"><span class="meal-label-emoji">☀️</span><span class="meal-label-text">Desayuno</span></div>
-<div class="meal-card" id="lorena-0-0"><div class="meal-card-header"><div class="meal-card-title">Tostada con lomo y tomate<small>+ café con leche</small></div><button class="meal-check" onclick="toggleMeal('lorena-0-0', this)">✓</button></div>
+<div class="meal-card" id="lorena-0-0"><div class="meal-card-header"><div class="meal-card-title">Tostada con lomo y tomate<small>+ café con leche</small></div><button class="meal-check" onclick="window.toggleMeal('lorena-0-0', this)">✓</button></div>
 <div class="ingredients">
 <div class="ingredient-row"><span class="ingredient-name">🥛 Leche entera</span><span class="ingredient-amount">150 ml</span></div>
 <div class="ingredient-row"><span class="ingredient-name">☕ Café</span><span class="ingredient-amount">30 ml</span></div>
@@ -513,24 +513,24 @@
 <div class="ingredient-row"><span class="ingredient-name">🍅 Tomate triturado</span><span class="ingredient-amount">30 g</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🫒 Aceite de oliva virgen extra</span><span class="ingredient-amount">5 ml</span></div>
 </div>
-<button class="recipe-toggle" onclick="toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
+<button class="recipe-toggle" onclick="window.toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
 <div class="recipe-step"><div class="step-num">1</div><div>Prepara el café con leche entera.</div></div>
 <div class="recipe-step"><div class="step-num">2</div><div>Tuesta el pan integral.</div></div>
 <div class="recipe-step"><div class="step-num">3</div><div>Unta tomate triturado con un chorrito de AOVE.</div></div>
 <div class="recipe-step"><div class="step-num">4</div><div>Coloca el lomo embuchado encima.</div></div>
 </div></div></div>
 <div class="section-block"><div class="meal-label"><span class="meal-label-emoji">🍎</span><span class="meal-label-text">Almuerzo</span></div>
-<div class="meal-card" id="lorena-0-1"><div class="meal-card-header"><div class="meal-card-title">Queso cottage con piña</div><button class="meal-check" onclick="toggleMeal('lorena-0-1', this)">✓</button></div>
+<div class="meal-card" id="lorena-0-1"><div class="meal-card-header"><div class="meal-card-title">Queso cottage con piña</div><button class="meal-check" onclick="window.toggleMeal('lorena-0-1', this)">✓</button></div>
 <div class="ingredients">
 <div class="ingredient-row"><span class="ingredient-name">🧀 Queso cottage</span><span class="ingredient-amount">100 g</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🍍 Piña</span><span class="ingredient-amount">200 g</span></div>
 </div>
-<button class="recipe-toggle" onclick="toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
+<button class="recipe-toggle" onclick="window.toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
 <div class="recipe-step"><div class="step-num">1</div><div>Pon el cottage en un bol.</div></div>
 <div class="recipe-step"><div class="step-num">2</div><div>Trocea la piña encima.</div></div>
 </div></div></div>
 <div class="section-block"><div class="meal-label"><span class="meal-label-emoji">🍽️</span><span class="meal-label-text">Comida</span></div>
-<div class="meal-card" id="lorena-0-2"><div class="meal-card-header"><div class="meal-card-title">Poke de arroz basmati con salmón<small>Mango, aguacate y salsa miel-mostaza</small></div><button class="meal-check" onclick="toggleMeal('lorena-0-2', this)">✓</button></div>
+<div class="meal-card" id="lorena-0-2"><div class="meal-card-header"><div class="meal-card-title">Poke de arroz basmati con salmón<small>Mango, aguacate y salsa miel-mostaza</small></div><button class="meal-check" onclick="window.toggleMeal('lorena-0-2', this)">✓</button></div>
 <div class="ingredients">
 <div class="ingredient-row"><span class="ingredient-name">• Arroz basmati (crudo)</span><span class="ingredient-amount">40 g</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🐟 Salmón</span><span class="ingredient-amount">150 g</span></div>
@@ -541,23 +541,23 @@
 <div class="ingredient-row"><span class="ingredient-name">🍯 Miel</span><span class="ingredient-amount">20 g</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🟡 Mostaza</span><span class="ingredient-amount">30 g</span></div>
 </div>
-<button class="recipe-toggle" onclick="toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
+<button class="recipe-toggle" onclick="window.toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
 <div class="recipe-step"><div class="step-num">1</div><div>Cuece el arroz y deja enfriar.</div></div>
 <div class="recipe-step"><div class="step-num">2</div><div>Trocea tomate, aguacate y mango. Escurre el maíz.</div></div>
 <div class="recipe-step"><div class="step-num">3</div><div>Salsa: mezcla miel con mostaza.</div></div>
 <div class="recipe-step"><div class="step-num">4</div><div>Monta el bol con el salmón encima y aliña.</div></div>
 </div></div></div>
 <div class="section-block"><div class="meal-label"><span class="meal-label-emoji">🌿</span><span class="meal-label-text">Merienda</span></div>
-<div class="meal-card" id="lorena-0-3"><div class="meal-card-header"><div class="meal-card-title">Yogur griego con sandía</div><button class="meal-check" onclick="toggleMeal('lorena-0-3', this)">✓</button></div>
+<div class="meal-card" id="lorena-0-3"><div class="meal-card-header"><div class="meal-card-title">Yogur griego con sandía</div><button class="meal-check" onclick="window.toggleMeal('lorena-0-3', this)">✓</button></div>
 <div class="ingredients">
 <div class="ingredient-row"><span class="ingredient-name">🥛 Yogur griego natural ligero</span><span class="ingredient-amount">125 g</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🍉 Sandía</span><span class="ingredient-amount">200 g</span></div>
 </div>
-<button class="recipe-toggle" onclick="toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
+<button class="recipe-toggle" onclick="window.toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
 <div class="recipe-step"><div class="step-num">1</div><div>Sirve el yogur con la sandía troceada.</div></div>
 </div></div></div>
 <div class="section-block"><div class="meal-label"><span class="meal-label-emoji">🌙</span><span class="meal-label-text">Cena</span></div>
-<div class="meal-card" id="lorena-0-4"><div class="meal-card-header"><div class="meal-card-title">Gazpacho con solomillo de cerdo</div><button class="meal-check" onclick="toggleMeal('lorena-0-4', this)">✓</button></div>
+<div class="meal-card" id="lorena-0-4"><div class="meal-card-header"><div class="meal-card-title">Gazpacho con solomillo de cerdo</div><button class="meal-check" onclick="window.toggleMeal('lorena-0-4', this)">✓</button></div>
 <div class="ingredients">
 <div class="ingredient-row"><span class="ingredient-name">🫙 Gazpacho Calisur</span><span class="ingredient-amount">250 g</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🥩 Solomillo de cerdo</span><span class="ingredient-amount">200 g</span></div>
@@ -565,7 +565,7 @@
 <div class="ingredient-row"><span class="ingredient-name">🫒 Aceite de oliva virgen extra</span><span class="ingredient-amount">10 ml</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🥛 Yogur griego natural ligero</span><span class="ingredient-amount">125 g</span></div>
 </div>
-<button class="recipe-toggle" onclick="toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
+<button class="recipe-toggle" onclick="window.toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
 <div class="recipe-step"><div class="step-num">1</div><div>Sella el solomillo en sartén con AOVE.</div></div>
 <div class="recipe-step"><div class="step-num">2</div><div>Cocina al punto y añade pimienta.</div></div>
 <div class="recipe-step"><div class="step-num">3</div><div>Sirve con gazpacho frío y yogur de postre.</div></div>
@@ -573,7 +573,7 @@
 </div>
 <div class="day-content" id="lorena-day-1">
 <div class="section-block"><div class="meal-label"><span class="meal-label-emoji">☀️</span><span class="meal-label-text">Desayuno</span></div>
-<div class="meal-card" id="lorena-1-0"><div class="meal-card-header"><div class="meal-card-title">Tostada con jamón cocido y tomate<small>+ café con leche</small></div><button class="meal-check" onclick="toggleMeal('lorena-1-0', this)">✓</button></div>
+<div class="meal-card" id="lorena-1-0"><div class="meal-card-header"><div class="meal-card-title">Tostada con jamón cocido y tomate<small>+ café con leche</small></div><button class="meal-check" onclick="window.toggleMeal('lorena-1-0', this)">✓</button></div>
 <div class="ingredients">
 <div class="ingredient-row"><span class="ingredient-name">🥛 Leche entera</span><span class="ingredient-amount">150 ml</span></div>
 <div class="ingredient-row"><span class="ingredient-name">☕ Café</span><span class="ingredient-amount">30 ml</span></div>
@@ -582,20 +582,20 @@
 <div class="ingredient-row"><span class="ingredient-name">🍅 Tomate triturado</span><span class="ingredient-amount">30 g</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🫒 Aceite de oliva virgen extra</span><span class="ingredient-amount">5 ml</span></div>
 </div>
-<button class="recipe-toggle" onclick="toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
+<button class="recipe-toggle" onclick="window.toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
 <div class="recipe-step"><div class="step-num">1</div><div>Café, tostada con tomate y AOVE, jamón cocido encima.</div></div>
 </div></div></div>
 <div class="section-block"><div class="meal-label"><span class="meal-label-emoji">🍎</span><span class="meal-label-text">Almuerzo</span></div>
-<div class="meal-card" id="lorena-1-1"><div class="meal-card-header"><div class="meal-card-title">Queso cottage con atún</div><button class="meal-check" onclick="toggleMeal('lorena-1-1', this)">✓</button></div>
+<div class="meal-card" id="lorena-1-1"><div class="meal-card-header"><div class="meal-card-title">Queso cottage con atún</div><button class="meal-check" onclick="window.toggleMeal('lorena-1-1', this)">✓</button></div>
 <div class="ingredients">
 <div class="ingredient-row"><span class="ingredient-name">🧀 Queso cottage</span><span class="ingredient-amount">100 g</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🐟 Atún al natural</span><span class="ingredient-amount">60 g</span></div>
 </div>
-<button class="recipe-toggle" onclick="toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
+<button class="recipe-toggle" onclick="window.toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
 <div class="recipe-step"><div class="step-num">1</div><div>Escurre el atún y sírvelo con el cottage.</div></div>
 </div></div></div>
 <div class="section-block"><div class="meal-label"><span class="meal-label-emoji">🍽️</span><span class="meal-label-text">Comida</span></div>
-<div class="meal-card" id="lorena-1-2"><div class="meal-card-header"><div class="meal-card-title">Ensalada templada de quinoa con pollo<small>Verduras salteadas y soja sin gluten</small></div><button class="meal-check" onclick="toggleMeal('lorena-1-2', this)">✓</button></div>
+<div class="meal-card" id="lorena-1-2"><div class="meal-card-header"><div class="meal-card-title">Ensalada templada de quinoa con pollo<small>Verduras salteadas y soja sin gluten</small></div><button class="meal-check" onclick="window.toggleMeal('lorena-1-2', this)">✓</button></div>
 <div class="ingredients">
 <div class="ingredient-row"><span class="ingredient-name">🌾 Quinoa cocida</span><span class="ingredient-amount">125 g</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🍗 Pechuga de pollo</span><span class="ingredient-amount">200 g</span></div>
@@ -605,23 +605,23 @@
 <div class="ingredient-row"><span class="ingredient-name">🫒 Aceite de oliva virgen extra</span><span class="ingredient-amount">10 ml</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🥢 Salsa de soja sin gluten</span><span class="ingredient-amount">25 ml</span></div>
 </div>
-<button class="recipe-toggle" onclick="toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
+<button class="recipe-toggle" onclick="window.toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
 <div class="recipe-step"><div class="step-num">1</div><div>Calienta la quinoa.</div></div>
 <div class="recipe-step"><div class="step-num">2</div><div>Saltea pimientos, champiñón y cebolleta con AOVE.</div></div>
 <div class="recipe-step"><div class="step-num">3</div><div>Plancha el pollo y córtalo.</div></div>
 <div class="recipe-step"><div class="step-num">4</div><div>Mezcla y aliña con soja sin gluten.</div></div>
 </div></div></div>
 <div class="section-block"><div class="meal-label"><span class="meal-label-emoji">🌿</span><span class="meal-label-text">Merienda</span></div>
-<div class="meal-card" id="lorena-1-3"><div class="meal-card-header"><div class="meal-card-title">Yogur griego con melocotón</div><button class="meal-check" onclick="toggleMeal('lorena-1-3', this)">✓</button></div>
+<div class="meal-card" id="lorena-1-3"><div class="meal-card-header"><div class="meal-card-title">Yogur griego con melocotón</div><button class="meal-check" onclick="window.toggleMeal('lorena-1-3', this)">✓</button></div>
 <div class="ingredients">
 <div class="ingredient-row"><span class="ingredient-name">🥛 Yogur griego natural ligero</span><span class="ingredient-amount">125 g</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🍑 Melocotón</span><span class="ingredient-amount">180 g</span></div>
 </div>
-<button class="recipe-toggle" onclick="toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
+<button class="recipe-toggle" onclick="window.toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
 <div class="recipe-step"><div class="step-num">1</div><div>Sirve el yogur con el melocotón troceado.</div></div>
 </div></div></div>
 <div class="section-block"><div class="meal-label"><span class="meal-label-emoji">🌙</span><span class="meal-label-text">Cena</span></div>
-<div class="meal-card" id="lorena-1-4"><div class="meal-card-header"><div class="meal-card-title">Ensalada de tomate con queso de cabra y bacalao<small>+ aguacate</small></div><button class="meal-check" onclick="toggleMeal('lorena-1-4', this)">✓</button></div>
+<div class="meal-card" id="lorena-1-4"><div class="meal-card-header"><div class="meal-card-title">Ensalada de tomate con queso de cabra y bacalao<small>+ aguacate</small></div><button class="meal-check" onclick="window.toggleMeal('lorena-1-4', this)">✓</button></div>
 <div class="ingredients">
 <div class="ingredient-row"><span class="ingredient-name">🍅 Tomate</span><span class="ingredient-amount">250 g</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🧀 Queso fresco de cabra</span><span class="ingredient-amount">40 g</span></div>
@@ -630,7 +630,7 @@
 <div class="ingredient-row"><span class="ingredient-name">🫒 Aceite de oliva virgen extra</span><span class="ingredient-amount">10 ml</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🥛 Yogur griego natural ligero</span><span class="ingredient-amount">125 g</span></div>
 </div>
-<button class="recipe-toggle" onclick="toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
+<button class="recipe-toggle" onclick="window.toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
 <div class="recipe-step"><div class="step-num">1</div><div>Plancha el bacalao con AOVE.</div></div>
 <div class="recipe-step"><div class="step-num">2</div><div>Monta la ensalada con tomate, aguacate y queso de cabra.</div></div>
 <div class="recipe-step"><div class="step-num">3</div><div>Aliña. Yogur de postre.</div></div>
@@ -638,7 +638,7 @@
 </div>
 <div class="day-content" id="lorena-day-2">
 <div class="section-block"><div class="meal-label"><span class="meal-label-emoji">☀️</span><span class="meal-label-text">Desayuno</span></div>
-<div class="meal-card" id="lorena-2-0"><div class="meal-card-header"><div class="meal-card-title">Tostada con lomo y tomate<small>+ café con leche</small></div><button class="meal-check" onclick="toggleMeal('lorena-2-0', this)">✓</button></div>
+<div class="meal-card" id="lorena-2-0"><div class="meal-card-header"><div class="meal-card-title">Tostada con lomo y tomate<small>+ café con leche</small></div><button class="meal-check" onclick="window.toggleMeal('lorena-2-0', this)">✓</button></div>
 <div class="ingredients">
 <div class="ingredient-row"><span class="ingredient-name">🥛 Leche entera</span><span class="ingredient-amount">150 ml</span></div>
 <div class="ingredient-row"><span class="ingredient-name">☕ Café</span><span class="ingredient-amount">30 ml</span></div>
@@ -647,20 +647,20 @@
 <div class="ingredient-row"><span class="ingredient-name">🍅 Tomate triturado</span><span class="ingredient-amount">30 g</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🫒 Aceite de oliva virgen extra</span><span class="ingredient-amount">5 ml</span></div>
 </div>
-<button class="recipe-toggle" onclick="toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
+<button class="recipe-toggle" onclick="window.toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
 <div class="recipe-step"><div class="step-num">1</div><div>Café, tostada con tomate y AOVE, lomo encima.</div></div>
 </div></div></div>
 <div class="section-block"><div class="meal-label"><span class="meal-label-emoji">🍎</span><span class="meal-label-text">Almuerzo</span></div>
-<div class="meal-card" id="lorena-2-1"><div class="meal-card-header"><div class="meal-card-title">Queso cottage con manzana</div><button class="meal-check" onclick="toggleMeal('lorena-2-1', this)">✓</button></div>
+<div class="meal-card" id="lorena-2-1"><div class="meal-card-header"><div class="meal-card-title">Queso cottage con manzana</div><button class="meal-check" onclick="window.toggleMeal('lorena-2-1', this)">✓</button></div>
 <div class="ingredients">
 <div class="ingredient-row"><span class="ingredient-name">🧀 Queso cottage</span><span class="ingredient-amount">100 g</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🍏 Manzana</span><span class="ingredient-amount">180 g</span></div>
 </div>
-<button class="recipe-toggle" onclick="toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
+<button class="recipe-toggle" onclick="window.toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
 <div class="recipe-step"><div class="step-num">1</div><div>Trocea la manzana sobre el cottage.</div></div>
 </div></div></div>
 <div class="section-block"><div class="meal-label"><span class="meal-label-emoji">🍽️</span><span class="meal-label-text">Comida</span></div>
-<div class="meal-card" id="lorena-2-2"><div class="meal-card-header"><div class="meal-card-title">Ensalada de sandía con huevos y feta<small>+ cebolla morada · chocolate de postre</small></div><button class="meal-check" onclick="toggleMeal('lorena-2-2', this)">✓</button></div>
+<div class="meal-card" id="lorena-2-2"><div class="meal-card-header"><div class="meal-card-title">Ensalada de sandía con huevos y feta<small>+ cebolla morada · chocolate de postre</small></div><button class="meal-check" onclick="window.toggleMeal('lorena-2-2', this)">✓</button></div>
 <div class="ingredients">
 <div class="ingredient-row"><span class="ingredient-name">🍉 Sandía</span><span class="ingredient-amount">220 g</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🥚 Huevos camperos</span><span class="ingredient-amount">120 g (~2u)</span></div>
@@ -669,22 +669,22 @@
 <div class="ingredient-row"><span class="ingredient-name">🫒 Aceite de oliva virgen extra</span><span class="ingredient-amount">10 ml</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🍫 Chocolate negro 85%</span><span class="ingredient-amount">8 g</span></div>
 </div>
-<button class="recipe-toggle" onclick="toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
+<button class="recipe-toggle" onclick="window.toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
 <div class="recipe-step"><div class="step-num">1</div><div>Cuece los huevos 10 min y trocéalos.</div></div>
 <div class="recipe-step"><div class="step-num">2</div><div>Corta sandía, cebolla morada fina y feta.</div></div>
 <div class="recipe-step"><div class="step-num">3</div><div>Monta y aliña. Chocolate de postre.</div></div>
 </div></div></div>
 <div class="section-block"><div class="meal-label"><span class="meal-label-emoji">🌿</span><span class="meal-label-text">Merienda</span></div>
-<div class="meal-card" id="lorena-2-3"><div class="meal-card-header"><div class="meal-card-title">Yogur griego con piña</div><button class="meal-check" onclick="toggleMeal('lorena-2-3', this)">✓</button></div>
+<div class="meal-card" id="lorena-2-3"><div class="meal-card-header"><div class="meal-card-title">Yogur griego con piña</div><button class="meal-check" onclick="window.toggleMeal('lorena-2-3', this)">✓</button></div>
 <div class="ingredients">
 <div class="ingredient-row"><span class="ingredient-name">🥛 Yogur griego natural ligero</span><span class="ingredient-amount">125 g</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🍍 Piña</span><span class="ingredient-amount">200 g</span></div>
 </div>
-<button class="recipe-toggle" onclick="toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
+<button class="recipe-toggle" onclick="window.toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
 <div class="recipe-step"><div class="step-num">1</div><div>Sirve el yogur con la piña troceada.</div></div>
 </div></div></div>
 <div class="section-block"><div class="meal-label"><span class="meal-label-emoji">🌙</span><span class="meal-label-text">Cena</span></div>
-<div class="meal-card" id="lorena-2-4"><div class="meal-card-header"><div class="meal-card-title">Tacos de atún caseros x2<small>Mango, aguacate y lima</small></div><button class="meal-check" onclick="toggleMeal('lorena-2-4', this)">✓</button></div>
+<div class="meal-card" id="lorena-2-4"><div class="meal-card-header"><div class="meal-card-title">Tacos de atún caseros x2<small>Mango, aguacate y lima</small></div><button class="meal-check" onclick="window.toggleMeal('lorena-2-4', this)">✓</button></div>
 <div class="ingredients">
 <div class="ingredient-row"><span class="ingredient-name">🫓 Tortilla de trigo integral</span><span class="ingredient-amount">72 g (x2)</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🐟 Atún al natural</span><span class="ingredient-amount">180 g</span></div>
@@ -693,7 +693,7 @@
 <div class="ingredient-row"><span class="ingredient-name">🍋 Lima</span><span class="ingredient-amount">20 g</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🥛 Yogur griego natural ligero</span><span class="ingredient-amount">125 g</span></div>
 </div>
-<button class="recipe-toggle" onclick="toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
+<button class="recipe-toggle" onclick="window.toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
 <div class="recipe-step"><div class="step-num">1</div><div>Escurre el atún. Trocea mango y aguacate.</div></div>
 <div class="recipe-step"><div class="step-num">2</div><div>Mezcla con zumo de lima.</div></div>
 <div class="recipe-step"><div class="step-num">3</div><div>Calienta las tortillas y rellena. Yogur de postre.</div></div>
@@ -701,7 +701,7 @@
 </div>
 <div class="day-content" id="lorena-day-3">
 <div class="section-block"><div class="meal-label"><span class="meal-label-emoji">☀️</span><span class="meal-label-text">Desayuno</span></div>
-<div class="meal-card" id="lorena-3-0"><div class="meal-card-header"><div class="meal-card-title">Tostada con jamón cocido y tomate<small>+ café con leche</small></div><button class="meal-check" onclick="toggleMeal('lorena-3-0', this)">✓</button></div>
+<div class="meal-card" id="lorena-3-0"><div class="meal-card-header"><div class="meal-card-title">Tostada con jamón cocido y tomate<small>+ café con leche</small></div><button class="meal-check" onclick="window.toggleMeal('lorena-3-0', this)">✓</button></div>
 <div class="ingredients">
 <div class="ingredient-row"><span class="ingredient-name">🥛 Leche entera</span><span class="ingredient-amount">150 ml</span></div>
 <div class="ingredient-row"><span class="ingredient-name">☕ Café</span><span class="ingredient-amount">30 ml</span></div>
@@ -710,20 +710,20 @@
 <div class="ingredient-row"><span class="ingredient-name">🍅 Tomate triturado</span><span class="ingredient-amount">30 g</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🫒 Aceite de oliva virgen extra</span><span class="ingredient-amount">5 ml</span></div>
 </div>
-<button class="recipe-toggle" onclick="toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
+<button class="recipe-toggle" onclick="window.toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
 <div class="recipe-step"><div class="step-num">1</div><div>Café, tostada con tomate y AOVE, jamón cocido.</div></div>
 </div></div></div>
 <div class="section-block"><div class="meal-label"><span class="meal-label-emoji">🍎</span><span class="meal-label-text">Almuerzo</span></div>
-<div class="meal-card" id="lorena-3-1"><div class="meal-card-header"><div class="meal-card-title">Queso cottage con mango</div><button class="meal-check" onclick="toggleMeal('lorena-3-1', this)">✓</button></div>
+<div class="meal-card" id="lorena-3-1"><div class="meal-card-header"><div class="meal-card-title">Queso cottage con mango</div><button class="meal-check" onclick="window.toggleMeal('lorena-3-1', this)">✓</button></div>
 <div class="ingredients">
 <div class="ingredient-row"><span class="ingredient-name">🧀 Queso cottage</span><span class="ingredient-amount">100 g</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🥭 Mango</span><span class="ingredient-amount">150 g</span></div>
 </div>
-<button class="recipe-toggle" onclick="toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
+<button class="recipe-toggle" onclick="window.toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
 <div class="recipe-step"><div class="step-num">1</div><div>Trocea el mango sobre el cottage.</div></div>
 </div></div></div>
 <div class="section-block"><div class="meal-label"><span class="meal-label-emoji">🍽️</span><span class="meal-label-text">Comida</span></div>
-<div class="meal-card" id="lorena-3-2"><div class="meal-card-header"><div class="meal-card-title">Ensalada de arroz basmati con sardinillas<small>+ tomate y cebolleta</small></div><button class="meal-check" onclick="toggleMeal('lorena-3-2', this)">✓</button></div>
+<div class="meal-card" id="lorena-3-2"><div class="meal-card-header"><div class="meal-card-title">Ensalada de arroz basmati con sardinillas<small>+ tomate y cebolleta</small></div><button class="meal-check" onclick="window.toggleMeal('lorena-3-2', this)">✓</button></div>
 <div class="ingredients">
 <div class="ingredient-row"><span class="ingredient-name">• Arroz basmati (crudo)</span><span class="ingredient-amount">40 g</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🐟 Sardinillas en aceite de oliva</span><span class="ingredient-amount">130 g (2 latas)</span></div>
@@ -732,23 +732,23 @@
 <div class="ingredient-row"><span class="ingredient-name">🫒 Aceite de oliva virgen extra</span><span class="ingredient-amount">10 ml</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🍶 Vinagre de módena</span><span class="ingredient-amount">10 ml</span></div>
 </div>
-<button class="recipe-toggle" onclick="toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
+<button class="recipe-toggle" onclick="window.toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
 <div class="recipe-step"><div class="step-num">1</div><div>Cuece el arroz y enfría.</div></div>
 <div class="recipe-step"><div class="step-num">2</div><div>⚠️ Escurre MUY bien las sardinillas (su aceite es proinflamatorio).</div></div>
 <div class="recipe-step"><div class="step-num">3</div><div>Mezcla arroz, tomate y cebolleta.</div></div>
 <div class="recipe-step"><div class="step-num">4</div><div>Aliña con AOVE y módena. Sardinillas encima.</div></div>
 </div></div></div>
 <div class="section-block"><div class="meal-label"><span class="meal-label-emoji">🌿</span><span class="meal-label-text">Merienda</span></div>
-<div class="meal-card" id="lorena-3-3"><div class="meal-card-header"><div class="meal-card-title">Yogur griego con melocotón</div><button class="meal-check" onclick="toggleMeal('lorena-3-3', this)">✓</button></div>
+<div class="meal-card" id="lorena-3-3"><div class="meal-card-header"><div class="meal-card-title">Yogur griego con melocotón</div><button class="meal-check" onclick="window.toggleMeal('lorena-3-3', this)">✓</button></div>
 <div class="ingredients">
 <div class="ingredient-row"><span class="ingredient-name">🥛 Yogur griego natural ligero</span><span class="ingredient-amount">125 g</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🍑 Melocotón</span><span class="ingredient-amount">180 g</span></div>
 </div>
-<button class="recipe-toggle" onclick="toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
+<button class="recipe-toggle" onclick="window.toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
 <div class="recipe-step"><div class="step-num">1</div><div>Sirve el yogur con el melocotón.</div></div>
 </div></div></div>
 <div class="section-block"><div class="meal-label"><span class="meal-label-emoji">🌙</span><span class="meal-label-text">Cena</span></div>
-<div class="meal-card" id="lorena-3-4"><div class="meal-card-header"><div class="meal-card-title">Hamburguesa casera de ternera con huevo</div><button class="meal-check" onclick="toggleMeal('lorena-3-4', this)">✓</button></div>
+<div class="meal-card" id="lorena-3-4"><div class="meal-card-header"><div class="meal-card-title">Hamburguesa casera de ternera con huevo</div><button class="meal-check" onclick="window.toggleMeal('lorena-3-4', this)">✓</button></div>
 <div class="ingredients">
 <div class="ingredient-row"><span class="ingredient-name">🥩 Carne picada de ternera</span><span class="ingredient-amount">150 g</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🥚 Huevos camperos</span><span class="ingredient-amount">60 g (~1u)</span></div>
@@ -762,7 +762,7 @@
 <div class="ingredient-row"><span class="ingredient-name">🫒 Aceite de oliva virgen extra</span><span class="ingredient-amount">5 ml</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🥛 Yogur griego natural ligero</span><span class="ingredient-amount">125 g</span></div>
 </div>
-<button class="recipe-toggle" onclick="toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
+<button class="recipe-toggle" onclick="window.toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
 <div class="recipe-step"><div class="step-num">1</div><div>Forma la hamburguesa y cocínala con AOVE; funde la mozzarella encima.</div></div>
 <div class="recipe-step"><div class="step-num">2</div><div>Cocina el huevo a la plancha.</div></div>
 <div class="recipe-step"><div class="step-num">3</div><div>Monta con pan, lechuga, tomate, pepinillos y mostaza. Yogur de postre.</div></div>
@@ -770,7 +770,7 @@
 </div>
 <div class="day-content" id="lorena-day-4">
 <div class="section-block"><div class="meal-label"><span class="meal-label-emoji">☀️</span><span class="meal-label-text">Desayuno</span></div>
-<div class="meal-card" id="lorena-4-0"><div class="meal-card-header"><div class="meal-card-title">Tostada con lomo y tomate<small>+ café con leche</small></div><button class="meal-check" onclick="toggleMeal('lorena-4-0', this)">✓</button></div>
+<div class="meal-card" id="lorena-4-0"><div class="meal-card-header"><div class="meal-card-title">Tostada con lomo y tomate<small>+ café con leche</small></div><button class="meal-check" onclick="window.toggleMeal('lorena-4-0', this)">✓</button></div>
 <div class="ingredients">
 <div class="ingredient-row"><span class="ingredient-name">🥛 Leche entera</span><span class="ingredient-amount">150 ml</span></div>
 <div class="ingredient-row"><span class="ingredient-name">☕ Café</span><span class="ingredient-amount">30 ml</span></div>
@@ -779,21 +779,21 @@
 <div class="ingredient-row"><span class="ingredient-name">🍅 Tomate triturado</span><span class="ingredient-amount">30 g</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🫒 Aceite de oliva virgen extra</span><span class="ingredient-amount">5 ml</span></div>
 </div>
-<button class="recipe-toggle" onclick="toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
+<button class="recipe-toggle" onclick="window.toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
 <div class="recipe-step"><div class="step-num">1</div><div>Café, tostada con tomate y AOVE, lomo encima.</div></div>
 </div></div></div>
 <div class="section-block"><div class="meal-label"><span class="meal-label-emoji">🍎</span><span class="meal-label-text">Almuerzo</span></div>
-<div class="meal-card" id="lorena-4-1"><div class="meal-card-header"><div class="meal-card-title">Queso cottage con manzana y canela</div><button class="meal-check" onclick="toggleMeal('lorena-4-1', this)">✓</button></div>
+<div class="meal-card" id="lorena-4-1"><div class="meal-card-header"><div class="meal-card-title">Queso cottage con manzana y canela</div><button class="meal-check" onclick="window.toggleMeal('lorena-4-1', this)">✓</button></div>
 <div class="ingredients">
 <div class="ingredient-row"><span class="ingredient-name">🧀 Queso cottage</span><span class="ingredient-amount">100 g</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🍏 Manzana</span><span class="ingredient-amount">180 g</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🟤 Canela</span><span class="ingredient-amount">10 g</span></div>
 </div>
-<button class="recipe-toggle" onclick="toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
+<button class="recipe-toggle" onclick="window.toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
 <div class="recipe-step"><div class="step-num">1</div><div>Trocea la manzana sobre el cottage y espolvorea canela.</div></div>
 </div></div></div>
 <div class="section-block"><div class="meal-label"><span class="meal-label-emoji">🍽️</span><span class="meal-label-text">Comida</span></div>
-<div class="meal-card" id="lorena-4-2"><div class="meal-card-header"><div class="meal-card-title">Calabacín relleno de pollo gratinado</div><button class="meal-check" onclick="toggleMeal('lorena-4-2', this)">✓</button></div>
+<div class="meal-card" id="lorena-4-2"><div class="meal-card-header"><div class="meal-card-title">Calabacín relleno de pollo gratinado</div><button class="meal-check" onclick="window.toggleMeal('lorena-4-2', this)">✓</button></div>
 <div class="ingredients">
 <div class="ingredient-row"><span class="ingredient-name">🥒 Calabacín</span><span class="ingredient-amount">250 g</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🍗 Pechuga de pollo</span><span class="ingredient-amount">250 g</span></div>
@@ -802,23 +802,23 @@
 <div class="ingredient-row"><span class="ingredient-name">🧀 Queso rallado mozzarella</span><span class="ingredient-amount">30 g</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🫒 Aceite de oliva virgen extra</span><span class="ingredient-amount">10 ml</span></div>
 </div>
-<button class="recipe-toggle" onclick="toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
+<button class="recipe-toggle" onclick="window.toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
 <div class="recipe-step"><div class="step-num">1</div><div>Vacía el calabacín y reserva la pulpa.</div></div>
 <div class="recipe-step"><div class="step-num">2</div><div>Sofríe pollo picado con cebolla en AOVE.</div></div>
 <div class="recipe-step"><div class="step-num">3</div><div>Añade pulpa y tomate frito, cocina 5 min.</div></div>
 <div class="recipe-step"><div class="step-num">4</div><div>Rellena, cubre con queso y gratina.</div></div>
 </div></div></div>
 <div class="section-block"><div class="meal-label"><span class="meal-label-emoji">🌿</span><span class="meal-label-text">Merienda</span></div>
-<div class="meal-card" id="lorena-4-3"><div class="meal-card-header"><div class="meal-card-title">Yogur griego con sandía</div><button class="meal-check" onclick="toggleMeal('lorena-4-3', this)">✓</button></div>
+<div class="meal-card" id="lorena-4-3"><div class="meal-card-header"><div class="meal-card-title">Yogur griego con sandía</div><button class="meal-check" onclick="window.toggleMeal('lorena-4-3', this)">✓</button></div>
 <div class="ingredients">
 <div class="ingredient-row"><span class="ingredient-name">🥛 Yogur griego natural ligero</span><span class="ingredient-amount">125 g</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🍉 Sandía</span><span class="ingredient-amount">250 g</span></div>
 </div>
-<button class="recipe-toggle" onclick="toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
+<button class="recipe-toggle" onclick="window.toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
 <div class="recipe-step"><div class="step-num">1</div><div>Sirve el yogur con la sandía.</div></div>
 </div></div></div>
 <div class="section-block"><div class="meal-label"><span class="meal-label-emoji">🌙</span><span class="meal-label-text">Cena</span></div>
-<div class="meal-card" id="lorena-4-4"><div class="meal-card-header"><div class="meal-card-title">Pizza fit casera x2<small>Jamón serrano + atún con champiñones</small></div><button class="meal-check" onclick="toggleMeal('lorena-4-4', this)">✓</button></div>
+<div class="meal-card" id="lorena-4-4"><div class="meal-card-header"><div class="meal-card-title">Pizza fit casera x2<small>Jamón serrano + atún con champiñones</small></div><button class="meal-check" onclick="window.toggleMeal('lorena-4-4', this)">✓</button></div>
 <div class="ingredients">
 <div class="ingredient-row"><span class="ingredient-name">🫓 Tortilla de trigo integral</span><span class="ingredient-amount">72 g (x2)</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🍅 Tomate frito básico</span><span class="ingredient-amount">40 g (entre 2)</span></div>
@@ -831,7 +831,7 @@
 <div class="ingredient-row"><span class="ingredient-name">🌿 Orégano</span><span class="ingredient-amount">10 g</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🥛 Yogur griego natural ligero</span><span class="ingredient-amount">125 g</span></div>
 </div>
-<button class="recipe-toggle" onclick="toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
+<button class="recipe-toggle" onclick="window.toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
 <div class="recipe-step"><div class="step-num">1</div><div>Precalienta el horno a 200°C.</div></div>
 <div class="recipe-step"><div class="step-num">2</div><div>Pizza 1: tomate, jamón serrano, cebolla, barbacoa y queso.</div></div>
 <div class="recipe-step"><div class="step-num">3</div><div>Pizza 2: tomate, atún, champiñón, orégano y queso.</div></div>
@@ -840,7 +840,7 @@
 </div>
 <div class="day-content" id="lorena-day-5">
 <div class="section-block"><div class="meal-label"><span class="meal-label-emoji">☀️</span><span class="meal-label-text">Desayuno</span></div>
-<div class="meal-card" id="lorena-5-0"><div class="meal-card-header"><div class="meal-card-title">Tostada con jamón cocido<small>+ café con leche</small></div><button class="meal-check" onclick="toggleMeal('lorena-5-0', this)">✓</button></div>
+<div class="meal-card" id="lorena-5-0"><div class="meal-card-header"><div class="meal-card-title">Tostada con jamón cocido<small>+ café con leche</small></div><button class="meal-check" onclick="window.toggleMeal('lorena-5-0', this)">✓</button></div>
 <div class="ingredients">
 <div class="ingredient-row"><span class="ingredient-name">🥛 Leche entera</span><span class="ingredient-amount">150 ml</span></div>
 <div class="ingredient-row"><span class="ingredient-name">☕ Café</span><span class="ingredient-amount">30 ml</span></div>
@@ -849,20 +849,20 @@
 <div class="ingredient-row"><span class="ingredient-name">🍅 Tomate triturado</span><span class="ingredient-amount">30 g</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🫒 Aceite de oliva virgen extra</span><span class="ingredient-amount">5 ml</span></div>
 </div>
-<button class="recipe-toggle" onclick="toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
+<button class="recipe-toggle" onclick="window.toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
 <div class="recipe-step"><div class="step-num">1</div><div>Café, tostada con tomate y AOVE, jamón cocido.</div></div>
 </div></div></div>
 <div class="section-block"><div class="meal-label"><span class="meal-label-emoji">🍎</span><span class="meal-label-text">Almuerzo</span></div>
-<div class="meal-card" id="lorena-5-1"><div class="meal-card-header"><div class="meal-card-title">Queso cottage con melocotón</div><button class="meal-check" onclick="toggleMeal('lorena-5-1', this)">✓</button></div>
+<div class="meal-card" id="lorena-5-1"><div class="meal-card-header"><div class="meal-card-title">Queso cottage con melocotón</div><button class="meal-check" onclick="window.toggleMeal('lorena-5-1', this)">✓</button></div>
 <div class="ingredients">
 <div class="ingredient-row"><span class="ingredient-name">🧀 Queso cottage</span><span class="ingredient-amount">100 g</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🍑 Melocotón</span><span class="ingredient-amount">180 g</span></div>
 </div>
-<button class="recipe-toggle" onclick="toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
+<button class="recipe-toggle" onclick="window.toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
 <div class="recipe-step"><div class="step-num">1</div><div>Trocea el melocotón sobre el cottage.</div></div>
 </div></div></div>
 <div class="section-block"><div class="meal-label"><span class="meal-label-emoji">🍽️</span><span class="meal-label-text">Comida</span></div>
-<div class="meal-card" id="lorena-5-2"><div class="meal-card-header"><div class="meal-card-title">Fajitas de pollo caseras x2</div><button class="meal-check" onclick="toggleMeal('lorena-5-2', this)">✓</button></div>
+<div class="meal-card" id="lorena-5-2"><div class="meal-card-header"><div class="meal-card-title">Fajitas de pollo caseras x2</div><button class="meal-check" onclick="window.toggleMeal('lorena-5-2', this)">✓</button></div>
 <div class="ingredients">
 <div class="ingredient-row"><span class="ingredient-name">🫓 Tortilla de trigo integral</span><span class="ingredient-amount">72 g (x2)</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🍗 Pechuga de pavo</span><span class="ingredient-amount">250 g</span></div>
@@ -871,22 +871,22 @@
 <div class="ingredient-row"><span class="ingredient-name">🌶️ Sazonador fajitas</span><span class="ingredient-amount">10 g</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🫒 Aceite de oliva virgen extra</span><span class="ingredient-amount">10 ml</span></div>
 </div>
-<button class="recipe-toggle" onclick="toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
+<button class="recipe-toggle" onclick="window.toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
 <div class="recipe-step"><div class="step-num">1</div><div>Corta pavo y verduras en tiras.</div></div>
 <div class="recipe-step"><div class="step-num">2</div><div>Saltea con AOVE y sazonador.</div></div>
 <div class="recipe-step"><div class="step-num">3</div><div>Calienta tortillas y rellena.</div></div>
 </div></div></div>
 <div class="section-block"><div class="meal-label"><span class="meal-label-emoji">🌿</span><span class="meal-label-text">Merienda</span></div>
-<div class="meal-card" id="lorena-5-3"><div class="meal-card-header"><div class="meal-card-title">Yogur griego con piña</div><button class="meal-check" onclick="toggleMeal('lorena-5-3', this)">✓</button></div>
+<div class="meal-card" id="lorena-5-3"><div class="meal-card-header"><div class="meal-card-title">Yogur griego con piña</div><button class="meal-check" onclick="window.toggleMeal('lorena-5-3', this)">✓</button></div>
 <div class="ingredients">
 <div class="ingredient-row"><span class="ingredient-name">🥛 Yogur griego natural ligero</span><span class="ingredient-amount">125 g</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🍍 Piña</span><span class="ingredient-amount">200 g</span></div>
 </div>
-<button class="recipe-toggle" onclick="toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
+<button class="recipe-toggle" onclick="window.toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
 <div class="recipe-step"><div class="step-num">1</div><div>Sirve el yogur con la piña.</div></div>
 </div></div></div>
 <div class="section-block"><div class="meal-label"><span class="meal-label-emoji">🌙</span><span class="meal-label-text">Cena</span></div>
-<div class="meal-card" id="lorena-5-4"><div class="meal-card-header"><div class="meal-card-title">Ensalada de tomate con feta y tortilla de patata fit</div><button class="meal-check" onclick="toggleMeal('lorena-5-4', this)">✓</button></div>
+<div class="meal-card" id="lorena-5-4"><div class="meal-card-header"><div class="meal-card-title">Ensalada de tomate con feta y tortilla de patata fit</div><button class="meal-check" onclick="window.toggleMeal('lorena-5-4', this)">✓</button></div>
 <div class="ingredients">
 <div class="ingredient-row"><span class="ingredient-name">🍅 Tomate</span><span class="ingredient-amount">250 g</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🧀 Queso feta</span><span class="ingredient-amount">40 g</span></div>
@@ -896,7 +896,7 @@
 <div class="ingredient-row"><span class="ingredient-name">🫒 Aceite de oliva virgen extra</span><span class="ingredient-amount">10 ml</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🥛 Yogur griego natural ligero</span><span class="ingredient-amount">125 g</span></div>
 </div>
-<button class="recipe-toggle" onclick="toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
+<button class="recipe-toggle" onclick="window.toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
 <div class="recipe-step"><div class="step-num">1</div><div>Patata FIT: cocida/asada/airfryer.</div></div>
 <div class="recipe-step"><div class="step-num">2</div><div>Mezcla con cebolla y huevo batido, cuaja en sartén.</div></div>
 <div class="recipe-step"><div class="step-num">3</div><div>Ensalada de tomate con feta. Yogur de postre.</div></div>
@@ -904,7 +904,7 @@
 </div>
 <div class="day-content" id="lorena-day-6">
 <div class="section-block"><div class="meal-label"><span class="meal-label-emoji">☀️</span><span class="meal-label-text">Desayuno</span></div>
-<div class="meal-card" id="lorena-6-0"><div class="meal-card-header"><div class="meal-card-title">Tortitas caseras con arándanos y miel<small>+ café con leche</small></div><button class="meal-check" onclick="toggleMeal('lorena-6-0', this)">✓</button></div>
+<div class="meal-card" id="lorena-6-0"><div class="meal-card-header"><div class="meal-card-title">Tortitas caseras con arándanos y miel<small>+ café con leche</small></div><button class="meal-check" onclick="window.toggleMeal('lorena-6-0', this)">✓</button></div>
 <div class="ingredients">
 <div class="ingredient-row"><span class="ingredient-name">🥛 Leche entera</span><span class="ingredient-amount">150 ml</span></div>
 <div class="ingredient-row"><span class="ingredient-name">☕ Café</span><span class="ingredient-amount">30 ml</span></div>
@@ -915,33 +915,33 @@
 <div class="ingredient-row"><span class="ingredient-name">🍯 Miel</span><span class="ingredient-amount">20 g</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🫐 Arándanos</span><span class="ingredient-amount">80 g</span></div>
 </div>
-<button class="recipe-toggle" onclick="toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
+<button class="recipe-toggle" onclick="window.toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
 <div class="recipe-step"><div class="step-num">1</div><div>Mezcla harina, huevo, leche, levadura y vainilla.</div></div>
 <div class="recipe-step"><div class="step-num">2</div><div>Cuaja en sartén sin aceite.</div></div>
 <div class="recipe-step"><div class="step-num">3</div><div>Sirve con arándanos y miel.</div></div>
 </div></div></div>
 <div class="section-block"><div class="meal-label"><span class="meal-label-emoji">🍎</span><span class="meal-label-text">Almuerzo</span></div>
-<div class="meal-card" id="lorena-6-1"><div class="meal-card-header"><div class="meal-card-title">Queso cottage con piña</div><button class="meal-check" onclick="toggleMeal('lorena-6-1', this)">✓</button></div>
+<div class="meal-card" id="lorena-6-1"><div class="meal-card-header"><div class="meal-card-title">Queso cottage con piña</div><button class="meal-check" onclick="window.toggleMeal('lorena-6-1', this)">✓</button></div>
 <div class="ingredients">
 <div class="ingredient-row"><span class="ingredient-name">🧀 Queso cottage</span><span class="ingredient-amount">100 g</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🍍 Piña</span><span class="ingredient-amount">200 g</span></div>
 </div>
-<button class="recipe-toggle" onclick="toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
+<button class="recipe-toggle" onclick="window.toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
 <div class="recipe-step"><div class="step-num">1</div><div>Trocea la piña sobre el cottage.</div></div>
 </div></div></div>
 <div class="section-block"><div class="meal-label"><span class="meal-label-emoji">🍽️</span><span class="meal-label-text">Comida</span></div>
 <div class="free-card"><span class="free-emoji">🎉</span><div class="free-title">Comida libre</div><div class="free-sub">Comida libre con moderación 🎉</div></div></div>
 <div class="section-block"><div class="meal-label"><span class="meal-label-emoji">🌿</span><span class="meal-label-text">Merienda</span></div>
-<div class="meal-card" id="lorena-6-3"><div class="meal-card-header"><div class="meal-card-title">Yogur griego con sandía</div><button class="meal-check" onclick="toggleMeal('lorena-6-3', this)">✓</button></div>
+<div class="meal-card" id="lorena-6-3"><div class="meal-card-header"><div class="meal-card-title">Yogur griego con sandía</div><button class="meal-check" onclick="window.toggleMeal('lorena-6-3', this)">✓</button></div>
 <div class="ingredients">
 <div class="ingredient-row"><span class="ingredient-name">🥛 Yogur griego natural ligero</span><span class="ingredient-amount">125 g</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🍉 Sandía</span><span class="ingredient-amount">250 g</span></div>
 </div>
-<button class="recipe-toggle" onclick="toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
+<button class="recipe-toggle" onclick="window.toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
 <div class="recipe-step"><div class="step-num">1</div><div>Sirve el yogur con la sandía.</div></div>
 </div></div></div>
 <div class="section-block"><div class="meal-label"><span class="meal-label-emoji">🌙</span><span class="meal-label-text">Cena</span></div>
-<div class="meal-card" id="lorena-6-4"><div class="meal-card-header"><div class="meal-card-title">Tartar de gambas con aguacate, mango y lima</div><button class="meal-check" onclick="toggleMeal('lorena-6-4', this)">✓</button></div>
+<div class="meal-card" id="lorena-6-4"><div class="meal-card-header"><div class="meal-card-title">Tartar de gambas con aguacate, mango y lima</div><button class="meal-check" onclick="window.toggleMeal('lorena-6-4', this)">✓</button></div>
 <div class="ingredients">
 <div class="ingredient-row"><span class="ingredient-name">🦐 Gamba pelada cruda</span><span class="ingredient-amount">250 g</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🥑 Aguacate</span><span class="ingredient-amount">120 g</span></div>
@@ -951,7 +951,7 @@
 <div class="ingredient-row"><span class="ingredient-name">🫒 Aceite de oliva virgen extra</span><span class="ingredient-amount">5 ml</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🥛 Yogur griego natural ligero</span><span class="ingredient-amount">125 g</span></div>
 </div>
-<button class="recipe-toggle" onclick="toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
+<button class="recipe-toggle" onclick="window.toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
 <div class="recipe-step"><div class="step-num">1</div><div>Cuece las gambas 2-3 min, enfría y pica.</div></div>
 <div class="recipe-step"><div class="step-num">2</div><div>Pica aguacate, mango y tomate.</div></div>
 <div class="recipe-step"><div class="step-num">3</div><div>Mezcla con lima y AOVE. Yogur de postre.</div></div>
@@ -961,26 +961,26 @@
   <div class="person-menu" id="menu-daniel">
 <div class="day-content active" id="daniel-day-0">
 <div class="section-block"><div class="meal-label"><span class="meal-label-emoji">☀️</span><span class="meal-label-text">Desayuno</span></div>
-<div class="meal-card" id="daniel-0-0"><div class="meal-card-header"><div class="meal-card-title">Café con leche y jamón serrano<small>Desayuno ligero</small></div><button class="meal-check" onclick="toggleMeal('daniel-0-0', this)">✓</button></div>
+<div class="meal-card" id="daniel-0-0"><div class="meal-card-header"><div class="meal-card-title">Café con leche y jamón serrano<small>Desayuno ligero</small></div><button class="meal-check" onclick="window.toggleMeal('daniel-0-0', this)">✓</button></div>
 <div class="ingredients">
 <div class="ingredient-row"><span class="ingredient-name">🥛 Leche entera</span><span class="ingredient-amount">150 ml</span></div>
 <div class="ingredient-row"><span class="ingredient-name">☕ Café</span><span class="ingredient-amount">30 ml</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🥩 Jamón serrano</span><span class="ingredient-amount">90 g</span></div>
 </div>
-<button class="recipe-toggle" onclick="toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
+<button class="recipe-toggle" onclick="window.toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
 <div class="recipe-step"><div class="step-num">1</div><div>Prepara el café con leche entera y acompaña con el jamón serrano.</div></div>
 </div></div></div>
 <div class="section-block"><div class="meal-label"><span class="meal-label-emoji">🍎</span><span class="meal-label-text">Almuerzo</span></div>
-<div class="meal-card" id="daniel-0-1"><div class="meal-card-header"><div class="meal-card-title">Tostada de pan integral con lomo</div><button class="meal-check" onclick="toggleMeal('daniel-0-1', this)">✓</button></div>
+<div class="meal-card" id="daniel-0-1"><div class="meal-card-header"><div class="meal-card-title">Tostada de pan integral con lomo</div><button class="meal-check" onclick="window.toggleMeal('daniel-0-1', this)">✓</button></div>
 <div class="ingredients">
 <div class="ingredient-row"><span class="ingredient-name">🍞 Pan integral</span><span class="ingredient-amount">60 g</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🥩 Lomo embuchado</span><span class="ingredient-amount">60 g</span></div>
 </div>
-<button class="recipe-toggle" onclick="toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
+<button class="recipe-toggle" onclick="window.toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
 <div class="recipe-step"><div class="step-num">1</div><div>Tuesta el pan integral y coloca el lomo embuchado.</div></div>
 </div></div></div>
 <div class="section-block"><div class="meal-label"><span class="meal-label-emoji">🍽️</span><span class="meal-label-text">Comida</span></div>
-<div class="meal-card" id="daniel-0-2"><div class="meal-card-header"><div class="meal-card-title">Poke de arroz basmati con salmón<small>Mango, aguacate y salsa miel-módena</small></div><button class="meal-check" onclick="toggleMeal('daniel-0-2', this)">✓</button></div>
+<div class="meal-card" id="daniel-0-2"><div class="meal-card-header"><div class="meal-card-title">Poke de arroz basmati con salmón<small>Mango, aguacate y salsa miel-módena</small></div><button class="meal-check" onclick="window.toggleMeal('daniel-0-2', this)">✓</button></div>
 <div class="ingredients">
 <div class="ingredient-row"><span class="ingredient-name">• Arroz basmati (crudo)</span><span class="ingredient-amount">60 g</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🐟 Salmón</span><span class="ingredient-amount">200 g</span></div>
@@ -993,14 +993,14 @@
 <div class="ingredient-row"><span class="ingredient-name">🫒 Aceite de oliva virgen extra</span><span class="ingredient-amount">5 ml</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🍉 Sandía</span><span class="ingredient-amount">200 g</span></div>
 </div>
-<button class="recipe-toggle" onclick="toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
+<button class="recipe-toggle" onclick="window.toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
 <div class="recipe-step"><div class="step-num">1</div><div>Cuece el arroz y deja enfriar.</div></div>
 <div class="recipe-step"><div class="step-num">2</div><div>Trocea tomate, aguacate y mango. Escurre el maíz.</div></div>
 <div class="recipe-step"><div class="step-num">3</div><div>Salsa: mezcla miel con vinagre de módena y AOVE.</div></div>
 <div class="recipe-step"><div class="step-num">4</div><div>Monta el bol con el salmón. Sandía de postre.</div></div>
 </div></div></div>
 <div class="section-block"><div class="meal-label"><span class="meal-label-emoji">🌙</span><span class="meal-label-text">Cena</span></div>
-<div class="meal-card" id="daniel-0-4"><div class="meal-card-header"><div class="meal-card-title">Gazpacho con solomillo de cerdo<small>+ chocolate de postre</small></div><button class="meal-check" onclick="toggleMeal('daniel-0-4', this)">✓</button></div>
+<div class="meal-card" id="daniel-0-4"><div class="meal-card-header"><div class="meal-card-title">Gazpacho con solomillo de cerdo<small>+ chocolate de postre</small></div><button class="meal-check" onclick="window.toggleMeal('daniel-0-4', this)">✓</button></div>
 <div class="ingredients">
 <div class="ingredient-row"><span class="ingredient-name">🫙 Gazpacho Calisur</span><span class="ingredient-amount">250 g</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🥩 Solomillo de cerdo</span><span class="ingredient-amount">350 g</span></div>
@@ -1009,7 +1009,7 @@
 <div class="ingredient-row"><span class="ingredient-name">🥛 Yogur griego natural ligero</span><span class="ingredient-amount">125 g</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🍫 Chocolate negro 85%</span><span class="ingredient-amount">8 g</span></div>
 </div>
-<button class="recipe-toggle" onclick="toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
+<button class="recipe-toggle" onclick="window.toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
 <div class="recipe-step"><div class="step-num">1</div><div>Sella el solomillo en sartén con AOVE y cocina al punto.</div></div>
 <div class="recipe-step"><div class="step-num">2</div><div>Añade pimienta.</div></div>
 <div class="recipe-step"><div class="step-num">3</div><div>Sirve con gazpacho frío. Yogur y chocolate de postre.</div></div>
@@ -1017,26 +1017,26 @@
 </div>
 <div class="day-content" id="daniel-day-1">
 <div class="section-block"><div class="meal-label"><span class="meal-label-emoji">☀️</span><span class="meal-label-text">Desayuno</span></div>
-<div class="meal-card" id="daniel-1-0"><div class="meal-card-header"><div class="meal-card-title">Café con leche y lomo embuchado<small>Desayuno ligero</small></div><button class="meal-check" onclick="toggleMeal('daniel-1-0', this)">✓</button></div>
+<div class="meal-card" id="daniel-1-0"><div class="meal-card-header"><div class="meal-card-title">Café con leche y lomo embuchado<small>Desayuno ligero</small></div><button class="meal-check" onclick="window.toggleMeal('daniel-1-0', this)">✓</button></div>
 <div class="ingredients">
 <div class="ingredient-row"><span class="ingredient-name">🥛 Leche entera</span><span class="ingredient-amount">150 ml</span></div>
 <div class="ingredient-row"><span class="ingredient-name">☕ Café</span><span class="ingredient-amount">30 ml</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🥩 Lomo embuchado</span><span class="ingredient-amount">60 g</span></div>
 </div>
-<button class="recipe-toggle" onclick="toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
+<button class="recipe-toggle" onclick="window.toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
 <div class="recipe-step"><div class="step-num">1</div><div>Café con leche entera y el lomo embuchado.</div></div>
 </div></div></div>
 <div class="section-block"><div class="meal-label"><span class="meal-label-emoji">🍎</span><span class="meal-label-text">Almuerzo</span></div>
-<div class="meal-card" id="daniel-1-1"><div class="meal-card-header"><div class="meal-card-title">Tostada de pan integral con jamón serrano</div><button class="meal-check" onclick="toggleMeal('daniel-1-1', this)">✓</button></div>
+<div class="meal-card" id="daniel-1-1"><div class="meal-card-header"><div class="meal-card-title">Tostada de pan integral con jamón serrano</div><button class="meal-check" onclick="window.toggleMeal('daniel-1-1', this)">✓</button></div>
 <div class="ingredients">
 <div class="ingredient-row"><span class="ingredient-name">🍞 Pan integral</span><span class="ingredient-amount">60 g</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🥩 Jamón serrano</span><span class="ingredient-amount">90 g</span></div>
 </div>
-<button class="recipe-toggle" onclick="toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
+<button class="recipe-toggle" onclick="window.toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
 <div class="recipe-step"><div class="step-num">1</div><div>Tuesta el pan y coloca el jamón serrano.</div></div>
 </div></div></div>
 <div class="section-block"><div class="meal-label"><span class="meal-label-emoji">🍽️</span><span class="meal-label-text">Comida</span></div>
-<div class="meal-card" id="daniel-1-2"><div class="meal-card-header"><div class="meal-card-title">Ensalada templada de quinoa con pollo<small>Verduras salteadas, soja y melocotón</small></div><button class="meal-check" onclick="toggleMeal('daniel-1-2', this)">✓</button></div>
+<div class="meal-card" id="daniel-1-2"><div class="meal-card-header"><div class="meal-card-title">Ensalada templada de quinoa con pollo<small>Verduras salteadas, soja y melocotón</small></div><button class="meal-check" onclick="window.toggleMeal('daniel-1-2', this)">✓</button></div>
 <div class="ingredients">
 <div class="ingredient-row"><span class="ingredient-name">🌾 Quinoa cocida</span><span class="ingredient-amount">125 g</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🍗 Pechuga de pollo</span><span class="ingredient-amount">250 g</span></div>
@@ -1047,14 +1047,14 @@
 <div class="ingredient-row"><span class="ingredient-name">🥢 Salsa de soja sin gluten</span><span class="ingredient-amount">25 ml</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🍑 Melocotón</span><span class="ingredient-amount">180 g</span></div>
 </div>
-<button class="recipe-toggle" onclick="toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
+<button class="recipe-toggle" onclick="window.toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
 <div class="recipe-step"><div class="step-num">1</div><div>Calienta la quinoa.</div></div>
 <div class="recipe-step"><div class="step-num">2</div><div>Saltea pimientos, champiñón y cebolleta con AOVE.</div></div>
 <div class="recipe-step"><div class="step-num">3</div><div>Plancha el pollo y córtalo.</div></div>
 <div class="recipe-step"><div class="step-num">4</div><div>Mezcla y aliña con soja. Melocotón de postre.</div></div>
 </div></div></div>
 <div class="section-block"><div class="meal-label"><span class="meal-label-emoji">🌙</span><span class="meal-label-text">Cena</span></div>
-<div class="meal-card" id="daniel-1-4"><div class="meal-card-header"><div class="meal-card-title">Ensalada de tomate con queso de cabra y bacalao<small>+ aguacate, patata y chocolate</small></div><button class="meal-check" onclick="toggleMeal('daniel-1-4', this)">✓</button></div>
+<div class="meal-card" id="daniel-1-4"><div class="meal-card-header"><div class="meal-card-title">Ensalada de tomate con queso de cabra y bacalao<small>+ aguacate, patata y chocolate</small></div><button class="meal-check" onclick="window.toggleMeal('daniel-1-4', this)">✓</button></div>
 <div class="ingredients">
 <div class="ingredient-row"><span class="ingredient-name">🍅 Tomate</span><span class="ingredient-amount">250 g</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🧀 Queso fresco de cabra</span><span class="ingredient-amount">60 g</span></div>
@@ -1065,7 +1065,7 @@
 <div class="ingredient-row"><span class="ingredient-name">🥛 Yogur griego natural ligero</span><span class="ingredient-amount">125 g</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🍫 Chocolate negro 85%</span><span class="ingredient-amount">8 g</span></div>
 </div>
-<button class="recipe-toggle" onclick="toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
+<button class="recipe-toggle" onclick="window.toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
 <div class="recipe-step"><div class="step-num">1</div><div>Plancha el bacalao con AOVE.</div></div>
 <div class="recipe-step"><div class="step-num">2</div><div>Cuece o asa la patata.</div></div>
 <div class="recipe-step"><div class="step-num">3</div><div>Monta la ensalada con tomate, aguacate y cabra. Yogur y chocolate de postre.</div></div>
@@ -1073,27 +1073,27 @@
 </div>
 <div class="day-content" id="daniel-day-2">
 <div class="section-block"><div class="meal-label"><span class="meal-label-emoji">☀️</span><span class="meal-label-text">Desayuno</span></div>
-<div class="meal-card" id="daniel-2-0"><div class="meal-card-header"><div class="meal-card-title">Café con leche y jamón serrano<small>Desayuno ligero</small></div><button class="meal-check" onclick="toggleMeal('daniel-2-0', this)">✓</button></div>
+<div class="meal-card" id="daniel-2-0"><div class="meal-card-header"><div class="meal-card-title">Café con leche y jamón serrano<small>Desayuno ligero</small></div><button class="meal-check" onclick="window.toggleMeal('daniel-2-0', this)">✓</button></div>
 <div class="ingredients">
 <div class="ingredient-row"><span class="ingredient-name">🥛 Leche entera</span><span class="ingredient-amount">150 ml</span></div>
 <div class="ingredient-row"><span class="ingredient-name">☕ Café</span><span class="ingredient-amount">30 ml</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🥩 Jamón serrano</span><span class="ingredient-amount">90 g</span></div>
 </div>
-<button class="recipe-toggle" onclick="toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
+<button class="recipe-toggle" onclick="window.toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
 <div class="recipe-step"><div class="step-num">1</div><div>Café con leche entera y el jamón serrano.</div></div>
 </div></div></div>
 <div class="section-block"><div class="meal-label"><span class="meal-label-emoji">🍎</span><span class="meal-label-text">Almuerzo</span></div>
-<div class="meal-card" id="daniel-2-1"><div class="meal-card-header"><div class="meal-card-title">Tostada con jamón cocido y mozzarella</div><button class="meal-check" onclick="toggleMeal('daniel-2-1', this)">✓</button></div>
+<div class="meal-card" id="daniel-2-1"><div class="meal-card-header"><div class="meal-card-title">Tostada con jamón cocido y mozzarella</div><button class="meal-check" onclick="window.toggleMeal('daniel-2-1', this)">✓</button></div>
 <div class="ingredients">
 <div class="ingredient-row"><span class="ingredient-name">🍞 Pan integral</span><span class="ingredient-amount">60 g</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🥩 Jamón cocido</span><span class="ingredient-amount">80 g</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🧀 Queso mozzarella en lonchas</span><span class="ingredient-amount">40 g</span></div>
 </div>
-<button class="recipe-toggle" onclick="toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
+<button class="recipe-toggle" onclick="window.toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
 <div class="recipe-step"><div class="step-num">1</div><div>Tuesta el pan, coloca jamón cocido y mozzarella.</div></div>
 </div></div></div>
 <div class="section-block"><div class="meal-label"><span class="meal-label-emoji">🍽️</span><span class="meal-label-text">Comida</span></div>
-<div class="meal-card" id="daniel-2-2"><div class="meal-card-header"><div class="meal-card-title">Ensalada de sandía con huevos y feta<small>+ cebolla morada · chocolate de postre</small></div><button class="meal-check" onclick="toggleMeal('daniel-2-2', this)">✓</button></div>
+<div class="meal-card" id="daniel-2-2"><div class="meal-card-header"><div class="meal-card-title">Ensalada de sandía con huevos y feta<small>+ cebolla morada · chocolate de postre</small></div><button class="meal-check" onclick="window.toggleMeal('daniel-2-2', this)">✓</button></div>
 <div class="ingredients">
 <div class="ingredient-row"><span class="ingredient-name">🍉 Sandía</span><span class="ingredient-amount">250 g</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🥚 Huevos camperos</span><span class="ingredient-amount">180 g (~3u)</span></div>
@@ -1102,13 +1102,13 @@
 <div class="ingredient-row"><span class="ingredient-name">🫒 Aceite de oliva virgen extra</span><span class="ingredient-amount">10 ml</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🍫 Chocolate negro 85%</span><span class="ingredient-amount">8 g</span></div>
 </div>
-<button class="recipe-toggle" onclick="toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
+<button class="recipe-toggle" onclick="window.toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
 <div class="recipe-step"><div class="step-num">1</div><div>Cuece los huevos 10 min y trocéalos.</div></div>
 <div class="recipe-step"><div class="step-num">2</div><div>Corta sandía, cebolla morada fina y feta.</div></div>
 <div class="recipe-step"><div class="step-num">3</div><div>Monta y aliña. Chocolate de postre.</div></div>
 </div></div></div>
 <div class="section-block"><div class="meal-label"><span class="meal-label-emoji">🌙</span><span class="meal-label-text">Cena</span></div>
-<div class="meal-card" id="daniel-2-4"><div class="meal-card-header"><div class="meal-card-title">Tacos de atún caseros x3<small>Mango, aguacate y lima</small></div><button class="meal-check" onclick="toggleMeal('daniel-2-4', this)">✓</button></div>
+<div class="meal-card" id="daniel-2-4"><div class="meal-card-header"><div class="meal-card-title">Tacos de atún caseros x3<small>Mango, aguacate y lima</small></div><button class="meal-check" onclick="window.toggleMeal('daniel-2-4', this)">✓</button></div>
 <div class="ingredients">
 <div class="ingredient-row"><span class="ingredient-name">🫓 Tortilla de trigo integral</span><span class="ingredient-amount">108 g (x3)</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🐟 Atún al natural</span><span class="ingredient-amount">180 g</span></div>
@@ -1118,7 +1118,7 @@
 <div class="ingredient-row"><span class="ingredient-name">🥛 Yogur griego natural ligero</span><span class="ingredient-amount">125 g</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🍫 Chocolate negro 85%</span><span class="ingredient-amount">8 g</span></div>
 </div>
-<button class="recipe-toggle" onclick="toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
+<button class="recipe-toggle" onclick="window.toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
 <div class="recipe-step"><div class="step-num">1</div><div>Escurre el atún. Trocea mango y aguacate.</div></div>
 <div class="recipe-step"><div class="step-num">2</div><div>Mezcla con zumo de lima.</div></div>
 <div class="recipe-step"><div class="step-num">3</div><div>Calienta las tortillas y rellena. Yogur y chocolate de postre.</div></div>
@@ -1126,26 +1126,26 @@
 </div>
 <div class="day-content" id="daniel-day-3">
 <div class="section-block"><div class="meal-label"><span class="meal-label-emoji">☀️</span><span class="meal-label-text">Desayuno</span></div>
-<div class="meal-card" id="daniel-3-0"><div class="meal-card-header"><div class="meal-card-title">Café con leche y lomo embuchado<small>Desayuno ligero</small></div><button class="meal-check" onclick="toggleMeal('daniel-3-0', this)">✓</button></div>
+<div class="meal-card" id="daniel-3-0"><div class="meal-card-header"><div class="meal-card-title">Café con leche y lomo embuchado<small>Desayuno ligero</small></div><button class="meal-check" onclick="window.toggleMeal('daniel-3-0', this)">✓</button></div>
 <div class="ingredients">
 <div class="ingredient-row"><span class="ingredient-name">🥛 Leche entera</span><span class="ingredient-amount">150 ml</span></div>
 <div class="ingredient-row"><span class="ingredient-name">☕ Café</span><span class="ingredient-amount">30 ml</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🥩 Lomo embuchado</span><span class="ingredient-amount">60 g</span></div>
 </div>
-<button class="recipe-toggle" onclick="toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
+<button class="recipe-toggle" onclick="window.toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
 <div class="recipe-step"><div class="step-num">1</div><div>Café con leche entera y el lomo embuchado.</div></div>
 </div></div></div>
 <div class="section-block"><div class="meal-label"><span class="meal-label-emoji">🍎</span><span class="meal-label-text">Almuerzo</span></div>
-<div class="meal-card" id="daniel-3-1"><div class="meal-card-header"><div class="meal-card-title">Tostada de pan integral con jamón serrano</div><button class="meal-check" onclick="toggleMeal('daniel-3-1', this)">✓</button></div>
+<div class="meal-card" id="daniel-3-1"><div class="meal-card-header"><div class="meal-card-title">Tostada de pan integral con jamón serrano</div><button class="meal-check" onclick="window.toggleMeal('daniel-3-1', this)">✓</button></div>
 <div class="ingredients">
 <div class="ingredient-row"><span class="ingredient-name">🍞 Pan integral</span><span class="ingredient-amount">60 g</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🥩 Jamón serrano</span><span class="ingredient-amount">90 g</span></div>
 </div>
-<button class="recipe-toggle" onclick="toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
+<button class="recipe-toggle" onclick="window.toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
 <div class="recipe-step"><div class="step-num">1</div><div>Tuesta el pan y coloca el jamón serrano.</div></div>
 </div></div></div>
 <div class="section-block"><div class="meal-label"><span class="meal-label-emoji">🍽️</span><span class="meal-label-text">Comida</span></div>
-<div class="meal-card" id="daniel-3-2"><div class="meal-card-header"><div class="meal-card-title">Ensalada de arroz basmati con sardinillas<small>+ tomate, cebolleta y sandía</small></div><button class="meal-check" onclick="toggleMeal('daniel-3-2', this)">✓</button></div>
+<div class="meal-card" id="daniel-3-2"><div class="meal-card-header"><div class="meal-card-title">Ensalada de arroz basmati con sardinillas<small>+ tomate, cebolleta y sandía</small></div><button class="meal-check" onclick="window.toggleMeal('daniel-3-2', this)">✓</button></div>
 <div class="ingredients">
 <div class="ingredient-row"><span class="ingredient-name">• Arroz basmati (crudo)</span><span class="ingredient-amount">60 g</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🐟 Sardinillas en aceite de oliva</span><span class="ingredient-amount">130 g (2 latas)</span></div>
@@ -1155,13 +1155,13 @@
 <div class="ingredient-row"><span class="ingredient-name">🍶 Vinagre de módena</span><span class="ingredient-amount">10 ml</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🍉 Sandía</span><span class="ingredient-amount">200 g</span></div>
 </div>
-<button class="recipe-toggle" onclick="toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
+<button class="recipe-toggle" onclick="window.toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
 <div class="recipe-step"><div class="step-num">1</div><div>Cuece el arroz y enfría.</div></div>
 <div class="recipe-step"><div class="step-num">2</div><div>⚠️ Escurre MUY bien las sardinillas (su aceite es proinflamatorio).</div></div>
 <div class="recipe-step"><div class="step-num">3</div><div>Mezcla arroz, tomate y cebolleta. Aliña con AOVE y módena. Sandía de postre.</div></div>
 </div></div></div>
 <div class="section-block"><div class="meal-label"><span class="meal-label-emoji">🌙</span><span class="meal-label-text">Cena</span></div>
-<div class="meal-card" id="daniel-3-4"><div class="meal-card-header"><div class="meal-card-title">Hamburguesa casera de ternera con huevo</div><button class="meal-check" onclick="toggleMeal('daniel-3-4', this)">✓</button></div>
+<div class="meal-card" id="daniel-3-4"><div class="meal-card-header"><div class="meal-card-title">Hamburguesa casera de ternera con huevo</div><button class="meal-check" onclick="window.toggleMeal('daniel-3-4', this)">✓</button></div>
 <div class="ingredients">
 <div class="ingredient-row"><span class="ingredient-name">🥖 Pan cristal</span><span class="ingredient-amount">70 g</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🥩 Carne picada de ternera</span><span class="ingredient-amount">200 g</span></div>
@@ -1176,7 +1176,7 @@
 <div class="ingredient-row"><span class="ingredient-name">🥛 Yogur griego natural ligero</span><span class="ingredient-amount">125 g</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🍫 Chocolate negro 85%</span><span class="ingredient-amount">8 g</span></div>
 </div>
-<button class="recipe-toggle" onclick="toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
+<button class="recipe-toggle" onclick="window.toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
 <div class="recipe-step"><div class="step-num">1</div><div>Forma la hamburguesa y cocínala con AOVE; funde la mozzarella encima.</div></div>
 <div class="recipe-step"><div class="step-num">2</div><div>Cocina el huevo a la plancha.</div></div>
 <div class="recipe-step"><div class="step-num">3</div><div>Monta con pan, lechuga, tomate, pepinillos y barbacoa. Yogur y chocolate de postre.</div></div>
@@ -1184,27 +1184,27 @@
 </div>
 <div class="day-content" id="daniel-day-4">
 <div class="section-block"><div class="meal-label"><span class="meal-label-emoji">☀️</span><span class="meal-label-text">Desayuno</span></div>
-<div class="meal-card" id="daniel-4-0"><div class="meal-card-header"><div class="meal-card-title">Café con leche y lomo embuchado<small>Desayuno ligero</small></div><button class="meal-check" onclick="toggleMeal('daniel-4-0', this)">✓</button></div>
+<div class="meal-card" id="daniel-4-0"><div class="meal-card-header"><div class="meal-card-title">Café con leche y lomo embuchado<small>Desayuno ligero</small></div><button class="meal-check" onclick="window.toggleMeal('daniel-4-0', this)">✓</button></div>
 <div class="ingredients">
 <div class="ingredient-row"><span class="ingredient-name">🥛 Leche entera</span><span class="ingredient-amount">150 ml</span></div>
 <div class="ingredient-row"><span class="ingredient-name">☕ Café</span><span class="ingredient-amount">30 ml</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🥩 Lomo embuchado</span><span class="ingredient-amount">60 g</span></div>
 </div>
-<button class="recipe-toggle" onclick="toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
+<button class="recipe-toggle" onclick="window.toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
 <div class="recipe-step"><div class="step-num">1</div><div>Café con leche entera y el lomo embuchado.</div></div>
 </div></div></div>
 <div class="section-block"><div class="meal-label"><span class="meal-label-emoji">🍎</span><span class="meal-label-text">Almuerzo</span></div>
-<div class="meal-card" id="daniel-4-1"><div class="meal-card-header"><div class="meal-card-title">Tostada con jamón serrano y aguacate</div><button class="meal-check" onclick="toggleMeal('daniel-4-1', this)">✓</button></div>
+<div class="meal-card" id="daniel-4-1"><div class="meal-card-header"><div class="meal-card-title">Tostada con jamón serrano y aguacate</div><button class="meal-check" onclick="window.toggleMeal('daniel-4-1', this)">✓</button></div>
 <div class="ingredients">
 <div class="ingredient-row"><span class="ingredient-name">🍞 Pan integral</span><span class="ingredient-amount">60 g</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🥩 Jamón serrano</span><span class="ingredient-amount">60 g</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🥑 Aguacate</span><span class="ingredient-amount">80 g</span></div>
 </div>
-<button class="recipe-toggle" onclick="toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
+<button class="recipe-toggle" onclick="window.toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
 <div class="recipe-step"><div class="step-num">1</div><div>Tuesta el pan, añade aguacate machacado y el jamón serrano.</div></div>
 </div></div></div>
 <div class="section-block"><div class="meal-label"><span class="meal-label-emoji">🍽️</span><span class="meal-label-text">Comida</span></div>
-<div class="meal-card" id="daniel-4-2"><div class="meal-card-header"><div class="meal-card-title">Calabacín relleno de pollo gratinado<small>+ melocotón de postre</small></div><button class="meal-check" onclick="toggleMeal('daniel-4-2', this)">✓</button></div>
+<div class="meal-card" id="daniel-4-2"><div class="meal-card-header"><div class="meal-card-title">Calabacín relleno de pollo gratinado<small>+ melocotón de postre</small></div><button class="meal-check" onclick="window.toggleMeal('daniel-4-2', this)">✓</button></div>
 <div class="ingredients">
 <div class="ingredient-row"><span class="ingredient-name">🥒 Calabacín</span><span class="ingredient-amount">250 g</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🍗 Pechuga de pollo</span><span class="ingredient-amount">300 g</span></div>
@@ -1214,14 +1214,14 @@
 <div class="ingredient-row"><span class="ingredient-name">🫒 Aceite de oliva virgen extra</span><span class="ingredient-amount">10 ml</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🍑 Melocotón</span><span class="ingredient-amount">180 g</span></div>
 </div>
-<button class="recipe-toggle" onclick="toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
+<button class="recipe-toggle" onclick="window.toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
 <div class="recipe-step"><div class="step-num">1</div><div>Vacía el calabacín y reserva la pulpa.</div></div>
 <div class="recipe-step"><div class="step-num">2</div><div>Sofríe pollo picado con cebolla.</div></div>
 <div class="recipe-step"><div class="step-num">3</div><div>Añade pulpa y tomate frito.</div></div>
 <div class="recipe-step"><div class="step-num">4</div><div>Rellena, cubre con queso y gratina. Melocotón de postre.</div></div>
 </div></div></div>
 <div class="section-block"><div class="meal-label"><span class="meal-label-emoji">🌙</span><span class="meal-label-text">Cena</span></div>
-<div class="meal-card" id="daniel-4-4"><div class="meal-card-header"><div class="meal-card-title">Pizza fit casera x3<small>Jamón serrano + atún con champiñones</small></div><button class="meal-check" onclick="toggleMeal('daniel-4-4', this)">✓</button></div>
+<div class="meal-card" id="daniel-4-4"><div class="meal-card-header"><div class="meal-card-title">Pizza fit casera x3<small>Jamón serrano + atún con champiñones</small></div><button class="meal-check" onclick="window.toggleMeal('daniel-4-4', this)">✓</button></div>
 <div class="ingredients">
 <div class="ingredient-row"><span class="ingredient-name">🫓 Tortilla de trigo integral</span><span class="ingredient-amount">108 g (x3)</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🍅 Tomate frito básico</span><span class="ingredient-amount">50 g</span></div>
@@ -1235,7 +1235,7 @@
 <div class="ingredient-row"><span class="ingredient-name">🥛 Yogur griego natural ligero</span><span class="ingredient-amount">125 g</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🍫 Chocolate negro 85%</span><span class="ingredient-amount">8 g</span></div>
 </div>
-<button class="recipe-toggle" onclick="toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
+<button class="recipe-toggle" onclick="window.toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
 <div class="recipe-step"><div class="step-num">1</div><div>Precalienta el horno a 200°C.</div></div>
 <div class="recipe-step"><div class="step-num">2</div><div>Monta las bases con tomate frito.</div></div>
 <div class="recipe-step"><div class="step-num">3</div><div>Reparte jamón serrano, atún, champiñón, cebolla, barbacoa y orégano. Cubre con queso.</div></div>
@@ -1244,26 +1244,26 @@
 </div>
 <div class="day-content" id="daniel-day-5">
 <div class="section-block"><div class="meal-label"><span class="meal-label-emoji">☀️</span><span class="meal-label-text">Desayuno</span></div>
-<div class="meal-card" id="daniel-5-0"><div class="meal-card-header"><div class="meal-card-title">Café con leche y jamón cocido<small>Desayuno ligero</small></div><button class="meal-check" onclick="toggleMeal('daniel-5-0', this)">✓</button></div>
+<div class="meal-card" id="daniel-5-0"><div class="meal-card-header"><div class="meal-card-title">Café con leche y jamón cocido<small>Desayuno ligero</small></div><button class="meal-check" onclick="window.toggleMeal('daniel-5-0', this)">✓</button></div>
 <div class="ingredients">
 <div class="ingredient-row"><span class="ingredient-name">🥛 Leche entera</span><span class="ingredient-amount">150 ml</span></div>
 <div class="ingredient-row"><span class="ingredient-name">☕ Café</span><span class="ingredient-amount">30 ml</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🥩 Jamón cocido</span><span class="ingredient-amount">100 g</span></div>
 </div>
-<button class="recipe-toggle" onclick="toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
+<button class="recipe-toggle" onclick="window.toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
 <div class="recipe-step"><div class="step-num">1</div><div>Café con leche entera y el jamón cocido.</div></div>
 </div></div></div>
 <div class="section-block"><div class="meal-label"><span class="meal-label-emoji">🍎</span><span class="meal-label-text">Almuerzo</span></div>
-<div class="meal-card" id="daniel-5-1"><div class="meal-card-header"><div class="meal-card-title">Tostada de pan integral con lomo</div><button class="meal-check" onclick="toggleMeal('daniel-5-1', this)">✓</button></div>
+<div class="meal-card" id="daniel-5-1"><div class="meal-card-header"><div class="meal-card-title">Tostada de pan integral con lomo</div><button class="meal-check" onclick="window.toggleMeal('daniel-5-1', this)">✓</button></div>
 <div class="ingredients">
 <div class="ingredient-row"><span class="ingredient-name">🍞 Pan integral</span><span class="ingredient-amount">60 g</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🥩 Lomo embuchado</span><span class="ingredient-amount">60 g</span></div>
 </div>
-<button class="recipe-toggle" onclick="toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
+<button class="recipe-toggle" onclick="window.toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
 <div class="recipe-step"><div class="step-num">1</div><div>Tuesta el pan y coloca el lomo embuchado.</div></div>
 </div></div></div>
 <div class="section-block"><div class="meal-label"><span class="meal-label-emoji">🍽️</span><span class="meal-label-text">Comida</span></div>
-<div class="meal-card" id="daniel-5-2"><div class="meal-card-header"><div class="meal-card-title">Fajitas de pavo caseras x3<small>+ sandía de postre</small></div><button class="meal-check" onclick="toggleMeal('daniel-5-2', this)">✓</button></div>
+<div class="meal-card" id="daniel-5-2"><div class="meal-card-header"><div class="meal-card-title">Fajitas de pavo caseras x3<small>+ sandía de postre</small></div><button class="meal-check" onclick="window.toggleMeal('daniel-5-2', this)">✓</button></div>
 <div class="ingredients">
 <div class="ingredient-row"><span class="ingredient-name">🫓 Tortilla de trigo integral</span><span class="ingredient-amount">108 g (x3)</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🍗 Pechuga de pavo</span><span class="ingredient-amount">300 g</span></div>
@@ -1273,13 +1273,13 @@
 <div class="ingredient-row"><span class="ingredient-name">🫒 Aceite de oliva virgen extra</span><span class="ingredient-amount">10 ml</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🍉 Sandía</span><span class="ingredient-amount">250 g</span></div>
 </div>
-<button class="recipe-toggle" onclick="toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
+<button class="recipe-toggle" onclick="window.toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
 <div class="recipe-step"><div class="step-num">1</div><div>Corta pavo y verduras en tiras.</div></div>
 <div class="recipe-step"><div class="step-num">2</div><div>Saltea con AOVE y sazonador.</div></div>
 <div class="recipe-step"><div class="step-num">3</div><div>Calienta tortillas y rellena. Sandía de postre.</div></div>
 </div></div></div>
 <div class="section-block"><div class="meal-label"><span class="meal-label-emoji">🌙</span><span class="meal-label-text">Cena</span></div>
-<div class="meal-card" id="daniel-5-4"><div class="meal-card-header"><div class="meal-card-title">Ensalada de tomate con feta y tortilla de patata fit<small>+ chocolate de postre</small></div><button class="meal-check" onclick="toggleMeal('daniel-5-4', this)">✓</button></div>
+<div class="meal-card" id="daniel-5-4"><div class="meal-card-header"><div class="meal-card-title">Ensalada de tomate con feta y tortilla de patata fit<small>+ chocolate de postre</small></div><button class="meal-check" onclick="window.toggleMeal('daniel-5-4', this)">✓</button></div>
 <div class="ingredients">
 <div class="ingredient-row"><span class="ingredient-name">🍅 Tomate</span><span class="ingredient-amount">250 g</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🧀 Queso feta</span><span class="ingredient-amount">60 g</span></div>
@@ -1290,7 +1290,7 @@
 <div class="ingredient-row"><span class="ingredient-name">🥛 Yogur griego natural ligero</span><span class="ingredient-amount">125 g</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🍫 Chocolate negro 85%</span><span class="ingredient-amount">8 g</span></div>
 </div>
-<button class="recipe-toggle" onclick="toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
+<button class="recipe-toggle" onclick="window.toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
 <div class="recipe-step"><div class="step-num">1</div><div>Patata FIT: cocida/asada/airfryer.</div></div>
 <div class="recipe-step"><div class="step-num">2</div><div>Mezcla con cebolla y huevo, cuaja en sartén.</div></div>
 <div class="recipe-step"><div class="step-num">3</div><div>Ensalada de tomate con feta. Yogur y chocolate de postre.</div></div>
@@ -1298,7 +1298,7 @@
 </div>
 <div class="day-content" id="daniel-day-6">
 <div class="section-block"><div class="meal-label"><span class="meal-label-emoji">☀️</span><span class="meal-label-text">Desayuno</span></div>
-<div class="meal-card" id="daniel-6-0"><div class="meal-card-header"><div class="meal-card-title">Tortitas caseras con arándanos y miel<small>+ café con leche</small></div><button class="meal-check" onclick="toggleMeal('daniel-6-0', this)">✓</button></div>
+<div class="meal-card" id="daniel-6-0"><div class="meal-card-header"><div class="meal-card-title">Tortitas caseras con arándanos y miel<small>+ café con leche</small></div><button class="meal-check" onclick="window.toggleMeal('daniel-6-0', this)">✓</button></div>
 <div class="ingredients">
 <div class="ingredient-row"><span class="ingredient-name">🥛 Leche entera</span><span class="ingredient-amount">150 ml</span></div>
 <div class="ingredient-row"><span class="ingredient-name">☕ Café</span><span class="ingredient-amount">30 ml</span></div>
@@ -1309,24 +1309,24 @@
 <div class="ingredient-row"><span class="ingredient-name">🍯 Miel</span><span class="ingredient-amount">20 g</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🫐 Arándanos</span><span class="ingredient-amount">80 g</span></div>
 </div>
-<button class="recipe-toggle" onclick="toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
+<button class="recipe-toggle" onclick="window.toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
 <div class="recipe-step"><div class="step-num">1</div><div>Mezcla harina, huevo, leche, levadura y vainilla.</div></div>
 <div class="recipe-step"><div class="step-num">2</div><div>Cuaja en sartén sin aceite.</div></div>
 <div class="recipe-step"><div class="step-num">3</div><div>Sirve con arándanos y miel.</div></div>
 </div></div></div>
 <div class="section-block"><div class="meal-label"><span class="meal-label-emoji">🍎</span><span class="meal-label-text">Almuerzo</span></div>
-<div class="meal-card" id="daniel-6-1"><div class="meal-card-header"><div class="meal-card-title">Queso cottage con piña</div><button class="meal-check" onclick="toggleMeal('daniel-6-1', this)">✓</button></div>
+<div class="meal-card" id="daniel-6-1"><div class="meal-card-header"><div class="meal-card-title">Queso cottage con piña</div><button class="meal-check" onclick="window.toggleMeal('daniel-6-1', this)">✓</button></div>
 <div class="ingredients">
 <div class="ingredient-row"><span class="ingredient-name">🧀 Queso cottage</span><span class="ingredient-amount">200 g</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🍍 Piña</span><span class="ingredient-amount">250 g</span></div>
 </div>
-<button class="recipe-toggle" onclick="toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
+<button class="recipe-toggle" onclick="window.toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
 <div class="recipe-step"><div class="step-num">1</div><div>Trocea la piña sobre el cottage.</div></div>
 </div></div></div>
 <div class="section-block"><div class="meal-label"><span class="meal-label-emoji">🍽️</span><span class="meal-label-text">Comida</span></div>
 <div class="free-card"><span class="free-emoji">🎉</span><div class="free-title">Comida libre</div><div class="free-sub">Comida libre con moderación 🎉</div></div></div>
 <div class="section-block"><div class="meal-label"><span class="meal-label-emoji">🌙</span><span class="meal-label-text">Cena</span></div>
-<div class="meal-card" id="daniel-6-4"><div class="meal-card-header"><div class="meal-card-title">Tartar de gambas con aguacate, mango y lima<small>+ chocolate de postre</small></div><button class="meal-check" onclick="toggleMeal('daniel-6-4', this)">✓</button></div>
+<div class="meal-card" id="daniel-6-4"><div class="meal-card-header"><div class="meal-card-title">Tartar de gambas con aguacate, mango y lima<small>+ chocolate de postre</small></div><button class="meal-check" onclick="window.toggleMeal('daniel-6-4', this)">✓</button></div>
 <div class="ingredients">
 <div class="ingredient-row"><span class="ingredient-name">🦐 Gamba pelada cruda</span><span class="ingredient-amount">300 g</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🥑 Aguacate</span><span class="ingredient-amount">150 g</span></div>
@@ -1337,7 +1337,7 @@
 <div class="ingredient-row"><span class="ingredient-name">🥛 Yogur griego natural ligero</span><span class="ingredient-amount">125 g</span></div>
 <div class="ingredient-row"><span class="ingredient-name">🍫 Chocolate negro 85%</span><span class="ingredient-amount">8 g</span></div>
 </div>
-<button class="recipe-toggle" onclick="toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
+<button class="recipe-toggle" onclick="window.toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
 <div class="recipe-step"><div class="step-num">1</div><div>Cuece las gambas 2-3 min, enfría y pica.</div></div>
 <div class="recipe-step"><div class="step-num">2</div><div>Pica aguacate, mango y tomate.</div></div>
 <div class="recipe-step"><div class="step-num">3</div><div>Mezcla con lima y AOVE. Yogur y chocolate de postre.</div></div>
@@ -1349,72 +1349,72 @@
 <div class="view" id="view-shop">
 <div class="shop-legend">🤝 = lo compráis los dos · Toca para tachar lo comprado</div>
 <div class="section-heading">Proteínas y frescos</div>
-<div class="shop-item" onclick="toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🐟 Salmón</span><div class="breakdown">Lorena 150 g · Daniel 200 g</div></div></div><span class="shop-item-qty">350 g</span></div>
-<div class="shop-item" onclick="toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🐟 Bacalao</span><div class="breakdown">Lorena 300 g · Daniel 350 g</div></div></div><span class="shop-item-qty">650 g</span></div>
-<div class="shop-item" onclick="toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🐟 Atún al natural</span><div class="breakdown">Lorena 300 g · Daniel 300 g</div></div></div><span class="shop-item-qty">600 g</span></div>
-<div class="shop-item" onclick="toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🐟 Sardinillas en aceite de oliva</span><div class="breakdown">Lorena 130 g · Daniel 130 g</div></div></div><span class="shop-item-qty">260 g</span></div>
-<div class="shop-item" onclick="toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🦐 Gamba pelada cruda</span><div class="breakdown">Lorena 250 g · Daniel 300 g</div></div></div><span class="shop-item-qty">550 g</span></div>
-<div class="shop-item" onclick="toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🍗 Pechuga de pollo</span><div class="breakdown">Lorena 450 g · Daniel 550 g</div></div></div><span class="shop-item-qty">1.000 g</span></div>
-<div class="shop-item" onclick="toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🍗 Pechuga de pavo</span><div class="breakdown">Lorena 250 g · Daniel 300 g</div></div></div><span class="shop-item-qty">550 g</span></div>
-<div class="shop-item" onclick="toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🥩 Solomillo de cerdo</span><div class="breakdown">Lorena 200 g · Daniel 350 g</div></div></div><span class="shop-item-qty">550 g</span></div>
-<div class="shop-item" onclick="toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🥩 Carne picada de ternera</span><div class="breakdown">Lorena 150 g · Daniel 200 g</div></div></div><span class="shop-item-qty">350 g</span></div>
-<div class="shop-item" onclick="toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🥩 Jamón cocido</span><div class="breakdown">Lorena 200 g · Daniel 180 g</div></div></div><span class="shop-item-qty">380 g</span></div>
-<div class="shop-item" onclick="toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🥩 Jamón serrano</span><div class="breakdown">Lorena 50 g · Daniel 480 g</div></div></div><span class="shop-item-qty">530 g</span></div>
-<div class="shop-item" onclick="toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🥩 Lomo embuchado</span><div class="breakdown">Lorena 180 g · Daniel 300 g</div></div></div><span class="shop-item-qty">480 g</span></div>
-<div class="shop-item" onclick="toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🥚 Huevos camperos</span><div class="breakdown">Lorena 360 g · Daniel 480 g</div></div></div><span class="shop-item-qty">840 g</span></div>
+<div class="shop-item" onclick="window.toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🐟 Salmón</span><div class="breakdown">Lorena 150 g · Daniel 200 g</div></div></div><span class="shop-item-qty">350 g</span></div>
+<div class="shop-item" onclick="window.toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🐟 Bacalao</span><div class="breakdown">Lorena 300 g · Daniel 350 g</div></div></div><span class="shop-item-qty">650 g</span></div>
+<div class="shop-item" onclick="window.toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🐟 Atún al natural</span><div class="breakdown">Lorena 300 g · Daniel 300 g</div></div></div><span class="shop-item-qty">600 g</span></div>
+<div class="shop-item" onclick="window.toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🐟 Sardinillas en aceite de oliva</span><div class="breakdown">Lorena 130 g · Daniel 130 g</div></div></div><span class="shop-item-qty">260 g</span></div>
+<div class="shop-item" onclick="window.toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🦐 Gamba pelada cruda</span><div class="breakdown">Lorena 250 g · Daniel 300 g</div></div></div><span class="shop-item-qty">550 g</span></div>
+<div class="shop-item" onclick="window.toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🍗 Pechuga de pollo</span><div class="breakdown">Lorena 450 g · Daniel 550 g</div></div></div><span class="shop-item-qty">1.000 g</span></div>
+<div class="shop-item" onclick="window.toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🍗 Pechuga de pavo</span><div class="breakdown">Lorena 250 g · Daniel 300 g</div></div></div><span class="shop-item-qty">550 g</span></div>
+<div class="shop-item" onclick="window.toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🥩 Solomillo de cerdo</span><div class="breakdown">Lorena 200 g · Daniel 350 g</div></div></div><span class="shop-item-qty">550 g</span></div>
+<div class="shop-item" onclick="window.toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🥩 Carne picada de ternera</span><div class="breakdown">Lorena 150 g · Daniel 200 g</div></div></div><span class="shop-item-qty">350 g</span></div>
+<div class="shop-item" onclick="window.toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🥩 Jamón cocido</span><div class="breakdown">Lorena 200 g · Daniel 180 g</div></div></div><span class="shop-item-qty">380 g</span></div>
+<div class="shop-item" onclick="window.toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🥩 Jamón serrano</span><div class="breakdown">Lorena 50 g · Daniel 480 g</div></div></div><span class="shop-item-qty">530 g</span></div>
+<div class="shop-item" onclick="window.toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🥩 Lomo embuchado</span><div class="breakdown">Lorena 180 g · Daniel 300 g</div></div></div><span class="shop-item-qty">480 g</span></div>
+<div class="shop-item" onclick="window.toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🥚 Huevos camperos</span><div class="breakdown">Lorena 360 g · Daniel 480 g</div></div></div><span class="shop-item-qty">840 g</span></div>
 <div class="section-heading">Lácteos</div>
-<div class="shop-item" onclick="toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🥛 Leche entera</span><div class="breakdown">Lorena 1.050 ml · Daniel 1.050 ml</div></div></div><span class="shop-item-qty">2.100 ml</span></div>
-<div class="shop-item" onclick="toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🥛 Yogur griego natural ligero</span><div class="breakdown">Lorena 1.750 g · Daniel 875 g</div></div></div><span class="shop-item-qty">2.625 g</span></div>
-<div class="shop-item" onclick="toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🧀 Queso cottage</span><div class="breakdown">Lorena 700 g · Daniel 200 g</div></div></div><span class="shop-item-qty">900 g</span></div>
-<div class="shop-item" onclick="toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🧀 Queso feta</span><div class="breakdown">Lorena 90 g · Daniel 140 g</div></div></div><span class="shop-item-qty">230 g</span></div>
-<div class="shop-item" onclick="toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🧀 Queso fresco de cabra</span><div class="breakdown">Lorena 40 g · Daniel 60 g</div></div></div><span class="shop-item-qty">100 g</span></div>
-<div class="shop-item" onclick="toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🧀 Queso mozzarella en lonchas</span><div class="breakdown">Lorena 20 g · Daniel 80 g</div></div></div><span class="shop-item-qty">100 g</span></div>
-<div class="shop-item" onclick="toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🧀 Queso rallado mozzarella</span><div class="breakdown">Lorena 60 g · Daniel 70 g</div></div></div><span class="shop-item-qty">130 g</span></div>
+<div class="shop-item" onclick="window.toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🥛 Leche entera</span><div class="breakdown">Lorena 1.050 ml · Daniel 1.050 ml</div></div></div><span class="shop-item-qty">2.100 ml</span></div>
+<div class="shop-item" onclick="window.toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🥛 Yogur griego natural ligero</span><div class="breakdown">Lorena 1.750 g · Daniel 875 g</div></div></div><span class="shop-item-qty">2.625 g</span></div>
+<div class="shop-item" onclick="window.toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🧀 Queso cottage</span><div class="breakdown">Lorena 700 g · Daniel 200 g</div></div></div><span class="shop-item-qty">900 g</span></div>
+<div class="shop-item" onclick="window.toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🧀 Queso feta</span><div class="breakdown">Lorena 90 g · Daniel 140 g</div></div></div><span class="shop-item-qty">230 g</span></div>
+<div class="shop-item" onclick="window.toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🧀 Queso fresco de cabra</span><div class="breakdown">Lorena 40 g · Daniel 60 g</div></div></div><span class="shop-item-qty">100 g</span></div>
+<div class="shop-item" onclick="window.toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🧀 Queso mozzarella en lonchas</span><div class="breakdown">Lorena 20 g · Daniel 80 g</div></div></div><span class="shop-item-qty">100 g</span></div>
+<div class="shop-item" onclick="window.toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🧀 Queso rallado mozzarella</span><div class="breakdown">Lorena 60 g · Daniel 70 g</div></div></div><span class="shop-item-qty">130 g</span></div>
 <div class="section-heading">Frutas y verduras</div>
-<div class="shop-item" onclick="toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🍉 Sandía</span><div class="breakdown">Lorena 1.170 g · Daniel 900 g</div></div></div><span class="shop-item-qty">2.070 g</span></div>
-<div class="shop-item" onclick="toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🥭 Mango</span><div class="breakdown">Lorena 540 g · Daniel 470 g</div></div></div><span class="shop-item-qty">1.010 g</span></div>
-<div class="shop-item" onclick="toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🍑 Melocotón</span><div class="breakdown">Lorena 540 g · Daniel 360 g</div></div></div><span class="shop-item-qty">900 g</span></div>
-<div class="shop-item" onclick="toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🍍 Piña</span><div class="breakdown">Lorena 600 g · Daniel 250 g</div></div></div><span class="shop-item-qty">850 g</span></div>
-<div class="shop-item" onclick="toggleBought(this)"><div class="shop-item-left"><div><span class="shop-item-name">🍏 Manzana</span><div class="breakdown">Solo Lorena</div></div></div><span class="shop-item-qty">360 g</span></div>
-<div class="shop-item" onclick="toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🥑 Aguacate</span><div class="breakdown">Lorena 360 g · Daniel 570 g</div></div></div><span class="shop-item-qty">930 g</span></div>
-<div class="shop-item" onclick="toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🫐 Arándanos</span><div class="breakdown">Lorena 80 g · Daniel 80 g</div></div></div><span class="shop-item-qty">160 g</span></div>
-<div class="shop-item" onclick="toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🍅 Tomate</span><div class="breakdown">Lorena 850 g · Daniel 900 g</div></div></div><span class="shop-item-qty">1.750 g</span></div>
-<div class="shop-item" onclick="toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🥒 Calabacín</span><div class="breakdown">Lorena 250 g · Daniel 250 g</div></div></div><span class="shop-item-qty">500 g</span></div>
-<div class="shop-item" onclick="toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🧅 Cebolla</span><div class="breakdown">Lorena 210 g · Daniel 270 g</div></div></div><span class="shop-item-qty">480 g</span></div>
-<div class="shop-item" onclick="toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🧅 Cebolla morada</span><div class="breakdown">Lorena 23 g · Daniel 30 g</div></div></div><span class="shop-item-qty">53 g</span></div>
-<div class="shop-item" onclick="toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🧅 Cebolleta</span><div class="breakdown">Lorena 70 g · Daniel 80 g</div></div></div><span class="shop-item-qty">150 g</span></div>
-<div class="shop-item" onclick="toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🫑 Pimientos</span><div class="breakdown">Lorena 230 g · Daniel 280 g</div></div></div><span class="shop-item-qty">510 g</span></div>
-<div class="shop-item" onclick="toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🍄 Champiñón</span><div class="breakdown">Lorena 160 g · Daniel 250 g</div></div></div><span class="shop-item-qty">410 g</span></div>
-<div class="shop-item" onclick="toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🥔 Patata</span><div class="breakdown">Lorena 150 g · Daniel 370 g</div></div></div><span class="shop-item-qty">520 g</span></div>
-<div class="shop-item" onclick="toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🥬 Lechuga</span><div class="breakdown">Lorena 20 g · Daniel 20 g</div></div></div><span class="shop-item-qty">40 g</span></div>
-<div class="shop-item" onclick="toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🍋 Lima</span><div class="breakdown">Lorena 40 g · Daniel 60 g</div></div></div><span class="shop-item-qty">100 g</span></div>
+<div class="shop-item" onclick="window.toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🍉 Sandía</span><div class="breakdown">Lorena 1.170 g · Daniel 900 g</div></div></div><span class="shop-item-qty">2.070 g</span></div>
+<div class="shop-item" onclick="window.toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🥭 Mango</span><div class="breakdown">Lorena 540 g · Daniel 470 g</div></div></div><span class="shop-item-qty">1.010 g</span></div>
+<div class="shop-item" onclick="window.toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🍑 Melocotón</span><div class="breakdown">Lorena 540 g · Daniel 360 g</div></div></div><span class="shop-item-qty">900 g</span></div>
+<div class="shop-item" onclick="window.toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🍍 Piña</span><div class="breakdown">Lorena 600 g · Daniel 250 g</div></div></div><span class="shop-item-qty">850 g</span></div>
+<div class="shop-item" onclick="window.toggleBought(this)"><div class="shop-item-left"><div><span class="shop-item-name">🍏 Manzana</span><div class="breakdown">Solo Lorena</div></div></div><span class="shop-item-qty">360 g</span></div>
+<div class="shop-item" onclick="window.toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🥑 Aguacate</span><div class="breakdown">Lorena 360 g · Daniel 570 g</div></div></div><span class="shop-item-qty">930 g</span></div>
+<div class="shop-item" onclick="window.toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🫐 Arándanos</span><div class="breakdown">Lorena 80 g · Daniel 80 g</div></div></div><span class="shop-item-qty">160 g</span></div>
+<div class="shop-item" onclick="window.toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🍅 Tomate</span><div class="breakdown">Lorena 850 g · Daniel 900 g</div></div></div><span class="shop-item-qty">1.750 g</span></div>
+<div class="shop-item" onclick="window.toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🥒 Calabacín</span><div class="breakdown">Lorena 250 g · Daniel 250 g</div></div></div><span class="shop-item-qty">500 g</span></div>
+<div class="shop-item" onclick="window.toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🧅 Cebolla</span><div class="breakdown">Lorena 210 g · Daniel 270 g</div></div></div><span class="shop-item-qty">480 g</span></div>
+<div class="shop-item" onclick="window.toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🧅 Cebolla morada</span><div class="breakdown">Lorena 23 g · Daniel 30 g</div></div></div><span class="shop-item-qty">53 g</span></div>
+<div class="shop-item" onclick="window.toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🧅 Cebolleta</span><div class="breakdown">Lorena 70 g · Daniel 80 g</div></div></div><span class="shop-item-qty">150 g</span></div>
+<div class="shop-item" onclick="window.toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🫑 Pimientos</span><div class="breakdown">Lorena 230 g · Daniel 280 g</div></div></div><span class="shop-item-qty">510 g</span></div>
+<div class="shop-item" onclick="window.toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🍄 Champiñón</span><div class="breakdown">Lorena 160 g · Daniel 250 g</div></div></div><span class="shop-item-qty">410 g</span></div>
+<div class="shop-item" onclick="window.toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🥔 Patata</span><div class="breakdown">Lorena 150 g · Daniel 370 g</div></div></div><span class="shop-item-qty">520 g</span></div>
+<div class="shop-item" onclick="window.toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🥬 Lechuga</span><div class="breakdown">Lorena 20 g · Daniel 20 g</div></div></div><span class="shop-item-qty">40 g</span></div>
+<div class="shop-item" onclick="window.toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🍋 Lima</span><div class="breakdown">Lorena 40 g · Daniel 60 g</div></div></div><span class="shop-item-qty">100 g</span></div>
 <div class="section-heading">Cereales y pan</div>
-<div class="shop-item" onclick="toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🍞 Pan integral</span><div class="breakdown">Lorena 240 g · Daniel 360 g</div></div></div><span class="shop-item-qty">600 g</span></div>
-<div class="shop-item" onclick="toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🥖 Pan cristal</span><div class="breakdown">Lorena 70 g · Daniel 70 g</div></div></div><span class="shop-item-qty">140 g</span></div>
-<div class="shop-item" onclick="toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🍚 Arroz basmati</span><div class="breakdown">Lorena 80 g · Daniel 120 g</div></div></div><span class="shop-item-qty">200 g</span></div>
-<div class="shop-item" onclick="toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🌾 Quinoa cocida</span><div class="breakdown">Lorena 125 g · Daniel 125 g</div></div></div><span class="shop-item-qty">250 g</span></div>
-<div class="shop-item" onclick="toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🫓 Tortilla de trigo integral</span><div class="breakdown">Lorena 216 g · Daniel 324 g</div></div></div><span class="shop-item-qty">540 g</span></div>
-<div class="shop-item" onclick="toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🌾 Harina de trigo</span><div class="breakdown">Lorena 40 g · Daniel 60 g</div></div></div><span class="shop-item-qty">100 g</span></div>
+<div class="shop-item" onclick="window.toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🍞 Pan integral</span><div class="breakdown">Lorena 240 g · Daniel 360 g</div></div></div><span class="shop-item-qty">600 g</span></div>
+<div class="shop-item" onclick="window.toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🥖 Pan cristal</span><div class="breakdown">Lorena 70 g · Daniel 70 g</div></div></div><span class="shop-item-qty">140 g</span></div>
+<div class="shop-item" onclick="window.toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🍚 Arroz basmati</span><div class="breakdown">Lorena 80 g · Daniel 120 g</div></div></div><span class="shop-item-qty">200 g</span></div>
+<div class="shop-item" onclick="window.toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🌾 Quinoa cocida</span><div class="breakdown">Lorena 125 g · Daniel 125 g</div></div></div><span class="shop-item-qty">250 g</span></div>
+<div class="shop-item" onclick="window.toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🫓 Tortilla de trigo integral</span><div class="breakdown">Lorena 216 g · Daniel 324 g</div></div></div><span class="shop-item-qty">540 g</span></div>
+<div class="shop-item" onclick="window.toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🌾 Harina de trigo</span><div class="breakdown">Lorena 40 g · Daniel 60 g</div></div></div><span class="shop-item-qty">100 g</span></div>
 <div class="section-heading">Despensa</div>
-<div class="shop-item" onclick="toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🫒 Aceite de oliva virgen extra</span><div class="breakdown">Lorena 120 ml · Daniel 95 ml</div></div></div><span class="shop-item-qty">215 ml</span></div>
-<div class="shop-item" onclick="toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🍯 Miel</span><div class="breakdown">Lorena 40 g · Daniel 45 g</div></div></div><span class="shop-item-qty">85 g</span></div>
-<div class="shop-item" onclick="toggleBought(this)"><div class="shop-item-left"><div><span class="shop-item-name">🟡 Mostaza</span><div class="breakdown">Solo Lorena</div></div></div><span class="shop-item-qty">50 g</span></div>
-<div class="shop-item" onclick="toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🥢 Salsa de soja sin gluten</span><div class="breakdown">Lorena 25 ml · Daniel 25 ml</div></div></div><span class="shop-item-qty">50 ml</span></div>
-<div class="shop-item" onclick="toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🍖 Salsa barbacoa</span><div class="breakdown">Lorena 20 g · Daniel 40 g</div></div></div><span class="shop-item-qty">60 g</span></div>
-<div class="shop-item" onclick="toggleBought(this)"><div class="shop-item-left"><div><span class="shop-item-name">🍅 Tomate triturado</span><div class="breakdown">Solo Lorena</div></div></div><span class="shop-item-qty">180 g</span></div>
-<div class="shop-item" onclick="toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🍅 Tomate frito básico</span><div class="breakdown">Lorena 80 g · Daniel 110 g</div></div></div><span class="shop-item-qty">190 g</span></div>
-<div class="shop-item" onclick="toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🌽 Maíz dulce</span><div class="breakdown">Lorena 30 g · Daniel 40 g</div></div></div><span class="shop-item-qty">70 g</span></div>
-<div class="shop-item" onclick="toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🍶 Vinagre de módena</span><div class="breakdown">Lorena 10 ml · Daniel 20 ml</div></div></div><span class="shop-item-qty">30 ml</span></div>
-<div class="shop-item" onclick="toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🌿 Orégano</span><div class="breakdown">Lorena 10 g · Daniel 10 g</div></div></div><span class="shop-item-qty">20 g</span></div>
-<div class="shop-item" onclick="toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🌶️ Sazonador fajitas</span><div class="breakdown">Lorena 10 g · Daniel 10 g</div></div></div><span class="shop-item-qty">20 g</span></div>
-<div class="shop-item" onclick="toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🌿 Esencia de vainilla</span><div class="breakdown">Lorena 10 ml · Daniel 10 ml</div></div></div><span class="shop-item-qty">20 ml</span></div>
-<div class="shop-item" onclick="toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🫧 Levadura</span><div class="breakdown">Lorena 10 g · Daniel 10 g</div></div></div><span class="shop-item-qty">20 g</span></div>
-<div class="shop-item" onclick="toggleBought(this)"><div class="shop-item-left"><div><span class="shop-item-name">🟤 Canela</span><div class="breakdown">Solo Lorena</div></div></div><span class="shop-item-qty">10 g</span></div>
-<div class="shop-item" onclick="toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🌶️ Pimienta negra molida</span><div class="breakdown">Lorena 10 g · Daniel 10 g</div></div></div><span class="shop-item-qty">20 g</span></div>
-<div class="shop-item" onclick="toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🍫 Chocolate negro 85%</span><div class="breakdown">Lorena 8 g · Daniel 64 g</div></div></div><span class="shop-item-qty">72 g</span></div>
-<div class="shop-item" onclick="toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🥒 Pepinillos</span><div class="breakdown">Lorena 40 g · Daniel 40 g</div></div></div><span class="shop-item-qty">80 g</span></div>
-<div class="shop-item" onclick="toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">☕ Café</span><div class="breakdown">Lorena 210 ml · Daniel 210 ml</div></div></div><span class="shop-item-qty">420 ml</span></div>
-<div class="shop-item" onclick="toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🫙 Gazpacho Calisur</span><div class="breakdown">Lorena 250 g · Daniel 250 g</div></div></div><span class="shop-item-qty">500 g</span></div>
+<div class="shop-item" onclick="window.toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🫒 Aceite de oliva virgen extra</span><div class="breakdown">Lorena 120 ml · Daniel 95 ml</div></div></div><span class="shop-item-qty">215 ml</span></div>
+<div class="shop-item" onclick="window.toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🍯 Miel</span><div class="breakdown">Lorena 40 g · Daniel 45 g</div></div></div><span class="shop-item-qty">85 g</span></div>
+<div class="shop-item" onclick="window.toggleBought(this)"><div class="shop-item-left"><div><span class="shop-item-name">🟡 Mostaza</span><div class="breakdown">Solo Lorena</div></div></div><span class="shop-item-qty">50 g</span></div>
+<div class="shop-item" onclick="window.toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🥢 Salsa de soja sin gluten</span><div class="breakdown">Lorena 25 ml · Daniel 25 ml</div></div></div><span class="shop-item-qty">50 ml</span></div>
+<div class="shop-item" onclick="window.toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🍖 Salsa barbacoa</span><div class="breakdown">Lorena 20 g · Daniel 40 g</div></div></div><span class="shop-item-qty">60 g</span></div>
+<div class="shop-item" onclick="window.toggleBought(this)"><div class="shop-item-left"><div><span class="shop-item-name">🍅 Tomate triturado</span><div class="breakdown">Solo Lorena</div></div></div><span class="shop-item-qty">180 g</span></div>
+<div class="shop-item" onclick="window.toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🍅 Tomate frito básico</span><div class="breakdown">Lorena 80 g · Daniel 110 g</div></div></div><span class="shop-item-qty">190 g</span></div>
+<div class="shop-item" onclick="window.toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🌽 Maíz dulce</span><div class="breakdown">Lorena 30 g · Daniel 40 g</div></div></div><span class="shop-item-qty">70 g</span></div>
+<div class="shop-item" onclick="window.toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🍶 Vinagre de módena</span><div class="breakdown">Lorena 10 ml · Daniel 20 ml</div></div></div><span class="shop-item-qty">30 ml</span></div>
+<div class="shop-item" onclick="window.toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🌿 Orégano</span><div class="breakdown">Lorena 10 g · Daniel 10 g</div></div></div><span class="shop-item-qty">20 g</span></div>
+<div class="shop-item" onclick="window.toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🌶️ Sazonador fajitas</span><div class="breakdown">Lorena 10 g · Daniel 10 g</div></div></div><span class="shop-item-qty">20 g</span></div>
+<div class="shop-item" onclick="window.toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🌿 Esencia de vainilla</span><div class="breakdown">Lorena 10 ml · Daniel 10 ml</div></div></div><span class="shop-item-qty">20 ml</span></div>
+<div class="shop-item" onclick="window.toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🫧 Levadura</span><div class="breakdown">Lorena 10 g · Daniel 10 g</div></div></div><span class="shop-item-qty">20 g</span></div>
+<div class="shop-item" onclick="window.toggleBought(this)"><div class="shop-item-left"><div><span class="shop-item-name">🟤 Canela</span><div class="breakdown">Solo Lorena</div></div></div><span class="shop-item-qty">10 g</span></div>
+<div class="shop-item" onclick="window.toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🌶️ Pimienta negra molida</span><div class="breakdown">Lorena 10 g · Daniel 10 g</div></div></div><span class="shop-item-qty">20 g</span></div>
+<div class="shop-item" onclick="window.toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🍫 Chocolate negro 85%</span><div class="breakdown">Lorena 8 g · Daniel 64 g</div></div></div><span class="shop-item-qty">72 g</span></div>
+<div class="shop-item" onclick="window.toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🥒 Pepinillos</span><div class="breakdown">Lorena 40 g · Daniel 40 g</div></div></div><span class="shop-item-qty">80 g</span></div>
+<div class="shop-item" onclick="window.toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">☕ Café</span><div class="breakdown">Lorena 210 ml · Daniel 210 ml</div></div></div><span class="shop-item-qty">420 ml</span></div>
+<div class="shop-item" onclick="window.toggleBought(this)"><div class="shop-item-left"><span class="shared-badge">🤝</span><div><span class="shop-item-name">🫙 Gazpacho Calisur</span><div class="breakdown">Lorena 250 g · Daniel 250 g</div></div></div><span class="shop-item-qty">500 g</span></div>
 </div>
 
 <div class="view" id="view-cook">
@@ -1517,6 +1517,8 @@
 </div>
 
 <script>
+try {
+
   let currentPerson = 'lorena';
   let currentDay = 0;
 
@@ -1594,25 +1596,31 @@
   updateProgress();
 
   // ─── FIREBASE ────────────────────────────────────────────────────
-  var firebaseConfig = { databaseURL: "https://app-dieta-1d721-default-rtdb.europe-west1.firebasedatabase.app" };
-  firebase.initializeApp(firebaseConfig);
-  var db = firebase.database();
+  var db = null;
   var dbCache = { lorena: {}, daniel: {} };
 
-  db.ref('dieta').on('value', function(snap) {
-    var data = snap.val() || {};
-    dbCache.lorena = data.lorena || {};
-    dbCache.daniel = data.daniel || {};
-    if (document.getElementById('view-control').classList.contains('active')) {
-      renderCalendar(); renderStats(); renderLog();
-    }
-    restoreMealChecks();
-  });
+  try {
+    var firebaseConfig = { databaseURL: "https://app-dieta-1d721-default-rtdb.europe-west1.firebasedatabase.app" };
+    firebase.initializeApp(firebaseConfig);
+    db = firebase.database();
+
+    db.ref('dieta').on('value', function(snap) {
+      var data = snap.val() || {};
+      dbCache.lorena = data.lorena || {};
+      dbCache.daniel = data.daniel || {};
+      if (document.getElementById('view-control').classList.contains('active')) {
+        renderCalendar(); renderStats(); renderLog();
+      }
+      restoreMealChecks();
+    });
+  } catch(e) {
+    console.warn('Firebase no disponible:', e);
+  }
 
   function makeDateKey(y, m, d) { return y + '-' + String(m+1).padStart(2,'0') + '-' + String(d).padStart(2,'0'); }
   function getCtrlData(person, dk) { return dbCache[person][dk] || {}; }
-  function setCtrlData(person, dk, data) { dbCache[person][dk] = data; db.ref('dieta/' + person + '/' + dk).set(data); }
-  function removeCtrlData(person, dk) { dbCache[person][dk] = {}; db.ref('dieta/' + person + '/' + dk).remove(); }
+  function setCtrlData(person, dk, data) { dbCache[person][dk] = data; if (db) db.ref('dieta/' + person + '/' + dk).set(data); }
+  function removeCtrlData(person, dk) { dbCache[person][dk] = {}; if (db) db.ref('dieta/' + person + '/' + dk).remove(); }
 
   function saveMealCheck(cardId, checked) {
     var today = new Date();
@@ -2053,84 +2061,82 @@
   let cookChecked = safeStorage.get('cookChecked') || {};
 
   function renderCooking() {
-    const dayData = COOKING_DATA[cookDay];
+    var dayData = COOKING_DATA[cookDay];
     if (!dayData) return;
-    const el = document.getElementById('cook-day-name');
-    if (!el) return; // vista no disponible aún
-    const nextDayIdx = (cookDay + 1) % 7;
-    const nextDayData = COOKING_DATA[nextDayIdx];
+    var elName = document.getElementById('cook-day-name');
+    if (!elName) return;
+    var nextDayIdx = (cookDay + 1) % 7;
+    var nextDayData = COOKING_DATA[nextDayIdx];
+    var dayNames = ['Lunes','Martes','Miercoles','Jueves','Viernes','Sabado','Domingo'];
 
-    // Calcular aviso de descongelar mañana
-    const defrostAlerts = [];
+    var defrostHTML = '';
     if (nextDayData) {
-      nextDayData.meals.forEach(m => {
-        if (m.frozen) defrostAlerts.push(m.frozenItem + ': ' + m.defrostNote);
-      });
+      var alerts = [];
+      for (var ni = 0; ni < nextDayData.meals.length; ni++) {
+        var nm = nextDayData.meals[ni];
+        if (nm.frozen) alerts.push('<div class="defrost-item">&#8226; ' + nm.frozenItem + ': ' + nm.defrostNote + '</div>');
+      }
+      if (alerts.length > 0) {
+        defrostHTML = '<div class="defrost-banner">' +
+          '<div class="defrost-title">Acuerdate esta noche</div>' +
+          '<div class="defrost-subtitle">Para el ' + dayNames[nextDayIdx] + ':</div>' +
+          alerts.join('') + '</div>';
+      }
     }
 
-    const dayNames = ['Lunes','Martes','Miércoles','Jueves','Viernes','Sábado','Domingo'];
-
-    let defrostHTML = '';
-    if (defrostAlerts.length > 0) {
-      defrostHTML = `
-        <div class="defrost-banner">
-          <div class="defrost-title">❄️ Acuérdate esta noche</div>
-          <div class="defrost-subtitle">Para el ${dayNames[nextDayIdx]}:</div>
-          ${defrostAlerts.map(a=>`<div class="defrost-item">• ${a}</div>`).join('')}
-        </div>`;
+    var mealsHTML = '';
+    for (var mi = 0; mi < dayData.meals.length; mi++) {
+      var meal = dayData.meals[mi];
+      var chk = cookChecked[meal.id] || false;
+      var frozenTag = meal.frozen
+        ? '<span class="cook-tag cook-frozen">Congelado</span>'
+        : '<span class="cook-tag cook-fresh">Fresco</span>';
+      var batchTag = meal.canBatch ? '<span class="cook-tag cook-batch">Aprovechable</span>' : '';
+      var batchNote = meal.canBatch ? '<div class="cook-batch-note">' + meal.batchNote + '</div>' : '';
+      var nextNote = meal.nextDay ? '<div class="cook-next-note">' + meal.nextDay + '</div>' : '';
+      var stepsHTML = '';
+      for (var si = 0; si < meal.steps.length; si++) {
+        stepsHTML += '<div class="cook-step"><div class="cook-step-num">' + (si+1) + '</div><div>' + meal.steps[si] + '</div></div>';
+      }
+      mealsHTML +=
+        '<div class="cook-card ' + (chk ? 'cook-done' : '') + '" id="cc-' + meal.id + '">' +
+          '<div class="cook-card-header" onclick="window.toggleCookStep('cc-' + meal.id + '')">' +
+            '<div class="cook-card-left">' +
+              '<div class="cook-emoji">' + meal.emoji + '</div>' +
+              '<div>' +
+                '<div class="cook-name">' + meal.name + '</div>' +
+                '<div class="cook-tags">' + frozenTag + batchTag + '</div>' +
+              '</div>' +
+            '</div>' +
+            '<div class="cook-card-right">' +
+              '<div class="cook-cost">' + meal.cost + '</div>' +
+              '<div class="cook-cost-detail">' + meal.costDetail + '</div>' +
+              '<button class="cook-check ' + (chk ? 'checked' : '') + '" onclick="window.toggleCookDone(event,\'' + meal.id + '\')">&#10003;</button>' +
+            '</div>' +
+          '</div>' +
+          '<div class="cook-body">' + batchNote + nextNote +
+            '<div class="cook-steps-title">Pasos</div>' + stepsHTML +
+          '</div>' +
+        '</div>';
     }
 
-    let mealsHTML = dayData.meals.map(meal => {
-      const checked = cookChecked[meal.id] || false;
-      const frozenTag = meal.frozen ? `<span class="cook-tag cook-frozen">❄️ Congelado</span>` : `<span class="cook-tag cook-fresh">🌿 Fresco</span>`;
-      const batchTag = meal.canBatch ? `<span class="cook-tag cook-batch">🔄 Aprovechable</span>` : '';
-      const batchNote = meal.canBatch ? `<div class="cook-batch-note">${meal.batchNote}</div>` : '';
-      const nextNote = meal.nextDay ? `<div class="cook-next-note">💡 ${meal.nextDay}</div>` : '';
-      const stepsHTML = meal.steps.map((s,i)=>`<div class="cook-step"><div class="cook-step-num">${i+1}</div><div>${s}</div></div>`).join('');
-
-      return `
-      <div class="cook-card ${checked ? 'cook-done' : ''}" id="cc-${meal.id}">
-        <div class="cook-card-header" onclick="window.toggleCookStep('cc-${meal.id}')">
-          <div class="cook-card-left">
-            <div class="cook-emoji">${meal.emoji}</div>
-            <div>
-              <div class="cook-name">${meal.name}</div>
-              <div class="cook-tags">${frozenTag}${batchTag}</div>
-            </div>
-          </div>
-          <div class="cook-card-right">
-            <div class="cook-cost">${meal.cost}</div>
-            <div class="cook-cost-detail">${meal.costDetail}</div>
-            <button class="cook-check ${checked ? 'checked' : ''}" onclick="window.toggleCookDone(event,'${meal.id}')">✓</button>
-          </div>
-        </div>
-        <div class="cook-body">
-          ${batchNote}
-          ${nextNote}
-          <div class="cook-steps-title">📋 Pasos</div>
-          ${stepsHTML}
-        </div>
-      </div>`;
-    }).join('');
-
-    document.getElementById('cook-day-name').textContent = dayData.dayName;
+    elName.textContent = dayData.dayName;
     document.getElementById('cook-defrost').innerHTML = defrostHTML;
     document.getElementById('cook-meals').innerHTML = mealsHTML;
 
-    // Coste total estimado del día (suma de los platos)
-    const totalEl = document.getElementById('cook-total-val');
+    var totalEl = document.getElementById('cook-total-val');
     if (totalEl) {
-      const costs = dayData.meals.map(m => {
-        const match = m.cost.match(/[\d,.]+/);
-        return match ? parseFloat(match[0].replace(',','.')) : 0;
-      });
-      const total = costs.reduce((a,b)=>a+b,0);
-      totalEl.textContent = '≈ ' + total.toFixed(2).replace('.',',') + '€';
+      var total = 0;
+      for (var ti = 0; ti < dayData.meals.length; ti++) {
+        var match = dayData.meals[ti].cost.match(/[\d,.]+/);
+        if (match) total += parseFloat(match[0].replace(',','.'));
+      }
+      totalEl.textContent = total.toFixed(2).replace('.',',') + 'EUR';
     }
   }
 
   window.toggleCookStep = function(cardId) {
-    const card = document.getElementById(cardId);
+    var card = document.getElementById(cardId);
     if (card) card.classList.toggle('open');
   }
 
@@ -2143,19 +2149,23 @@
 
   window.setCookDay = function(idx, btn) {
     cookDay = idx;
-    document.querySelectorAll('.cook-day-btn').forEach(b=>b.classList.remove('active'));
+    var btns = document.querySelectorAll('.cook-day-btn');
+    for (var i = 0; i < btns.length; i++) btns[i].classList.remove('active');
     btn.classList.add('active');
     renderCooking();
   }
 
-  // Sync cook day selector on load
   (function() {
-    const btns = document.querySelectorAll('.cook-day-btn');
-    btns.forEach(b => b.classList.remove('active'));
+    var btns = document.querySelectorAll('.cook-day-btn');
+    for (var i = 0; i < btns.length; i++) btns[i].classList.remove('active');
     if (btns[cookDay]) btns[cookDay].classList.add('active');
   })();
 
   // renderCooking se llama al entrar en la vista desde setView
+
+} catch(globalErr) {
+  console.error('Error en el script principal:', globalErr);
+}
 </script>
 </body>
 </html>
