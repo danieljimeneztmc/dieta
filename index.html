@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <title>Nuestra Dieta</title>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap');
 
@@ -373,16 +375,106 @@
   }
   .cook-step div { font-size: 14px; font-weight: 600; color: var(--text); line-height: 1.4; }
 
-  .cook-header-info {
-    background: var(--card); border-radius: 16px; padding: 14px 16px;
-    box-shadow: var(--shadow); margin-bottom: 14px;
-    display: flex; align-items: center; justify-content: space-between;
+  /* CONTROL DE DIETA */
+  .control-header {
+    background: linear-gradient(135deg, var(--accent), var(--green-light));
+    border-radius: 20px; padding: 18px 20px; margin-bottom: 16px;
+    color: #fff; box-shadow: var(--shadow-md);
   }
-  .cook-header-day { font-size: 22px; font-weight: 900; color: var(--text); }
-  .cook-header-sub { font-size: 12px; font-weight: 600; color: var(--muted); margin-top: 2px; }
-  .cook-total-cost { text-align: right; }
-  .cook-total-label { font-size: 11px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; }
-  .cook-total-val { font-size: 20px; font-weight: 900; color: var(--accent); }
+  body.daniel .control-header { background: linear-gradient(135deg, var(--blue), #5B9BD5); }
+  .control-header-title { font-size: 17px; font-weight: 900; margin-bottom: 4px; }
+  .control-header-sub { font-size: 13px; opacity: 0.8; font-weight: 600; }
+  .control-stats {
+    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-bottom: 16px;
+  }
+  .ctrl-stat {
+    background: var(--card); border-radius: 16px; padding: 14px 10px;
+    text-align: center; box-shadow: var(--shadow);
+  }
+  .ctrl-stat-val { font-size: 26px; font-weight: 900; color: var(--accent); line-height: 1; }
+  body.daniel .ctrl-stat-val { color: var(--blue); }
+  .ctrl-stat-label { font-size: 10px; font-weight: 800; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; margin-top: 4px; }
+
+  .cal-card {
+    background: var(--card); border-radius: 20px; padding: 16px;
+    box-shadow: var(--shadow); margin-bottom: 16px;
+  }
+  .cal-month-nav {
+    display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;
+  }
+  .cal-month-title { font-size: 16px; font-weight: 900; color: var(--text); }
+  .cal-nav-btn {
+    background: var(--accent-bg); border: none; border-radius: 10px;
+    width: 32px; height: 32px; font-size: 16px; cursor: pointer; color: var(--accent);
+    display: flex; align-items: center; justify-content: center; font-weight: 900;
+  }
+  body.daniel .cal-nav-btn { color: var(--blue); background: var(--blue-bg); }
+  .cal-weekdays {
+    display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; margin-bottom: 6px;
+  }
+  .cal-weekday { text-align: center; font-size: 10px; font-weight: 800; color: var(--muted); text-transform: uppercase; padding: 4px 0; }
+  .cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; }
+  .cal-day {
+    aspect-ratio: 1; border-radius: 10px; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; cursor: pointer;
+    font-size: 12px; font-weight: 800; color: var(--text);
+    background: var(--accent-bg); border: 2px solid transparent;
+    transition: all 0.15s; position: relative; user-select: none;
+  }
+  body.daniel .cal-day { background: var(--blue-bg); }
+  .cal-day.empty { background: transparent; cursor: default; border: none; }
+  .cal-day.today { border-color: var(--accent); }
+  body.daniel .cal-day.today { border-color: var(--blue); }
+  .cal-day.done { background: #2D7A4F !important; color: #fff !important; border-color: #2D7A4F !important; }
+  .cal-day.done .cal-tick { display: flex; }
+  .cal-day.noted { background: #FFF3CD !important; border-color: #F4845F !important; }
+  .cal-day.noted .cal-note-dot { display: block; }
+  .cal-day.future { opacity: 0.35; cursor: default; }
+  .cal-tick { display: none; position: absolute; top: 2px; right: 3px; font-size: 10px; color: rgba(255,255,255,0.9); }
+  .cal-note-dot { display: none; position: absolute; bottom: 3px; width: 5px; height: 5px; background: #F4845F; border-radius: 50%; }
+  .cal-day-num { font-size: 13px; line-height: 1; }
+
+  .modal-overlay {
+    display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.45);
+    z-index: 500; align-items: flex-end; justify-content: center;
+  }
+  .modal-overlay.open { display: flex; }
+  .modal-box {
+    background: var(--card); border-radius: 24px 24px 0 0; padding: 24px 20px 32px;
+    width: 100%; max-width: 430px; box-shadow: 0 -4px 30px rgba(0,0,0,0.2);
+    animation: slideUp 0.25s ease;
+  }
+  @keyframes slideUp { from { transform: translateY(80px); opacity:0 } to { transform: translateY(0); opacity:1 } }
+  .modal-title { font-size: 17px; font-weight: 900; margin-bottom: 6px; color: var(--text); }
+  .modal-sub { font-size: 13px; color: var(--muted); font-weight: 600; margin-bottom: 14px; }
+  .modal-textarea {
+    width: 100%; border: 2px solid var(--border); border-radius: 14px; padding: 12px 14px;
+    font-family: 'Nunito', sans-serif; font-size: 14px; font-weight: 600; color: var(--text);
+    resize: none; outline: none; height: 90px; background: var(--accent-bg); transition: border-color 0.2s;
+  }
+  body.daniel .modal-textarea { background: var(--blue-bg); }
+  .modal-textarea:focus { border-color: var(--accent); }
+  body.daniel .modal-textarea:focus { border-color: var(--blue); }
+  .modal-btns { display: flex; gap: 10px; margin-top: 12px; }
+  .modal-btn {
+    flex: 1; padding: 13px; border-radius: 14px; border: none; font-family: 'Nunito', sans-serif;
+    font-size: 15px; font-weight: 900; cursor: pointer; transition: all 0.15s;
+  }
+  .modal-btn-cancel { background: var(--accent-bg); color: var(--muted); }
+  body.daniel .modal-btn-cancel { background: var(--blue-bg); }
+  .modal-btn-save { background: var(--accent); color: #fff; }
+  body.daniel .modal-btn-save { background: var(--blue); }
+  .modal-btn-clear { background: #FFF3CD; color: #c06040; font-size: 13px; flex: 0.6; }
+  .modal-btn-undo { background: #FEE2E2; color: #DC2626; border-radius: 14px; border: none; font-family: 'Nunito', sans-serif; font-size: 14px; font-weight: 800; cursor: pointer; padding: 12px; transition: all 0.15s; }
+
+  .log-card {
+    background: var(--card); border-radius: 16px; padding: 14px 16px;
+    box-shadow: var(--shadow); margin-bottom: 8px; display: flex; gap: 12px; align-items: flex-start;
+  }
+  .log-emoji { font-size: 22px; flex-shrink: 0; }
+  .log-date { font-size: 12px; font-weight: 800; color: var(--muted); margin-bottom: 2px; }
+  .log-text { font-size: 13px; font-weight: 700; color: var(--text); line-height: 1.4; }
+  .log-empty { text-align: center; padding: 24px 0; color: var(--muted); font-size: 14px; font-weight: 700; }
 </style>
 </head>
 <body class="lorena">
@@ -1374,11 +1466,54 @@
 </div><div style="text-align:center; padding:16px 0; color:var(--muted); font-size:12px; font-weight:700;">📧 oeonutripro@gmail.com · 📞 671 948 170</div>
 </div>
 
+<div class="view" id="view-control">
+  <div class="control-header">
+    <div class="control-header-title">📅 Control de dieta</div>
+    <div class="control-header-sub" id="controlSubtitle">Seguimiento de Lorena</div>
+  </div>
+  <div class="control-stats">
+    <div class="ctrl-stat"><div class="ctrl-stat-val" id="statDone">0</div><div class="ctrl-stat-label">✅ Días OK</div></div>
+    <div class="ctrl-stat"><div class="ctrl-stat-val" id="statNoted">0</div><div class="ctrl-stat-label">📝 Con nota</div></div>
+    <div class="ctrl-stat"><div class="ctrl-stat-val" id="statStreak">0</div><div class="ctrl-stat-label">🔥 Racha</div></div>
+  </div>
+  <div class="cal-card">
+    <div class="cal-month-nav">
+      <button class="cal-nav-btn" onclick="window.changeMonth(-1)">‹</button>
+      <div class="cal-month-title" id="calMonthTitle">Junio 2026</div>
+      <button class="cal-nav-btn" onclick="window.changeMonth(1)">›</button>
+    </div>
+    <div class="cal-weekdays">
+      <div class="cal-weekday">L</div><div class="cal-weekday">M</div><div class="cal-weekday">X</div>
+      <div class="cal-weekday">J</div><div class="cal-weekday">V</div><div class="cal-weekday">S</div>
+      <div class="cal-weekday">D</div>
+    </div>
+    <div class="cal-grid" id="calGrid"></div>
+  </div>
+  <div style="font-size:11px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:1px;padding:0 4px 10px;">📝 Notas de días</div>
+  <div id="logList"></div>
+</div>
+
 <div class="bottom-nav">
-  <button class="nav-btn active" id="nav-menu" onclick="setView('menu', this)"><span class="nav-icon">🥗</span>Menú</button>
-  <button class="nav-btn" id="nav-cook" onclick="setView('cook', this)"><span class="nav-icon">👨‍🍳</span>Cocina</button>
-  <button class="nav-btn" id="nav-shop" onclick="setView('shop', this)"><span class="nav-icon">🛒</span>Compra</button>
-  <button class="nav-btn" id="nav-profile" onclick="setView('profile', this)"><span class="nav-icon">👤</span>Perfil</button>
+  <button class="nav-btn active" id="nav-menu" onclick="window.setView('menu', this)"><span class="nav-icon">🥗</span>Menú</button>
+  <button class="nav-btn" id="nav-cook" onclick="window.setView('cook', this)"><span class="nav-icon">👨‍🍳</span>Cocina</button>
+  <button class="nav-btn" id="nav-control" onclick="window.setView('control', this)"><span class="nav-icon">📅</span>Control</button>
+  <button class="nav-btn" id="nav-shop" onclick="window.setView('shop', this)"><span class="nav-icon">🛒</span>Compra</button>
+  <button class="nav-btn" id="nav-profile" onclick="window.setView('profile', this)"><span class="nav-icon">👤</span>Perfil</button>
+</div>
+
+<!-- MODAL NOTA DÍA -->
+<div class="modal-overlay" id="noteModal">
+  <div class="modal-box">
+    <div class="modal-title" id="modalTitle">📝 ¿Por qué no hiciste dieta?</div>
+    <div class="modal-sub" id="modalSub">Añade una nota para este día</div>
+    <button class="modal-btn modal-btn-undo" id="modalBtnUndo" onclick="window.markDayIncomplete()" style="display:none;width:100%;margin-bottom:10px;">↩️ Marcar como incompleto</button>
+    <textarea class="modal-textarea" id="modalTextarea" placeholder="Ej: Comida familiar, cumpleaños, viaje..."></textarea>
+    <div class="modal-btns">
+      <button class="modal-btn modal-btn-cancel" onclick="window.closeModal()">Cancelar</button>
+      <button class="modal-btn modal-btn-clear" onclick="window.clearDayNote()">🗑️ Borrar nota</button>
+      <button class="modal-btn modal-btn-save" onclick="window.saveNote()">Guardar</button>
+    </div>
+  </div>
 </div>
 
 <script>
@@ -1424,9 +1559,11 @@
       menu: 'Nuestra <span>dieta</span> 🥗',
       cook: '¿Qué <span>cocinamos</span>? 👨‍🍳',
       shop: 'Compra <span>conjunta</span> 🛒',
-      profile: 'Perfiles 👤'
+      profile: 'Perfiles 👤',
+      control: 'Control <span>dieta</span> 📅'
     };
     document.getElementById('headerTitle').innerHTML = titles[name];
+    if (name === 'control') renderControl();
   }
 
   window.toggleMeal = function(cardId, checkBtn) {
@@ -1454,6 +1591,205 @@
   }
 
   updateProgress();
+
+  // ─── FIREBASE ────────────────────────────────────────────────────
+  var firebaseConfig = { databaseURL: "https://app-dieta-1d721-default-rtdb.europe-west1.firebasedatabase.app" };
+  firebase.initializeApp(firebaseConfig);
+  var db = firebase.database();
+  var dbCache = { lorena: {}, daniel: {} };
+
+  db.ref('dieta').on('value', function(snap) {
+    var data = snap.val() || {};
+    dbCache.lorena = data.lorena || {};
+    dbCache.daniel = data.daniel || {};
+    if (document.getElementById('view-control').classList.contains('active')) {
+      renderCalendar(); renderStats(); renderLog();
+    }
+    restoreMealChecks();
+  });
+
+  function makeDateKey(y, m, d) { return y + '-' + String(m+1).padStart(2,'0') + '-' + String(d).padStart(2,'0'); }
+  function getCtrlData(person, dk) { return dbCache[person][dk] || {}; }
+  function setCtrlData(person, dk, data) { dbCache[person][dk] = data; db.ref('dieta/' + person + '/' + dk).set(data); }
+  function removeCtrlData(person, dk) { dbCache[person][dk] = {}; db.ref('dieta/' + person + '/' + dk).remove(); }
+
+  function saveMealCheck(cardId, checked) {
+    var today = new Date();
+    var dk = makeDateKey(today.getFullYear(), today.getMonth(), today.getDate());
+    var existing = getCtrlData(currentPerson, dk);
+    var meals = existing.meals || {};
+    meals[cardId] = checked;
+    setCtrlData(currentPerson, dk, Object.assign({}, existing, { meals: meals }));
+  }
+
+  function restoreMealChecks() {
+    var today = new Date();
+    var dk = makeDateKey(today.getFullYear(), today.getMonth(), today.getDate());
+    ['lorena','daniel'].forEach(function(person) {
+      var data = getCtrlData(person, dk);
+      var meals = data.meals || {};
+      Object.keys(meals).forEach(function(cardId) {
+        var card = document.getElementById(cardId);
+        var btn = card ? card.querySelector('.meal-check') : null;
+        if (!btn) return;
+        if (meals[cardId] && !btn.classList.contains('checked')) { btn.classList.add('checked'); card.classList.add('done'); }
+        else if (!meals[cardId] && btn.classList.contains('checked')) { btn.classList.remove('checked'); card.classList.remove('done'); }
+      });
+    });
+    updateProgress();
+  }
+
+  document.addEventListener('click', function(e) {
+    var btn = e.target.closest('.meal-check');
+    if (!btn) return;
+    setTimeout(function() {
+      var card = btn.closest('.meal-card');
+      if (!card) return;
+      var cardId = card.id;
+      var checked = btn.classList.contains('checked');
+      saveMealCheck(cardId, checked);
+      var dayEl = document.getElementById(currentPerson+'-day-'+currentDay);
+      if (!dayEl) return;
+      var checks = dayEl.querySelectorAll('.meal-check');
+      var doneCount = dayEl.querySelectorAll('.meal-check.checked').length;
+      var today = new Date();
+      var dayOfWeek = (today.getDay() + 6) % 7;
+      var targetDate = new Date(today);
+      targetDate.setDate(today.getDate() - dayOfWeek + currentDay);
+      var dk = makeDateKey(targetDate.getFullYear(), targetDate.getMonth(), targetDate.getDate());
+      var existing = getCtrlData(currentPerson, dk);
+      if (checks.length > 0 && doneCount === checks.length) {
+        setCtrlData(currentPerson, dk, Object.assign({}, existing, { done: true }));
+      } else if (existing.done) {
+        var updated = Object.assign({}, existing); delete updated.done;
+        setCtrlData(currentPerson, dk, updated);
+      }
+    }, 50);
+  });
+
+  // ─── CONTROL DE DIETA ────────────────────────────────────────────
+  var calYear = new Date().getFullYear();
+  var calMonth = new Date().getMonth();
+  var MONTH_NAMES = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+  var modalDateKey = null;
+
+  function renderControl() {
+    document.getElementById('controlSubtitle').textContent = 'Seguimiento de ' + (currentPerson === 'lorena' ? 'Lorena' : 'Daniel');
+    renderCalendar(); renderStats(); renderLog();
+  }
+
+  function renderCalendar() {
+    document.getElementById('calMonthTitle').textContent = MONTH_NAMES[calMonth] + ' ' + calYear;
+    var grid = document.getElementById('calGrid');
+    grid.innerHTML = '';
+    var today = new Date(); today.setHours(0,0,0,0);
+    var firstDay = new Date(calYear, calMonth, 1);
+    var daysInMonth = new Date(calYear, calMonth+1, 0).getDate();
+    var startOffset = (firstDay.getDay() + 6) % 7;
+    for (var i = 0; i < startOffset; i++) { var blank = document.createElement('div'); blank.className = 'cal-day empty'; grid.appendChild(blank); }
+    for (var d = 1; d <= daysInMonth; d++) {
+      var cellDate = new Date(calYear, calMonth, d);
+      var dk = makeDateKey(calYear, calMonth, d);
+      var data = getCtrlData(currentPerson, dk);
+      var isFuture = cellDate > today;
+      var isToday = cellDate.getTime() === today.getTime();
+      var cell = document.createElement('div');
+      cell.className = 'cal-day';
+      if (isFuture) cell.classList.add('future');
+      if (isToday) cell.classList.add('today');
+      if (data.done) cell.classList.add('done');
+      else if (data.note) cell.classList.add('noted');
+      cell.innerHTML = '<span class="cal-tick">✓</span><span class="cal-day-num">' + d + '</span><span class="cal-note-dot"></span>';
+      if (!isFuture) {
+        (function(dk2, dayNum2) {
+          cell.addEventListener('click', function() { openDayModal(dk2, dayNum2, getCtrlData(currentPerson, dk2)); });
+        })(dk, d);
+      }
+      grid.appendChild(cell);
+    }
+  }
+
+  function renderStats() {
+    var data = dbCache[currentPerson];
+    var done = 0, noted = 0, streak = 0;
+    Object.keys(data).forEach(function(dk) { var d = data[dk]; if (d.done) done++; else if (d.note) noted++; });
+    var today = new Date(); today.setHours(0,0,0,0);
+    var checkDate = new Date(today);
+    while (true) {
+      var dk = makeDateKey(checkDate.getFullYear(), checkDate.getMonth(), checkDate.getDate());
+      var d = getCtrlData(currentPerson, dk);
+      if (d.done) { streak++; checkDate.setDate(checkDate.getDate()-1); } else break;
+    }
+    document.getElementById('statDone').textContent = done;
+    document.getElementById('statNoted').textContent = noted;
+    document.getElementById('statStreak').textContent = streak;
+  }
+
+  function renderLog() {
+    var list = document.getElementById('logList');
+    var data = dbCache[currentPerson];
+    var entries = [];
+    Object.keys(data).forEach(function(dk) { if (data[dk].note) entries.push({ dk: dk, note: data[dk].note }); });
+    entries.sort(function(a,b) { return b.dk.localeCompare(a.dk); });
+    if (entries.length === 0) { list.innerHTML = '<div class="log-empty">Sin notas todavía 🎉</div>'; return; }
+    list.innerHTML = entries.map(function(e) {
+      var parts = e.dk.split('-');
+      var label = parts[2] + ' ' + MONTH_NAMES[parseInt(parts[1])-1] + ' ' + parts[0];
+      return '<div class="log-card"><span class="log-emoji">📝</span><div><div class="log-date">' + label + '</div><div class="log-text">' + e.note + '</div></div></div>';
+    }).join('');
+  }
+
+  function openDayModal(dk, dayNum, data) {
+    modalDateKey = dk;
+    var parts = dk.split('-');
+    var label = dayNum + ' ' + MONTH_NAMES[parseInt(parts[1])-1] + ' ' + parts[0];
+    document.getElementById('modalSub').textContent = label;
+    document.getElementById('modalTextarea').value = data.note || '';
+    var undoBtn = document.getElementById('modalBtnUndo');
+    if (data.done) {
+      document.getElementById('modalTitle').textContent = '✅ Día completado';
+      document.getElementById('modalTextarea').placeholder = 'Añade una nota si quieres...';
+      undoBtn.style.display = 'block';
+    } else {
+      document.getElementById('modalTitle').textContent = '📝 ¿Por qué no hiciste dieta?';
+      document.getElementById('modalTextarea').placeholder = 'Ej: Comida familiar, cumpleaños, viaje...';
+      undoBtn.style.display = 'none';
+    }
+    document.getElementById('noteModal').classList.add('open');
+  }
+
+  window.markDayIncomplete = function() {
+    if (!modalDateKey) return;
+    var existing = getCtrlData(currentPerson, modalDateKey);
+    var updated = Object.assign({}, existing); delete updated.done;
+    if (Object.keys(updated).length === 0) removeCtrlData(currentPerson, modalDateKey);
+    else setCtrlData(currentPerson, modalDateKey, updated);
+    window.closeModal(); renderControl();
+  }
+  window.closeModal = function() { document.getElementById('noteModal').classList.remove('open'); modalDateKey = null; }
+  window.saveNote = function() {
+    if (!modalDateKey) return;
+    var note = document.getElementById('modalTextarea').value.trim();
+    var existing = getCtrlData(currentPerson, modalDateKey);
+    if (note) setCtrlData(currentPerson, modalDateKey, Object.assign({}, existing, { note: note }));
+    else { var updated = Object.assign({}, existing); delete updated.note; if (Object.keys(updated).length === 0) removeCtrlData(currentPerson, modalDateKey); else setCtrlData(currentPerson, modalDateKey, updated); }
+    window.closeModal(); renderControl();
+  }
+  window.clearDayNote = function() {
+    if (!modalDateKey) return;
+    var existing = getCtrlData(currentPerson, modalDateKey);
+    var updated = Object.assign({}, existing); delete updated.note;
+    if (Object.keys(updated).length === 0) removeCtrlData(currentPerson, modalDateKey);
+    else setCtrlData(currentPerson, modalDateKey, updated);
+    window.closeModal(); renderControl();
+  }
+  window.changeMonth = function(dir) {
+    calMonth += dir;
+    if (calMonth > 11) { calMonth = 0; calYear++; }
+    if (calMonth < 0) { calMonth = 11; calYear--; }
+    renderCalendar();
+  }
+  document.getElementById('noteModal').addEventListener('click', function(e) { if (e.target === this) window.closeModal(); });
 
   // ── COCINA ──────────────────────────────────────────────────────────────
   const COOKING_DATA = {
