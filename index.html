@@ -1564,6 +1564,7 @@
     };
     document.getElementById('headerTitle').innerHTML = titles[name];
     if (name === 'control') renderControl();
+    if (name === 'cook') renderCooking();
   }
 
   window.toggleMeal = function(cardId, checkBtn) {
@@ -2054,6 +2055,8 @@
   function renderCooking() {
     const dayData = COOKING_DATA[cookDay];
     if (!dayData) return;
+    const el = document.getElementById('cook-day-name');
+    if (!el) return; // vista no disponible aún
     const nextDayIdx = (cookDay + 1) % 7;
     const nextDayData = COOKING_DATA[nextDayIdx];
 
@@ -2152,7 +2155,7 @@
     if (btns[cookDay]) btns[cookDay].classList.add('active');
   })();
 
-  renderCooking();
+  // renderCooking se llama al entrar en la vista desde setView
 </script>
 </body>
 </html>
