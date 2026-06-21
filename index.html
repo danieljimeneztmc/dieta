@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <title>Nuestra Dieta</title>
-<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+<script defer src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script defer src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap');
 
@@ -1599,23 +1599,30 @@ try {
   var db = null;
   var dbCache = { lorena: {}, daniel: {} };
 
-  try {
-    var firebaseConfig = { databaseURL: "https://app-dieta-1d721-default-rtdb.europe-west1.firebasedatabase.app" };
-    firebase.initializeApp(firebaseConfig);
-    db = firebase.database();
-
-    db.ref('dieta').on('value', function(snap) {
-      var data = snap.val() || {};
-      dbCache.lorena = data.lorena || {};
-      dbCache.daniel = data.daniel || {};
-      if (document.getElementById('view-control').classList.contains('active')) {
-        renderCalendar(); renderStats(); renderLog();
-      }
-      restoreMealChecks();
-    });
-  } catch(e) {
-    console.warn('Firebase no disponible:', e);
+  function initFirebase(retries) {
+    if (typeof firebase === 'undefined') {
+      if (retries > 0) { setTimeout(function(){ initFirebase(retries-1); }, 300); }
+      else { console.warn('Firebase no cargo, la app funciona sin sincronizacion'); }
+      return;
+    }
+    try {
+      var firebaseConfig = { databaseURL: "https://app-dieta-1d721-default-rtdb.europe-west1.firebasedatabase.app" };
+      firebase.initializeApp(firebaseConfig);
+      db = firebase.database();
+      db.ref('dieta').on('value', function(snap) {
+        var data = snap.val() || {};
+        dbCache.lorena = data.lorena || {};
+        dbCache.daniel = data.daniel || {};
+        if (document.getElementById('view-control').classList.contains('active')) {
+          renderCalendar(); renderStats(); renderLog();
+        }
+        restoreMealChecks();
+      });
+    } catch(e) {
+      console.warn('Firebase no disponible:', e);
+    }
   }
+  initFirebase(15);
 
   function makeDateKey(y, m, d) { return y + '-' + String(m+1).padStart(2,'0') + '-' + String(d).padStart(2,'0'); }
   function getCtrlData(person, dk) { return dbCache[person][dk] || {}; }
