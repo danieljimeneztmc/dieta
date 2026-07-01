@@ -475,6 +475,51 @@
   .log-date { font-size: 12px; font-weight: 800; color: var(--muted); margin-bottom: 2px; }
   .log-text { font-size: 13px; font-weight: 700; color: var(--text); line-height: 1.4; }
   .log-empty { text-align: center; padding: 24px 0; color: var(--muted); font-size: 14px; font-weight: 700; }
+
+  /* COOK HEADER INFO */
+  .cook-header-info {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 16px; padding: 14px 16px;
+    background: var(--card); border-radius: 18px; box-shadow: var(--shadow);
+  }
+  .cook-header-day { font-size: 20px; font-weight: 900; color: var(--text); }
+  .cook-header-sub { font-size: 13px; font-weight: 600; color: var(--muted); margin-top: 2px; }
+  .cook-total-cost { text-align: right; }
+  .cook-total-label { font-size: 11px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; }
+  .cook-total-val { font-size: 22px; font-weight: 900; color: var(--accent); }
+  body.daniel .cook-total-val { color: var(--blue); }
+
+  /* DESGLOSE POR PERSONA */
+  .bd-section { margin: 0 0 12px; }
+  .bd-title { font-size: 10px; font-weight: 900; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+  .bd-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+  .bd-table th { font-size: 10px; font-weight: 800; color: var(--muted); text-transform: uppercase; letter-spacing: 0.4px; padding: 4px 6px; text-align: right; }
+  .bd-table th:first-child { text-align: left; }
+  .bd-table td { padding: 5px 6px; border-bottom: 1px solid var(--border); vertical-align: middle; }
+  .bd-table tr:last-child td { border-bottom: none; }
+  .bd-ing { font-size: 12px; font-weight: 600; color: var(--text); }
+  .bd-l { font-size: 12px; font-weight: 800; color: var(--green); text-align: right; white-space: nowrap; }
+  .bd-d { font-size: 12px; font-weight: 800; color: var(--blue); text-align: right; white-space: nowrap; }
+
+  /* PREVISIÓN PARA MAÑANA */
+  .tomorrow-banner {
+    background: linear-gradient(135deg, #1a2e5a 0%, #2c4a8a 100%);
+    border-radius: 20px; padding: 16px 16px 12px; margin-bottom: 16px;
+    box-shadow: 0 4px 18px rgba(28,50,100,0.28);
+  }
+  .tomorrow-title { font-size: 15px; font-weight: 900; color: #fff; margin-bottom: 12px; }
+  .tomorrow-meal { background: rgba(255,255,255,0.1); border-radius: 12px; padding: 10px 12px; margin-bottom: 8px; }
+  .tomorrow-meal:last-of-type { margin-bottom: 0; }
+  .tomorrow-meal-name { font-size: 13px; font-weight: 800; color: #fff; margin-bottom: 6px; }
+  .tomorrow-banner .bd-table th { color: rgba(255,255,255,0.55); }
+  .tomorrow-banner .bd-ing { color: rgba(255,255,255,0.85); }
+  .tomorrow-banner .bd-l { color: #7dffaa; }
+  .tomorrow-banner .bd-d { color: #7dc8ff; }
+  .tomorrow-banner .bd-table td { border-bottom-color: rgba(255,255,255,0.1); }
+  .defrost-inner { background: rgba(0,0,0,0.22); border-radius: 12px; padding: 10px 12px; margin-top: 10px; }
+  .defrost-inner-title { font-size: 11px; font-weight: 900; color: rgba(255,255,255,0.8); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+  .defrost-item { font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.9); padding: 2px 0; line-height: 1.5; }
+
 </style>
 </head>
 <body class="lorena">
@@ -877,13 +922,13 @@
 <div class="recipe-step"><div class="step-num">3</div><div>Calienta tortillas y rellena.</div></div>
 </div></div></div>
 <div class="section-block"><div class="meal-label"><span class="meal-label-emoji">🌿</span><span class="meal-label-text">Merienda</span></div>
-<div class="meal-card" id="lorena-5-3"><div class="meal-card-header"><div class="meal-card-title">Yogur griego con piña</div><button class="meal-check" onclick="window.toggleMeal('lorena-5-3', this)">✓</button></div>
+<div class="meal-card" id="lorena-5-3"><div class="meal-card-header"><div class="meal-card-title">Yogur griego con sandía</div><button class="meal-check" onclick="window.toggleMeal('lorena-5-3', this)">✓</button></div>
 <div class="ingredients">
 <div class="ingredient-row"><span class="ingredient-name">🥛 Yogur griego natural ligero</span><span class="ingredient-amount">125 g</span></div>
-<div class="ingredient-row"><span class="ingredient-name">🍍 Piña</span><span class="ingredient-amount">200 g</span></div>
+<div class="ingredient-row"><span class="ingredient-name">🍉 Sandía</span><span class="ingredient-amount">250 g</span></div>
 </div>
 <button class="recipe-toggle" onclick="window.toggleRecipe(this)">🍳 Ver cómo prepararlo <span class="chevron">▼</span></button><div class="recipe-content">
-<div class="recipe-step"><div class="step-num">1</div><div>Sirve el yogur con la piña.</div></div>
+<div class="recipe-step"><div class="step-num">1</div><div>Sirve el yogur con la sandía.</div></div>
 </div></div></div>
 <div class="section-block"><div class="meal-label"><span class="meal-label-emoji">🌙</span><span class="meal-label-text">Cena</span></div>
 <div class="meal-card" id="lorena-5-4"><div class="meal-card-header"><div class="meal-card-title">Ensalada de tomate con feta y tortilla de patata fit</div><button class="meal-check" onclick="window.toggleMeal('lorena-5-4', this)">✓</button></div>
@@ -1519,6 +1564,17 @@
 <script>
 try {
 
+  // ── STORAGE HÍBRIDO: localStorage (caché inmediata) + Firebase (sync entre móviles) ──
+  const ls = {
+    get(k) { try { return JSON.parse(localStorage.getItem(k) || 'null'); } catch(e) { return null; } },
+    set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch(e) {} }
+  };
+
+  // Estado de compra (solo local, no necesita sync)
+  let shopBought = ls.get('ndieta_shop') || {};
+  function saveShop() { ls.set('ndieta_shop', shopBought); }
+
+  // ── PERSONA / DÍA ────────────────────────────────────────────────────
   let currentPerson = 'lorena';
   let currentDay = 0;
 
@@ -1531,12 +1587,12 @@ try {
     document.getElementById('menu-daniel').style.display = p==='daniel' ? 'block' : 'none';
     document.getElementById('profile-lorena').classList.toggle('active', p==='lorena');
     document.getElementById('profile-daniel').classList.toggle('active', p==='daniel');
-    // reset to current day within this person
     document.querySelectorAll('#menu-'+p+' .day-content').forEach(d=>d.classList.remove('active'));
     const target = document.getElementById(p+'-day-'+currentDay);
     if (target) target.classList.add('active');
+    if (document.getElementById('view-control').classList.contains('active')) renderControl();
     updateProgress();
-  }
+  };
 
   window.setDay = function(dayIdx, btn) {
     document.querySelectorAll('.day-btn').forEach(b => b.classList.remove('active'));
@@ -1546,7 +1602,7 @@ try {
     const target = document.getElementById(currentPerson+'-day-'+dayIdx);
     if (target) target.classList.add('active');
     updateProgress();
-  }
+  };
 
   window.setView = function(name, btn) {
     document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
@@ -1567,20 +1623,32 @@ try {
     document.getElementById('headerTitle').innerHTML = titles[name];
     if (name === 'control') renderControl();
     if (name === 'cook') renderCooking();
-  }
+  };
 
   window.toggleMeal = function(cardId, checkBtn) {
     checkBtn.classList.toggle('checked');
     document.getElementById(cardId).classList.toggle('done');
     updateProgress();
-  }
+  };
 
   window.toggleRecipe = function(btn) {
     btn.classList.toggle('open');
     btn.nextElementSibling.classList.toggle('visible');
-  }
+  };
 
-  window.toggleBought = function(item) { item.classList.toggle('bought'); }
+  // Lista de compra: guarda en localStorage para que persista
+  window.toggleBought = function(item) {
+    item.classList.toggle('bought');
+    const name = (item.querySelector('.shop-item-name') || {}).textContent || '';
+    if (name) { shopBought[name] = item.classList.contains('bought'); saveShop(); }
+  };
+
+  function restoreShop() {
+    document.querySelectorAll('.shop-item').forEach(function(item) {
+      const name = (item.querySelector('.shop-item-name') || {}).textContent || '';
+      if (name && shopBought[name]) item.classList.add('bought');
+    });
+  }
 
   function updateProgress() {
     const dayEl = document.getElementById(currentPerson+'-day-'+currentDay);
@@ -1594,15 +1662,20 @@ try {
   }
 
   updateProgress();
+  restoreShop();
 
-  // ─── FIREBASE ────────────────────────────────────────────────────
+  // ── FIREBASE (sync entre móviles) ─────────────────────────────────────
   var db = null;
   var dbCache = { lorena: {}, daniel: {} };
 
   function initFirebase(retries) {
     if (typeof firebase === 'undefined') {
       if (retries > 0) { setTimeout(function(){ initFirebase(retries-1); }, 300); }
-      else { console.warn('Firebase no cargo, la app funciona sin sincronizacion'); }
+      else {
+        console.warn('Firebase no cargó, usando solo localStorage');
+        // Restaurar desde caché local si Firebase no carga
+        restoreMealChecksFromCache();
+      }
       return;
     }
     try {
@@ -1613,21 +1686,43 @@ try {
         var data = snap.val() || {};
         dbCache.lorena = data.lorena || {};
         dbCache.daniel = data.daniel || {};
+        // Guardar en localStorage como caché
+        ls.set('ndieta_fb_lorena', dbCache.lorena);
+        ls.set('ndieta_fb_daniel', dbCache.daniel);
         if (document.getElementById('view-control').classList.contains('active')) {
           renderCalendar(); renderStats(); renderLog();
         }
         restoreMealChecks();
       });
     } catch(e) {
-      console.warn('Firebase no disponible:', e);
+      console.warn('Firebase error:', e);
+      restoreMealChecksFromCache();
     }
   }
+
+  function restoreMealChecksFromCache() {
+    dbCache.lorena = ls.get('ndieta_fb_lorena') || {};
+    dbCache.daniel = ls.get('ndieta_fb_daniel') || {};
+    restoreMealChecks();
+  }
+
+  // Restaurar desde caché local inmediatamente (sin esperar a Firebase)
+  restoreMealChecksFromCache();
+
   initFirebase(15);
 
   function makeDateKey(y, m, d) { return y + '-' + String(m+1).padStart(2,'0') + '-' + String(d).padStart(2,'0'); }
   function getCtrlData(person, dk) { return dbCache[person][dk] || {}; }
-  function setCtrlData(person, dk, data) { dbCache[person][dk] = data; if (db) db.ref('dieta/' + person + '/' + dk).set(data); }
-  function removeCtrlData(person, dk) { dbCache[person][dk] = {}; if (db) db.ref('dieta/' + person + '/' + dk).remove(); }
+  function setCtrlData(person, dk, data) {
+    dbCache[person][dk] = data;
+    ls.set('ndieta_fb_' + person, dbCache[person]); // caché local
+    if (db) db.ref('dieta/' + person + '/' + dk).set(data);
+  }
+  function removeCtrlData(person, dk) {
+    dbCache[person][dk] = {};
+    ls.set('ndieta_fb_' + person, dbCache[person]);
+    if (db) db.ref('dieta/' + person + '/' + dk).remove();
+  }
 
   function saveMealCheck(cardId, checked) {
     var today = new Date();
@@ -1680,13 +1775,15 @@ try {
         var updated = Object.assign({}, existing); delete updated.done;
         setCtrlData(currentPerson, dk, updated);
       }
+      if (document.getElementById('view-control').classList.contains('active')) {
+        renderCalendar(); renderStats(); renderLog();
+      }
     }, 50);
   });
 
-  // ─── CONTROL DE DIETA ────────────────────────────────────────────
+  // ── CONTROL / CALENDARIO ─────────────────────────────────────────────
   var calYear = new Date().getFullYear();
   var calMonth = new Date().getMonth();
-  var MONTH_NAMES = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
   var modalDateKey = null;
 
   function renderControl() {
@@ -1695,46 +1792,49 @@ try {
   }
 
   function renderCalendar() {
-    document.getElementById('calMonthTitle').textContent = MONTH_NAMES[calMonth] + ' ' + calYear;
-    var grid = document.getElementById('calGrid');
-    grid.innerHTML = '';
-    var today = new Date(); today.setHours(0,0,0,0);
-    var firstDay = new Date(calYear, calMonth, 1);
+    var months = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+    document.getElementById('calMonthTitle').textContent = months[calMonth] + ' ' + calYear;
+    var today = new Date();
+    var firstDay = (new Date(calYear, calMonth, 1).getDay() + 6) % 7;
     var daysInMonth = new Date(calYear, calMonth+1, 0).getDate();
-    var startOffset = (firstDay.getDay() + 6) % 7;
-    for (var i = 0; i < startOffset; i++) { var blank = document.createElement('div'); blank.className = 'cal-day empty'; grid.appendChild(blank); }
+    var html = '';
+    for (var i = 0; i < firstDay; i++) html += '<div class="cal-day empty"></div>';
     for (var d = 1; d <= daysInMonth; d++) {
-      var cellDate = new Date(calYear, calMonth, d);
       var dk = makeDateKey(calYear, calMonth, d);
       var data = getCtrlData(currentPerson, dk);
-      var isFuture = cellDate > today;
-      var isToday = cellDate.getTime() === today.getTime();
-      var cell = document.createElement('div');
-      cell.className = 'cal-day';
-      if (isFuture) cell.classList.add('future');
-      if (isToday) cell.classList.add('today');
-      if (data.done) cell.classList.add('done');
-      else if (data.note) cell.classList.add('noted');
-      cell.innerHTML = '<span class="cal-tick">✓</span><span class="cal-day-num">' + d + '</span><span class="cal-note-dot"></span>';
-      if (!isFuture) {
-        (function(dk2, dayNum2) {
-          cell.addEventListener('click', function() { openDayModal(dk2, dayNum2, getCtrlData(currentPerson, dk2)); });
-        })(dk, d);
-      }
-      grid.appendChild(cell);
+      var isToday = today.getFullYear()===calYear && today.getMonth()===calMonth && today.getDate()===d;
+      var isFuture = new Date(calYear, calMonth, d) > today;
+      var cls = 'cal-day';
+      if (data.done) cls += ' done';
+      else if (data.note) cls += ' noted';
+      if (isToday) cls += ' today';
+      if (isFuture) cls += ' future';
+      (function(dk2, dayNum2) {
+        html += '<div class="' + cls + '"' + (isFuture ? '' : ' id="cday-' + dk2 + '"') + '>' +
+          '<span class="cal-tick">✓</span><div class="cal-day-num">' + d + '</div><div class="cal-note-dot"></div></div>';
+      })(dk, d);
+    }
+    document.getElementById('calGrid').innerHTML = html;
+    if (!isFuture) {
+      document.querySelectorAll('.cal-day:not(.empty):not(.future)').forEach(function(cell) {
+        var id = cell.id;
+        if (!id) return;
+        var dk2 = id.replace('cday-', '');
+        cell.addEventListener('click', function() { openDayModal(dk2, 0, getCtrlData(currentPerson, dk2)); });
+      });
     }
   }
 
   function renderStats() {
-    var data = dbCache[currentPerson];
+    var data = dbCache[currentPerson] || {};
     var done = 0, noted = 0, streak = 0;
     Object.keys(data).forEach(function(dk) { var d = data[dk]; if (d.done) done++; else if (d.note) noted++; });
-    var today = new Date(); today.setHours(0,0,0,0);
-    var checkDate = new Date(today);
-    while (true) {
-      var dk = makeDateKey(checkDate.getFullYear(), checkDate.getMonth(), checkDate.getDate());
-      var d = getCtrlData(currentPerson, dk);
-      if (d.done) { streak++; checkDate.setDate(checkDate.getDate()-1); } else break;
+    var today = new Date();
+    for (var i = 0; i < 365; i++) {
+      var d = new Date(today); d.setDate(today.getDate() - i);
+      var dk = makeDateKey(d.getFullYear(), d.getMonth(), d.getDate());
+      if ((data[dk] || {}).done) streak++;
+      else break;
     }
     document.getElementById('statDone').textContent = done;
     document.getElementById('statNoted').textContent = noted;
@@ -1742,104 +1842,103 @@ try {
   }
 
   function renderLog() {
-    var list = document.getElementById('logList');
-    var data = dbCache[currentPerson];
+    var data = dbCache[currentPerson] || {};
     var entries = [];
     Object.keys(data).forEach(function(dk) { if (data[dk].note) entries.push({ dk: dk, note: data[dk].note }); });
     entries.sort(function(a,b) { return b.dk.localeCompare(a.dk); });
-    if (entries.length === 0) { list.innerHTML = '<div class="log-empty">Sin notas todavía 🎉</div>'; return; }
+    var list = document.getElementById('logList');
+    if (!entries.length) { list.innerHTML = '<div class="log-empty">Sin notas aún 📋</div>'; return; }
+    var days = ['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'];
     list.innerHTML = entries.map(function(e) {
       var parts = e.dk.split('-');
-      var label = parts[2] + ' ' + MONTH_NAMES[parseInt(parts[1])-1] + ' ' + parts[0];
-      return '<div class="log-card"><span class="log-emoji">📝</span><div><div class="log-date">' + label + '</div><div class="log-text">' + e.note + '</div></div></div>';
+      var dateObj = new Date(+parts[0], +parts[1]-1, +parts[2]);
+      return '<div class="log-card"><span class="log-emoji">📝</span><div><div class="log-date">' +
+        days[dateObj.getDay()] + ', ' + +parts[2] + '/' + +parts[1] + '/' + parts[0] +
+        '</div><div class="log-text">' + e.note + '</div></div></div>';
     }).join('');
   }
 
   function openDayModal(dk, dayNum, data) {
     modalDateKey = dk;
+    document.getElementById('modalTitle').textContent = data.done ? '📅 Día completado ✅' : '📝 ¿Pasó algo este día?';
     var parts = dk.split('-');
-    var label = dayNum + ' ' + MONTH_NAMES[parseInt(parts[1])-1] + ' ' + parts[0];
-    document.getElementById('modalSub').textContent = label;
+    document.getElementById('modalSub').textContent = +parts[2] + '/' + +parts[1] + '/' + parts[0];
+    document.getElementById('modalBtnUndo').style.display = data.done ? 'block' : 'none';
     document.getElementById('modalTextarea').value = data.note || '';
-    var undoBtn = document.getElementById('modalBtnUndo');
-    if (data.done) {
-      document.getElementById('modalTitle').textContent = '✅ Día completado';
-      document.getElementById('modalTextarea').placeholder = 'Añade una nota si quieres...';
-      undoBtn.style.display = 'block';
-    } else {
-      document.getElementById('modalTitle').textContent = '📝 ¿Por qué no hiciste dieta?';
-      document.getElementById('modalTextarea').placeholder = 'Ej: Comida familiar, cumpleaños, viaje...';
-      undoBtn.style.display = 'none';
-    }
     document.getElementById('noteModal').classList.add('open');
   }
 
   window.markDayIncomplete = function() {
-    if (!modalDateKey) return;
-    var existing = getCtrlData(currentPerson, modalDateKey);
-    var updated = Object.assign({}, existing); delete updated.done;
-    if (Object.keys(updated).length === 0) removeCtrlData(currentPerson, modalDateKey);
-    else setCtrlData(currentPerson, modalDateKey, updated);
+    var data = getCtrlData(currentPerson, modalDateKey);
+    var updated = Object.assign({}, data); delete updated.done;
+    setCtrlData(currentPerson, modalDateKey, updated);
     window.closeModal(); renderControl();
-  }
-  window.closeModal = function() { document.getElementById('noteModal').classList.remove('open'); modalDateKey = null; }
+  };
+  window.closeModal = function() { document.getElementById('noteModal').classList.remove('open'); modalDateKey = null; };
   window.saveNote = function() {
-    if (!modalDateKey) return;
     var note = document.getElementById('modalTextarea').value.trim();
-    var existing = getCtrlData(currentPerson, modalDateKey);
-    if (note) setCtrlData(currentPerson, modalDateKey, Object.assign({}, existing, { note: note }));
-    else { var updated = Object.assign({}, existing); delete updated.note; if (Object.keys(updated).length === 0) removeCtrlData(currentPerson, modalDateKey); else setCtrlData(currentPerson, modalDateKey, updated); }
+    var data = getCtrlData(currentPerson, modalDateKey);
+    if (note) setCtrlData(currentPerson, modalDateKey, Object.assign({}, data, { note: note }));
+    else { var u = Object.assign({}, data); delete u.note; setCtrlData(currentPerson, modalDateKey, u); }
     window.closeModal(); renderControl();
-  }
+  };
   window.clearDayNote = function() {
-    if (!modalDateKey) return;
-    var existing = getCtrlData(currentPerson, modalDateKey);
-    var updated = Object.assign({}, existing); delete updated.note;
-    if (Object.keys(updated).length === 0) removeCtrlData(currentPerson, modalDateKey);
-    else setCtrlData(currentPerson, modalDateKey, updated);
+    var data = getCtrlData(currentPerson, modalDateKey);
+    var updated = Object.assign({}, data); delete updated.note;
+    setCtrlData(currentPerson, modalDateKey, updated);
     window.closeModal(); renderControl();
-  }
+  };
   window.changeMonth = function(dir) {
     calMonth += dir;
     if (calMonth > 11) { calMonth = 0; calYear++; }
     if (calMonth < 0) { calMonth = 11; calYear--; }
     renderCalendar();
-  }
+  };
   document.getElementById('noteModal').addEventListener('click', function(e) { if (e.target === this) window.closeModal(); });
 
-  // ── COCINA (preparacion conjunta, precio total Lorena + Daniel) ──────
+  // ── DATOS DE COCINA (con desglose por persona) ────────────────────────
   var COOKING_DATA = {
     0: {
       dayName: 'Lunes',
       meals: [
         {
-          id:'c-l-0', emoji:'P', name:'Poke de arroz con salmon',
-          frozen: true, frozenItem: 'Salmon (lomos congelados)',
-          defrostNote: 'sacar 350 g de salmon del congelador',
+          id:'c-l-0', emoji:'🍱', name:'Poke de arroz con salmón',
+          frozen: true, frozenItem: 'Salmón (lomos congelados)',
+          defrostNote: 'sacar 350 g de salmón del congelador',
           canBatch: false,
           cost: '6,80 EUR',
-          costDetail: 'Salmon, arroz basmati, maiz, tomate, aguacate y mango',
+          breakdown: [
+            { name: 'Arroz basmati (crudo)', lorena: '40 g', daniel: '60 g' },
+            { name: 'Salmón', lorena: '150 g', daniel: '200 g' },
+            { name: 'Maíz dulce', lorena: '30 g', daniel: '40 g' },
+            { name: 'Tomate', lorena: '80 g', daniel: '100 g' },
+            { name: 'Aguacate', lorena: '80 g', daniel: '100 g' },
+            { name: 'Mango', lorena: '120 g', daniel: '120 g' },
+            { name: 'Salsa (miel+mostaza / miel+módena)', lorena: '20g+30g', daniel: '25g+10ml' }
+          ],
           steps:[
             'Cocer 100 g de arroz basmati en crudo y dejar enfriar.',
-            'Cortar 350 g de salmon descongelado en dados.',
-            'Trocear 180 g de tomate, 180 g de aguacate y 240 g de mango. Escurrir 70 g de maiz.',
-            'Salsa: 45 g de miel con 50 g de mostaza o 10 ml de vinagre de modena.',
-            'Montar los boles con el salmon encima y alinar.'
+            'Cortar 350 g de salmón descongelado en dados.',
+            'Trocear tomate, aguacate y mango. Escurrir maíz.',
+            'Lorena → salsa miel+mostaza. Daniel → miel+módena+AOVE.',
+            'Montar los boles con el salmón encima y aliñar.'
           ],
           nextDay: 'El arroz cocido aguanta en nevera'
         },
         {
-          id:'c-l-1', emoji:'C', name:'Gazpacho + solomillo de cerdo',
+          id:'c-l-1', emoji:'🥩', name:'Gazpacho + solomillo de cerdo',
           frozen: true, frozenItem: 'Solomillo de cerdo (congelado)',
           defrostNote: 'sacar 550 g de solomillo del congelador',
-          canBatch: true,
-          batchNote: 'Haz todo el solomillo de una vez',
+          canBatch: true, batchNote: 'Haz todo el solomillo de una vez',
           cost: '5,50 EUR',
-          costDetail: 'Solomillo de cerdo y gazpacho Calisur',
+          breakdown: [
+            { name: 'Solomillo de cerdo', lorena: '200 g', daniel: '350 g' },
+            { name: 'Gazpacho Calisur', lorena: '250 g', daniel: '250 g' }
+          ],
           steps:[
             'Sazonar 550 g de solomillo con pimienta negra.',
-            'Plancha fuerte con 10 ml de AOVE, 3 min por lado.',
-            'Servir con 500 g de gazpacho frio. Yogur griego de postre.'
+            'Plancha fuerte con AOVE, 3 min por lado.',
+            'Servir con gazpacho frío. Yogur griego de postre.'
           ],
           nextDay: null
         }
@@ -1849,66 +1948,86 @@ try {
       dayName: 'Martes',
       meals: [
         {
-          id:'c-m-0', emoji:'Q', name:'Ensalada de quinoa con pollo',
+          id:'c-m-0', emoji:'🌾', name:'Ensalada de quinoa con pollo',
           frozen: true, frozenItem: 'Pechuga de pollo (congelada)',
           defrostNote: 'sacar 450 g de pollo del congelador',
-          canBatch: true,
-          batchNote: 'Cuece quinoa de mas, sirve para el jueves',
+          canBatch: false,
           cost: '4,95 EUR',
-          costDetail: 'Pollo, quinoa, pimientos, champinon y cebolleta',
+          breakdown: [
+            { name: 'Quinoa cocida', lorena: '125 g', daniel: '125 g' },
+            { name: 'Pechuga de pollo', lorena: '200 g', daniel: '250 g' },
+            { name: 'Pimientos', lorena: '80 g', daniel: '100 g' },
+            { name: 'Champiñón', lorena: '100 g', daniel: '150 g' },
+            { name: 'Cebolleta', lorena: '25 g', daniel: '30 g' }
+          ],
           steps:[
             'Calentar 250 g de quinoa cocida.',
-            'Saltear 180 g de pimientos, 250 g de champinon y 55 g de cebolleta con 10 ml de AOVE.',
-            'Plancha 450 g de pollo y cortar en tiras.',
-            'Mezclar y alinar con 50 ml de salsa de soja sin gluten.'
+            'Saltear pimientos, champiñón y cebolleta con AOVE.',
+            'Planchar 450 g de pollo y cortar en tiras.',
+            'Mezclar y aliñar con 50 ml de soja sin gluten.'
           ],
-          nextDay: 'Guarda quinoa extra para el jueves'
+          nextDay: null
         },
         {
-          id:'c-m-1', emoji:'B', name:'Ensalada de tomate, cabra y bacalao',
+          id:'c-m-1', emoji:'🐟', name:'Ensalada tomate, cabra y bacalao',
           frozen: true, frozenItem: 'Bacalao (congelado)',
           defrostNote: 'sacar 650 g de bacalao del congelador',
           canBatch: false,
           cost: '8,00 EUR',
-          costDetail: 'Bacalao, queso de cabra, tomate y aguacate',
+          breakdown: [
+            { name: 'Bacalao', lorena: '300 g', daniel: '350 g' },
+            { name: 'Tomate', lorena: '250 g', daniel: '250 g' },
+            { name: 'Queso de cabra', lorena: '40 g', daniel: '60 g' },
+            { name: 'Aguacate', lorena: '60 g', daniel: '120 g' },
+            { name: 'Patata (solo Daniel)', lorena: '—', daniel: '120 g' }
+          ],
           steps:[
-            'Secar 650 g de bacalao descongelado con papel.',
-            'Plancha fuerte con 10 ml de AOVE, 2-3 min por lado.',
-            'Montar ensalada: 250 g de tomate, 100 g de queso de cabra, 180 g de aguacate.',
-            'Alinar con AOVE y vinagre.'
+            'Secar el bacalao descongelado con papel.',
+            'Plancha fuerte con AOVE, 2-3 min por lado.',
+            'Montar: tomate, queso de cabra, aguacate.',
+            'Daniel: añadir 120 g de patata cocida.',
+            'Aliñar con AOVE y vinagre.'
           ],
           nextDay: null
         }
       ]
     },
     2: {
-      dayName: 'Miercoles',
+      dayName: 'Miércoles',
       meals: [
         {
-          id:'c-x-0', emoji:'H', name:'Ensalada de sandia, huevos y feta',
-          frozen: false,
-          canBatch: false,
+          id:'c-x-0', emoji:'🍳', name:'Ensalada de sandía, huevos y feta',
+          frozen: false, canBatch: false,
           cost: '3,70 EUR',
-          costDetail: 'Sandia, huevos, queso feta y cebolla morada',
+          breakdown: [
+            { name: 'Sandía', lorena: '220 g', daniel: '250 g' },
+            { name: 'Huevos camperos', lorena: '2 ud (~120 g)', daniel: '3 ud (~180 g)' },
+            { name: 'Queso feta', lorena: '50 g', daniel: '80 g' },
+            { name: 'Cebolla morada', lorena: '23 g', daniel: '30 g' }
+          ],
           steps:[
             'Cocer 5 huevos 10 min, enfriar y pelar.',
-            'Trocear 470 g de sandia y 53 g de cebolla morada en juliana.',
-            'Desmenuzar 130 g de feta por encima.',
-            'Alinar con 20 ml de AOVE y pimienta.'
+            'Trocear sandía y cebolla morada en juliana.',
+            'Desmenuzar feta por encima.',
+            'Aliñar con AOVE y pimienta.'
           ],
           nextDay: null
         },
         {
-          id:'c-x-1', emoji:'A', name:'Tacos de atun caseros',
-          frozen: false,
-          canBatch: false,
+          id:'c-x-1', emoji:'🌮', name:'Tacos de atún caseros',
+          frozen: false, canBatch: false,
           cost: '5,75 EUR',
-          costDetail: 'Atun, tortillas integrales, mango y aguacate',
+          breakdown: [
+            { name: 'Tortilla integral', lorena: '72 g (×2)', daniel: '108 g (×3)' },
+            { name: 'Atún al natural', lorena: '180 g', daniel: '180 g' },
+            { name: 'Mango', lorena: '120 g', daniel: '150 g' },
+            { name: 'Aguacate', lorena: '100 g', daniel: '120 g' },
+            { name: 'Lima', lorena: '20 g', daniel: '30 g' }
+          ],
           steps:[
-            'Escurrir bien 360 g de atun (4 latas).',
-            'Mezclar con 270 g de mango y 220 g de aguacate en dados y zumo de lima.',
-            'Calentar 5 tortillas integrales.',
-            'Rellenar y servir.'
+            'Escurrir bien el atún (4 latas).',
+            'Mezclar con mango y aguacate en dados y zumo de lima.',
+            'Calentar las tortillas. Rellenar y servir.'
           ],
           nextDay: null
         }
@@ -1918,31 +2037,41 @@ try {
       dayName: 'Jueves',
       meals: [
         {
-          id:'c-j-0', emoji:'S', name:'Ensalada de arroz con sardinillas',
-          frozen: false,
-          canBatch: false,
+          id:'c-j-0', emoji:'🍚', name:'Ensalada de arroz con sardinillas',
+          frozen: false, canBatch: false,
           cost: '3,90 EUR',
-          costDetail: 'Sardinillas, arroz, tomate y cebolleta',
+          breakdown: [
+            { name: 'Arroz basmati (crudo)', lorena: '40 g', daniel: '60 g' },
+            { name: 'Sardinillas en aceite', lorena: '130 g (2 latas)', daniel: '130 g (2 latas)' },
+            { name: 'Tomate', lorena: '100 g', daniel: '130 g' },
+            { name: 'Cebolleta', lorena: '25 g', daniel: '30 g' }
+          ],
           steps:[
-            'Cocer 100 g de arroz en crudo si no hay del lunes.',
-            'IMPORTANTE: escurrir muy bien 4 latas de sardinillas.',
-            'Mezclar el arroz frio con 230 g de tomate y 55 g de cebolleta.',
-            'Poner las sardinillas encima. Alinar con AOVE y vinagre.'
+            'Cocer arroz si no queda del lunes.',
+            '⚠️ Escurrir muy bien las sardinillas.',
+            'Mezclar arroz frío con tomate y cebolleta.',
+            'Sardinillas encima. Aliñar con AOVE y vinagre.'
           ],
           nextDay: null
         },
         {
-          id:'c-j-1', emoji:'T', name:'Hamburguesa de ternera con huevo',
+          id:'c-j-1', emoji:'🍔', name:'Hamburguesa de ternera con huevo',
           frozen: true, frozenItem: 'Carne picada de ternera (congelada)',
           defrostNote: 'sacar 350 g de carne picada del congelador',
           canBatch: false,
           cost: '4,45 EUR',
-          costDetail: 'Ternera picada, huevos, pan y mozzarella',
+          breakdown: [
+            { name: 'Carne picada de ternera', lorena: '150 g', daniel: '200 g' },
+            { name: 'Huevo campero', lorena: '1 ud', daniel: '1 ud' },
+            { name: 'Pan cristal', lorena: '70 g', daniel: '70 g' },
+            { name: 'Mozzarella', lorena: '20 g', daniel: '40 g' },
+            { name: 'Pepinillos', lorena: '40 g', daniel: '40 g' }
+          ],
           steps:[
-            'Amasar 350 g de ternera con sal y pimienta.',
-            'Formar las hamburguesas, cocinar y fundir 60 g de mozzarella.',
-            'Hacer 2 huevos a la plancha.',
-            'Montar con 140 g de pan cristal, lechuga, tomate y 80 g de pepinillos.'
+            'Amasar la ternera con sal y pimienta.',
+            'Cocinar la hamburguesa y fundir la mozzarella encima.',
+            'Hacer los huevos a la plancha.',
+            'Montar con pan cristal, lechuga, tomate y pepinillos.'
           ],
           nextDay: null
         }
@@ -1952,66 +2081,85 @@ try {
       dayName: 'Viernes',
       meals: [
         {
-          id:'c-v-0', emoji:'Z', name:'Calabacin relleno de pollo',
+          id:'c-v-0', emoji:'🥒', name:'Calabacín relleno de pollo',
           frozen: true, frozenItem: 'Pechuga de pollo (congelada)',
           defrostNote: 'sacar 550 g de pollo del congelador',
-          canBatch: true,
-          batchNote: 'Prepara los rellenos y hornea de una vez',
+          canBatch: true, batchNote: 'Prepara todos los rellenos y hornea de una vez',
           cost: '5,10 EUR',
-          costDetail: 'Pollo, calabacin, tomate frito, cebolla y queso',
+          breakdown: [
+            { name: 'Calabacín', lorena: '250 g', daniel: '250 g' },
+            { name: 'Pechuga de pollo', lorena: '250 g', daniel: '300 g' },
+            { name: 'Tomate frito', lorena: '40 g', daniel: '60 g' },
+            { name: 'Cebolla', lorena: '50 g', daniel: '70 g' },
+            { name: 'Mozzarella rallada', lorena: '30 g', daniel: '30 g' }
+          ],
           steps:[
-            'Vaciar 500 g de calabacin y reservar la carne.',
-            'Sofreir 120 g de cebolla, pimiento y 100 g de tomate frito.',
-            'Anadir 550 g de pollo picado y cocinar 8 min.',
-            'Rellenar, cubrir con 60 g de mozzarella y gratinar 180 grados 20 min.'
+            'Vaciar los calabacines y reservar la pulpa.',
+            'Sofreír cebolla y tomate frito.',
+            'Añadir el pollo picado y cocinar 8 min.',
+            'Rellenar, cubrir con mozzarella y gratinar 180°C 20 min.'
           ],
           nextDay: 'Si sobran aguantan en nevera'
         },
         {
-          id:'c-v-1', emoji:'I', name:'Pizza casera fit',
-          frozen: false,
-          canBatch: false,
+          id:'c-v-1', emoji:'🍕', name:'Pizza fit casera',
+          frozen: false, canBatch: false,
           cost: '5,55 EUR',
-          costDetail: 'Tortillas integrales, jamon serrano, atun y queso',
+          breakdown: [
+            { name: 'Tortilla integral', lorena: '72 g (×2)', daniel: '108 g (×3)' },
+            { name: 'Jamón serrano', lorena: '50 g', daniel: '60 g' },
+            { name: 'Atún al natural', lorena: '60 g', daniel: '120 g' },
+            { name: 'Champiñón', lorena: '60 g', daniel: '100 g' },
+            { name: 'Mozzarella rallada', lorena: '30 g', daniel: '40 g' }
+          ],
           steps:[
-            'Poner 5 tortillas integrales sobre papel de horno.',
-            'Unas con 110 g de jamon serrano, cebolla y 40 g de barbacoa.',
-            'Otras con 180 g de atun, 160 g de champinon y oregano.',
-            'Repartir 70 g de mozzarella y hornear 190 grados 10-12 min.'
+            'Poner tortillas sobre papel de horno.',
+            'Unas: jamón serrano + cebolla + salsa barbacoa.',
+            'Otras: atún + champiñón + orégano.',
+            'Repartir mozzarella y hornear 190°C 10-12 min.'
           ],
           nextDay: null
         }
       ]
     },
     5: {
-      dayName: 'Sabado',
+      dayName: 'Sábado',
       meals: [
         {
-          id:'c-s-0', emoji:'F', name:'Fajitas de pollo y pavo',
-          frozen: false,
-          canBatch: false,
+          id:'c-s-0', emoji:'🌯', name:'Fajitas de pavo',
+          frozen: false, canBatch: false,
           cost: '6,40 EUR',
-          costDetail: 'Pavo, tortillas, pimientos y cebolla',
+          breakdown: [
+            { name: 'Tortilla integral', lorena: '72 g (×2)', daniel: '108 g (×3)' },
+            { name: 'Pechuga de pavo', lorena: '250 g', daniel: '300 g' },
+            { name: 'Pimientos', lorena: '150 g', daniel: '180 g' },
+            { name: 'Cebolla', lorena: '80 g', daniel: '100 g' }
+          ],
           steps:[
-            'Cortar 550 g de pavo en tiras.',
-            'Marinar con 20 g de sazonador de fajitas.',
-            'Saltear 330 g de pimiento y 180 g de cebolla en AOVE; anadir el pavo 6-8 min.',
-            'Calentar 5 tortillas y montar.'
+            'Cortar el pavo en tiras y marinar con sazonador.',
+            'Saltear pimientos y cebolla con AOVE.',
+            'Añadir el pavo 6-8 min.',
+            'Calentar las tortillas y montar.'
           ],
           nextDay: null
         },
         {
-          id:'c-s-1', emoji:'O', name:'Tomate con feta y tortilla de patata',
+          id:'c-s-1', emoji:'🥚', name:'Tortilla de patata + tomate y feta',
           frozen: false,
-          canBatch: true,
-          batchNote: 'Haz una tortilla grande de una vez',
+          canBatch: true, batchNote: 'Haz una tortilla grande de una vez',
           cost: '4,15 EUR',
-          costDetail: 'Patata, huevos, queso feta y tomate',
+          breakdown: [
+            { name: 'Patata', lorena: '150 g', daniel: '250 g' },
+            { name: 'Huevos camperos', lorena: '2 ud (~120 g)', daniel: '3 ud (~180 g)' },
+            { name: 'Cebolla', lorena: '50 g', daniel: '70 g' },
+            { name: 'Queso feta', lorena: '40 g', daniel: '60 g' },
+            { name: 'Tomate', lorena: '250 g', daniel: '250 g' }
+          ],
           steps:[
-            'Cocer o airfryer 400 g de patata.',
-            'Batir con 5 huevos, sal y 120 g de cebolla.',
-            'Cuajar en sarten dando la vuelta con un plato.',
-            'Acompanar con 250 g de tomate y 100 g de feta.'
+            'Cocer o airfryer las patatas.',
+            'Batir con huevos, sal y cebolla.',
+            'Cuajar en sartén dando la vuelta.',
+            'Acompañar con tomate y feta.'
           ],
           nextDay: null
         }
@@ -2021,32 +2169,42 @@ try {
       dayName: 'Domingo',
       meals: [
         {
-          id:'c-d-0', emoji:'W', name:'Tortitas con arandanos y miel',
+          id:'c-d-0', emoji:'🥞', name:'Tortitas con arándanos y miel',
           frozen: false,
-          canBatch: true,
-          batchNote: 'Haz toda la masa junta',
+          canBatch: true, batchNote: 'Haz toda la masa junta',
           cost: '2,65 EUR',
-          costDetail: 'Harina, huevos, leche, arandanos y miel',
-          steps:[
-            'Mezclar 100 g de harina con 2 huevos, 300 ml de leche y levadura.',
-            'Reposar 10 min.',
-            'Cuajar en sarten sin aceite, 2 min por lado.',
-            'Servir con 160 g de arandanos y miel.'
+          breakdown: [
+            { name: 'Harina de trigo', lorena: '40 g', daniel: '60 g' },
+            { name: 'Huevos', lorena: '1 ud', daniel: '1 ud' },
+            { name: 'Leche entera', lorena: '150 ml', daniel: '150 ml' },
+            { name: 'Arándanos', lorena: '80 g', daniel: '80 g' }
           ],
-          nextDay: 'Comida libre, con moderacion'
+          steps:[
+            'Mezclar harina con huevos, leche y levadura.',
+            'Reposar 10 min.',
+            'Cuajar en sartén sin aceite, 2 min por lado.',
+            'Servir con arándanos y miel.'
+          ],
+          nextDay: 'Comida libre, con moderación'
         },
         {
-          id:'c-d-1', emoji:'G', name:'Tartar de gambas, aguacate y mango',
+          id:'c-d-1', emoji:'🦐', name:'Tartar de gambas, aguacate y mango',
           frozen: true, frozenItem: 'Gambas peladas (congeladas)',
           defrostNote: 'sacar 550 g de gambas del congelador',
           canBatch: false,
           cost: '10,30 EUR',
-          costDetail: 'Gambas, aguacate, mango, tomate y lima',
+          breakdown: [
+            { name: 'Gamba pelada', lorena: '250 g', daniel: '300 g' },
+            { name: 'Aguacate', lorena: '120 g', daniel: '150 g' },
+            { name: 'Mango', lorena: '150 g', daniel: '200 g' },
+            { name: 'Tomate', lorena: '150 g', daniel: '150 g' },
+            { name: 'Lima', lorena: '20 g', daniel: '30 g' }
+          ],
           steps:[
             'Cocer 550 g de gambas 2-3 min, enfriar y pelar.',
-            'Picar las gambas en trozos.',
-            'Mezclar con 270 g de aguacate, 350 g de mango y 300 g de tomate en dados.',
-            'Alinar con zumo de 2 limas y AOVE.'
+            'Picar en trozos.',
+            'Mezclar con aguacate, mango y tomate en dados.',
+            'Aliñar con zumo de lima y AOVE.'
           ],
           nextDay: null
         }
@@ -2054,130 +2212,133 @@ try {
     }
   };
 
-  let cookDay = new Date().getDay();
+  var cookDay = new Date().getDay();
   cookDay = cookDay === 0 ? 6 : cookDay - 1;
 
-  // localStorage con fallback seguro
-  const safeStorage = {
-    get: function(k) { try { return JSON.parse(localStorage.getItem(k) || 'null'); } catch(e) { return null; } },
-    set: function(k,v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch(e) {} }
-  };
-  let cookChecked = safeStorage.get('cookChecked') || {};
+  // localStorage para ticks de cocina
+  var cookChecked = ls.get('ndieta_cook') || {};
 
-function renderCooking() {
+  function renderCooking() {
     var dayData = COOKING_DATA[cookDay];
     if (!dayData) return;
     var elName = document.getElementById('cook-day-name');
     if (!elName) return;
     var nextDayIdx = (cookDay + 1) % 7;
     var nextDayData = COOKING_DATA[nextDayIdx];
-    var dayNames = ['Lunes','Martes','Miercoles','Jueves','Viernes','Sabado','Domingo'];
+    var dayNames = ['Lunes','Martes','Miércoles','Jueves','Viernes','Sábado','Domingo'];
 
-    var defrostHTML = '';
+    // ── Previsión completa para mañana ──
+    var tomorrowHTML = '';
     if (nextDayData) {
-      var alerts = [];
+      var frozenAlerts = [];
+      var tomorrowMealsHTML = '';
       for (var ni = 0; ni < nextDayData.meals.length; ni++) {
         var nm = nextDayData.meals[ni];
-        if (nm.frozen) alerts.push('<div class="defrost-item">- ' + nm.frozenItem + ': ' + nm.defrostNote + '</div>');
+        if (nm.frozen) frozenAlerts.push('<div class="defrost-item">❄️ ' + nm.frozenItem + ': ' + nm.defrostNote + '</div>');
+        var bdRows = '';
+        if (nm.breakdown) {
+          bdRows = nm.breakdown.map(function(b) {
+            return '<tr><td class="bd-ing">' + b.name + '</td><td class="bd-l">' + b.lorena + '</td><td class="bd-d">' + b.daniel + '</td></tr>';
+          }).join('');
+        }
+        tomorrowMealsHTML +=
+          '<div class="tomorrow-meal">' +
+            '<div class="tomorrow-meal-name">' + nm.emoji + ' ' + nm.name + '</div>' +
+            (bdRows ? '<table class="bd-table"><thead><tr><th></th><th>🌿 Lorena</th><th>💙 Daniel</th></tr></thead><tbody>' + bdRows + '</tbody></table>' : '') +
+          '</div>';
       }
-      if (alerts.length > 0) {
-        defrostHTML = '<div class="defrost-banner">' +
-          '<div class="defrost-title">Acuerdate esta noche</div>' +
-          '<div class="defrost-subtitle">Para el ' + dayNames[nextDayIdx] + ':</div>' +
-          alerts.join('') + '</div>';
-      }
+      tomorrowHTML = '<div class="tomorrow-banner">' +
+        '<div class="tomorrow-title">🌙 Mañana — ' + dayNames[nextDayIdx] + '</div>' +
+        tomorrowMealsHTML +
+        (frozenAlerts.length ? '<div class="defrost-inner"><div class="defrost-inner-title">❄️ Sacar del congelador esta noche</div>' + frozenAlerts.join('') + '</div>' : '') +
+        '</div>';
     }
 
+    // ── Tarjetas del día actual ──
     var mealsHTML = '';
     for (var mi = 0; mi < dayData.meals.length; mi++) {
       var meal = dayData.meals[mi];
       var chk = cookChecked[meal.id] || false;
-      var frozenTag = meal.frozen
-        ? '<span class="cook-tag cook-frozen">Congelado</span>'
-        : '<span class="cook-tag cook-fresh">Fresco</span>';
-      var batchTag = meal.canBatch ? '<span class="cook-tag cook-batch">Aprovechable</span>' : '';
-      var batchNote = meal.canBatch ? '<div class="cook-batch-note">' + meal.batchNote + '</div>' : '';
-      var nextNote = meal.nextDay ? '<div class="cook-next-note">' + meal.nextDay + '</div>' : '';
-      var stepsHTML = '';
-      for (var si = 0; si < meal.steps.length; si++) {
-        stepsHTML += '<div class="cook-step"><div class="cook-step-num">' + (si+1) + '</div><div>' + meal.steps[si] + '</div></div>';
+      var frozenTag = meal.frozen ? '<span class="cook-tag cook-frozen">❄️ Congelado</span>' : '<span class="cook-tag cook-fresh">✅ Fresco</span>';
+      var batchTag = meal.canBatch ? '<span class="cook-tag cook-batch">📦 Aprovechable</span>' : '';
+      var batchNote = meal.canBatch ? '<div class="cook-batch-note">💡 ' + meal.batchNote + '</div>' : '';
+      var nextNote = meal.nextDay ? '<div class="cook-next-note">🗓️ ' + meal.nextDay + '</div>' : '';
+
+      // Tabla de cantidades por persona
+      var bdHTML = '';
+      if (meal.breakdown && meal.breakdown.length) {
+        var rows = meal.breakdown.map(function(b) {
+          return '<tr><td class="bd-ing">' + b.name + '</td><td class="bd-l">' + b.lorena + '</td><td class="bd-d">' + b.daniel + '</td></tr>';
+        }).join('');
+        bdHTML = '<div class="bd-section"><div class="bd-title">Cantidades por persona</div>' +
+          '<table class="bd-table"><thead><tr><th></th><th>🌿 Lorena</th><th>💙 Daniel</th></tr></thead><tbody>' + rows + '</tbody></table></div>';
       }
+
+      var stepsHTML = meal.steps.map(function(s, i) {
+        return '<div class="cook-step"><div class="cook-step-num">' + (i+1) + '</div><div>' + s + '</div></div>';
+      }).join('');
+
       mealsHTML +=
-        '<div class="cook-card ' + (chk ? 'cook-done' : '') + '" id="cc-' + meal.id + '" data-mealid="' + meal.id + '">' +
+        '<div class="cook-card' + (chk ? ' cook-done' : '') + '" id="cc-' + meal.id + '" data-mealid="' + meal.id + '">' +
           '<div class="cook-card-header" data-action="toggle-step" data-card="cc-' + meal.id + '">' +
             '<div class="cook-card-left">' +
               '<div class="cook-emoji">' + meal.emoji + '</div>' +
-              '<div>' +
-                '<div class="cook-name">' + meal.name + '</div>' +
-                '<div class="cook-tags">' + frozenTag + batchTag + '</div>' +
-              '</div>' +
+              '<div><div class="cook-name">' + meal.name + '</div><div class="cook-tags">' + frozenTag + batchTag + '</div></div>' +
             '</div>' +
             '<div class="cook-card-right">' +
               '<div class="cook-cost">' + meal.cost + '</div>' +
-              '<div class="cook-cost-detail">' + meal.costDetail + '</div>' +
-              '<button class="cook-check ' + (chk ? 'checked' : '') + '" data-action="toggle-done" data-mealid="' + meal.id + '">v</button>' +
+              '<button class="cook-check' + (chk ? ' checked' : '') + '" data-action="toggle-done" data-mealid="' + meal.id + '">✓</button>' +
             '</div>' +
           '</div>' +
-          '<div class="cook-body">' + batchNote + nextNote +
-            '<div class="cook-steps-title">Pasos</div>' + stepsHTML +
-          '</div>' +
+          '<div class="cook-body">' + batchNote + nextNote + bdHTML + '<div class="cook-steps-title">Pasos</div>' + stepsHTML + '</div>' +
         '</div>';
     }
 
     elName.textContent = dayData.dayName;
-    document.getElementById('cook-defrost').innerHTML = defrostHTML;
+    document.getElementById('cook-defrost').innerHTML = tomorrowHTML;
     document.getElementById('cook-meals').innerHTML = mealsHTML;
 
     var totalEl = document.getElementById('cook-total-val');
     if (totalEl) {
       var total = 0;
-      for (var ti = 0; ti < dayData.meals.length; ti++) {
-        var match = dayData.meals[ti].cost.match(/[0-9,.]+/);
+      dayData.meals.forEach(function(m) {
+        var match = m.cost.match(/[0-9,.]+/);
         if (match) total += parseFloat(match[0].replace(',','.'));
-      }
+      });
       totalEl.textContent = total.toFixed(2).replace('.',',') + ' EUR';
     }
   }
 
-  // Delegacion de eventos para la vista cocina (evita problemas de onclick inline)
   document.getElementById('cook-meals').addEventListener('click', function(e) {
     var doneBtn = e.target.closest('[data-action="toggle-done"]');
     if (doneBtn) {
       e.stopPropagation();
       var mealId = doneBtn.getAttribute('data-mealid');
       cookChecked[mealId] = !cookChecked[mealId];
-      safeStorage.set('cookChecked', cookChecked);
+      ls.set('ndieta_cook', cookChecked);
       renderCooking();
       return;
     }
     var header = e.target.closest('[data-action="toggle-step"]');
     if (header) {
-      var cardId = header.getAttribute('data-card');
-      var card = document.getElementById(cardId);
+      var card = document.getElementById(header.getAttribute('data-card'));
       if (card) card.classList.toggle('open');
     }
   });
 
-  // Selector de dias de cocina
   (function() {
     var btns = document.querySelectorAll('.cook-day-btn');
-    for (var i = 0; i < btns.length; i++) {
-      (function(idx, btn) {
-        btn.addEventListener('click', function() {
-          cookDay = idx;
-          var all = document.querySelectorAll('.cook-day-btn');
-          for (var j = 0; j < all.length; j++) all[j].classList.remove('active');
-          btn.classList.add('active');
-          renderCooking();
-        });
-      })(i, btns[i]);
-    }
-    // Marcar el dia de hoy
-    for (var k = 0; k < btns.length; k++) btns[k].classList.remove('active');
+    btns.forEach(function(b) { b.classList.remove('active'); });
+    btns.forEach(function(btn, idx) {
+      btn.addEventListener('click', function() {
+        cookDay = idx;
+        btns.forEach(function(b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        renderCooking();
+      });
+    });
     if (btns[cookDay]) btns[cookDay].classList.add('active');
   })();
-
-  // renderCooking se llama al entrar en la vista desde setView
 
 } catch(globalErr) {
   console.error('Error en el script principal:', globalErr);
